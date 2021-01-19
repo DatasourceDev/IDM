@@ -1,0 +1,89 @@
+﻿@model IDM.Models.OU
+@{
+    ViewData["Title"] = "OU";
+
+}
+<div class="container-fluid">
+    <!-- Page-Title -->
+    <div class="row">
+        <div class="col-sm-12">
+            <div aria-live="polite" aria-atomic="true" style="position: relative;">
+                <div class="page-title-box">
+                    <div class="float-right" style="width:50%">
+                        @if (ViewBag.ReturnCode != null)
+                        {
+                            @if (ViewBag.ReturnCode == ReturnCode.Success)
+                            {
+                                <div class="alert alert-success  border-0" role="alert">
+                                    <i class="mdi mdi-check-circle-outline font-18 mr-1"></i>
+                                    <strong class="font-18">@ViewBag.Message</strong>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="alert alert-danger border-0" role="alert">
+                                    <i class="mdi mdi-close-circle-outline font-18 mr-1"></i>
+                                    <strong class="font-18">@ViewBag.Message</strong>
+                                </div>
+                            }
+                        }
+                    </div>
+                    <h4 class="page-title">OU</h4>
+                    <p class="text-muted">
+                        OU
+                    </p>
+                </div><!--end page-title-box-->
+               
+            </div>
+        </div><!--end col-->
+    </div>
+    <!-- end page title end breadcrumb -->
+    <!--end row-->
+    <form class="form-horizontal form-parsley" novalidate role="form" asp-action="OUInfo" asp-controller="System">
+        @Html.HiddenFor(m => m.OUID)
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body mt-3">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label text-right">รหัส OU</label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control" type="text" asp-for="OUName" required>
+                                        @Html.ValidationMessageFor(m => m.OUName)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label text-right">ชื่อ OU</label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control" type="text" asp-for="OUDescription" required>
+                                        @Html.ValidationMessageFor(m => m.OUDescription)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label text-right"></label>
+                                    <div class="col-sm-8">
+                                        <button class="btn btn-primary " type="submit">บันทึก</button>
+                                        <a href="@Url.Action("OU","System")" class="btn btn-light">กลับ</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- end card-body -->
+                </div> <!-- end card -->
+            </div> <!-- end col -->
+            <!-- end col -->
+        </div> <!-- end row -->
+    </form>
+
+
+</div><!-- container -->

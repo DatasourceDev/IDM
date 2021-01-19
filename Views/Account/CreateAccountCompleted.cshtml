@@ -1,0 +1,85 @@
+﻿@model IDM.Models.visual_fim_user
+@using IDM.DTO;
+@using IDM.Extensions
+@using IDM;
+@{
+    ViewData["Title"] = "สร้างบัญชีรายชื่อผู้ใช้สำเร็จ";
+
+}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div aria-live="polite" aria-atomic="true" style="position: relative;">
+                <div class="page-title-box">
+                    <div class="float-right" style="width:50%">
+                        @if (ViewBag.ReturnCode != null)
+                        {
+                            @if (ViewBag.ReturnCode == ReturnCode.Success)
+                            {
+                                <div class="alert alert-success  border-0" role="alert">
+                                    <i class="mdi mdi-check-circle-outline font-18 mr-1"></i>
+                                    <strong class="font-18">@ViewBag.Message</strong>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="alert alert-danger border-0" role="alert">
+                                    <i class="mdi mdi-close-circle-outline font-18 mr-1"></i>
+                                    <strong class="font-18">@ViewBag.Message</strong>
+                                </div>
+                            }
+                        }
+                    </div>
+                    <h4 class="page-title">สร้างบัญชีรายชื่อผู้ใช้สำเร็จ</h4>
+                    <p class="text-muted">
+                        Account Created Successfully
+                    </p>
+                </div><!--end page-title-box-->
+            </div>
+        </div><!--end col-->
+    </div>
+    <!-- end page title end breadcrumb -->
+    <!--end row-->
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body  mt-3">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label text-right">รหัสผู้ใช้</label>
+                                <div class="col-sm-4">
+                                    <label class="col-form-label ">@Model.basic_uid</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label text-right">รหัสผ่าน</label>
+                                <div class="col-sm-4">
+                                    <label class="col-form-label ">@Cryptography.decrypt(Model.basic_userPassword)</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label text-right"></label>
+                                <div class="col-sm-8">
+                                    <a href="@Url.Action("CreateAccount","Account")" class="btn btn-light">กลับ</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- end card-body -->
+            </div> <!-- end card -->
+        </div> <!-- end col -->
+        <!-- end col -->
+    </div>
+</div><!-- container -->
+@section scripts{
+    
+}

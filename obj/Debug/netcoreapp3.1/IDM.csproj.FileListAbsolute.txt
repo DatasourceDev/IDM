@@ -1,0 +1,1400 @@
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\appsettings.Development.json
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\appsettings.json
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\IDM.exe
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\IDM.deps.json
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\IDM.runtimeconfig.json
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\IDM.runtimeconfig.dev.json
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\IDM.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\IDM.pdb
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\IDM.Views.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\IDM.Views.pdb
+E:\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\IDM.RazorAssemblyInfo.cache
+E:\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\IDM.RazorAssemblyInfo.cs
+E:\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\IDM.AssemblyInfoInputs.cache
+E:\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\IDM.AssemblyInfo.cs
+E:\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\IDM.TagHelpers.input.cache
+E:\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\IDM.TagHelpers.output.cache
+E:\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\IDM.RazorCoreGenerate.cache
+E:\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+E:\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
+E:\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
+E:\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+E:\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+E:\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
+E:\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
+E:\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\IDM.RazorTargetAssemblyInfo.cache
+E:\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\IDM.RazorTargetAssemblyInfo.cs
+E:\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\IDM.Views.pdb
+E:\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\staticwebassets\IDM.StaticWebAssets.Manifest.cache
+E:\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\staticwebassets\IDM.StaticWebAssets.xml
+E:\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\IDM.dll
+E:\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\IDM.pdb
+E:\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\IDM.genruntimeconfig.cache
+E:\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\IDM.csproj.CopyComplete
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Antiforgery.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Authentication.Abstractions.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Authentication.Cookies.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Authentication.Core.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Authentication.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Authentication.OAuth.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Authorization.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Authorization.Policy.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Components.Authorization.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Components.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Components.Forms.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Components.Server.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Components.Web.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Connections.Abstractions.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.CookiePolicy.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Cors.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Cryptography.Internal.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.DataProtection.Abstractions.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.DataProtection.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.DataProtection.Extensions.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Diagnostics.Abstractions.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Diagnostics.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Diagnostics.HealthChecks.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.HostFiltering.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Hosting.Abstractions.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Hosting.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Html.Abstractions.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Http.Abstractions.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Http.Connections.Common.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Http.Connections.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Http.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Http.Extensions.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Http.Features.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.HttpOverrides.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.HttpsPolicy.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Identity.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Localization.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Localization.Routing.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Metadata.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.Abstractions.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.ApiExplorer.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.Core.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.Cors.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.DataAnnotations.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.Formatters.Json.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.Formatters.Xml.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.Localization.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.Razor.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.RazorPages.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.TagHelpers.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.ViewFeatures.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Razor.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Razor.Runtime.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.ResponseCaching.Abstractions.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.ResponseCaching.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.ResponseCompression.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Rewrite.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Routing.Abstractions.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Routing.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Server.HttpSys.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Server.IIS.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Server.IISIntegration.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Server.Kestrel.Core.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Server.Kestrel.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Session.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.SignalR.Common.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.SignalR.Core.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.SignalR.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.SignalR.Protocols.Json.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.StaticFiles.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.WebSockets.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.WebUtilities.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.CSharp.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.CommandLine.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.EnvironmentVariables.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.FileExtensions.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.Ini.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.Json.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.KeyPerFile.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.UserSecrets.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.Xml.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Diagnostics.HealthChecks.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.FileProviders.Abstractions.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.FileProviders.Composite.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.FileProviders.Embedded.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.FileProviders.Physical.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.FileSystemGlobbing.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Hosting.Abstractions.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Hosting.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Http.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Identity.Core.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Identity.Stores.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Localization.Abstractions.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Localization.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Logging.Configuration.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Logging.Console.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Logging.Debug.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Logging.EventLog.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Logging.EventSource.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Logging.TraceSource.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.ObjectPool.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Options.ConfigurationExtensions.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Options.DataAnnotations.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.WebEncoders.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.JSInterop.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Net.Http.Headers.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.VisualBasic.Core.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.VisualBasic.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Win32.Primitives.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Win32.Registry.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\mscorlib.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\netstandard.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.AppContext.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Buffers.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Collections.Concurrent.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Collections.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Collections.Immutable.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Collections.NonGeneric.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Collections.Specialized.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.ComponentModel.Annotations.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.ComponentModel.DataAnnotations.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.ComponentModel.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.ComponentModel.EventBasedAsync.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.ComponentModel.Primitives.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.ComponentModel.TypeConverter.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Configuration.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Console.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Core.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Data.Common.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Data.DataSetExtensions.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Data.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.Contracts.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.Debug.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.DiagnosticSource.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.EventLog.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.FileVersionInfo.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.Process.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.StackTrace.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.TextWriterTraceListener.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.Tools.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.TraceSource.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.Tracing.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Drawing.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Drawing.Primitives.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Dynamic.Runtime.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Globalization.Calendars.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Globalization.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Globalization.Extensions.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.IO.Compression.Brotli.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.IO.Compression.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.IO.Compression.FileSystem.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.IO.Compression.ZipFile.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.IO.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.IO.FileSystem.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.IO.FileSystem.DriveInfo.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.IO.FileSystem.Primitives.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.IO.FileSystem.Watcher.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.IO.IsolatedStorage.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.IO.MemoryMappedFiles.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.IO.Pipelines.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.IO.Pipes.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.IO.UnmanagedMemoryStream.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Linq.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Linq.Expressions.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Linq.Parallel.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Linq.Queryable.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Memory.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Net.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Net.Http.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Net.HttpListener.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Net.Mail.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Net.NameResolution.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Net.NetworkInformation.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Net.Ping.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Net.Primitives.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Net.Requests.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Net.Security.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Net.ServicePoint.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Net.Sockets.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Net.WebClient.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Net.WebHeaderCollection.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Net.WebProxy.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Net.WebSockets.Client.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Net.WebSockets.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Numerics.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Numerics.Vectors.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.ObjectModel.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Reflection.DispatchProxy.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Reflection.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Reflection.Emit.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Reflection.Emit.ILGeneration.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Reflection.Emit.Lightweight.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Reflection.Extensions.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Reflection.Metadata.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Reflection.Primitives.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Reflection.TypeExtensions.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Resources.Reader.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Resources.ResourceManager.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Resources.Writer.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Runtime.CompilerServices.Unsafe.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Runtime.CompilerServices.VisualC.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Runtime.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Runtime.Extensions.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Runtime.Handles.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Runtime.InteropServices.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Runtime.InteropServices.RuntimeInformation.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Runtime.InteropServices.WindowsRuntime.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Runtime.Intrinsics.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Runtime.Loader.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Runtime.Numerics.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Runtime.Serialization.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Runtime.Serialization.Formatters.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Runtime.Serialization.Json.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Runtime.Serialization.Primitives.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Runtime.Serialization.Xml.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Security.AccessControl.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Security.Claims.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Security.Cryptography.Algorithms.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Security.Cryptography.Cng.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Security.Cryptography.Csp.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Security.Cryptography.Encoding.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Security.Cryptography.Primitives.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Security.Cryptography.X509Certificates.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Security.Cryptography.Xml.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Security.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Security.Permissions.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Security.Principal.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Security.Principal.Windows.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Security.SecureString.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.ServiceModel.Web.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.ServiceProcess.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Text.Encoding.CodePages.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Text.Encoding.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Text.Encoding.Extensions.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Text.Encodings.Web.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Text.RegularExpressions.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Threading.Channels.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Threading.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Threading.Overlapped.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Threading.Tasks.Dataflow.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Threading.Tasks.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Threading.Tasks.Extensions.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Threading.Tasks.Parallel.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Threading.Thread.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Threading.ThreadPool.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Threading.Timer.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Transactions.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Transactions.Local.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.ValueTuple.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Web.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Web.HttpUtility.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Windows.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Windows.Extensions.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Xml.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Xml.Linq.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Xml.ReaderWriter.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Xml.Serialization.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Xml.XDocument.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Xml.XmlDocument.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Xml.XmlSerializer.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Xml.XPath.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Xml.XPath.XDocument.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\WindowsBase.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Razor.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\System.Text.Json.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.resources.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.resources.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.resources.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.resources.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.resources.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.resources.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.resources.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.resources.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.resources.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.resources.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.resources.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LayoutLogin.cshtml.g.cs
+E:\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Profile\Guest.cshtml.g.cs
+E:\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Profile\MacAddress.cshtml.g.cs
+E:\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Account\Search.cshtml.g.cs
+E:\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Auth\Login.cshtml.g.cs
+E:\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Auth\Register.cshtml.g.cs
+E:\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Auth\ResetPassword.cshtml.g.cs
+E:\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Guest\EnableAccount.cshtml.g.cs
+E:\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Guest\ResetPassword.cshtml.g.cs
+E:\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Guest\ManageAccount.cshtml.g.cs
+E:\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Guest\AccountInfo.cshtml.g.cs
+E:\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Guest\DeleteAccount.cshtml.g.cs
+E:\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Guest\ManageAccountWithFile.cshtml.g.cs
+E:\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Report\History.cshtml.g.cs
+E:\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\System\Admin.cshtml.g.cs
+E:\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\System\Role.cshtml.g.cs
+E:\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\System\Setup.cshtml.g.cs
+E:\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\System\AdminInfo.cshtml.g.cs
+E:\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\System\RoleInfo.cshtml.g.cs
+E:\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Account\RoleCheck.cshtml.g.cs
+E:\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Profile\Staff.cshtml.g.cs
+E:\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Profile\Student.cshtml.g.cs
+E:\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Auth\ForgotPassword.cshtml.g.cs
+E:\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LayoutBox.cshtml.g.cs
+E:\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Guest\ChangePassword.cshtml.g.cs
+E:\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Account\ChangePassword.cshtml.g.cs
+E:\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Account\ResetPassword.cshtml.g.cs
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+E:\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Auth\RegisterCompleted.cshtml.g.cs
+E:\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Profile\ChangePassword.cshtml.g.cs
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\System.DirectoryServices.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.DirectoryServices.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\System.DirectoryServices.AccountManagement.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\System.DirectoryServices.Protocols.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.DirectoryServices.AccountManagement.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.DirectoryServices.Protocols.dll
+E:\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Profile\Admin.cshtml.g.cs
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\EPPlus.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\System.Xml.XPath.XmlDocument.dll
+E:\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Guest\ManageAccountImportFile.cshtml.g.cs
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+E:\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Auth\RegisterOTP.cshtml.g.cs
+E:\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Auth\ForgotPasswordOTP.cshtml.g.cs
+E:\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Auth\ResetPasswordCompleted.cshtml.g.cs
+E:\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\IDM.csprojAssemblyReference.cache
+E:\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Auth\ForgotPassword2.cshtml.g.cs
+E:\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\System\OU.cshtml.g.cs
+E:\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\System\OUInfo.cshtml.g.cs
+E:\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Guest\PendingAccount.cshtml.g.cs
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Workspaces.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\dotnet-aspnet-codegenerator-design.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\System.Composition.AttributedModel.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\System.Composition.Convention.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\System.Composition.Hosting.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\System.Composition.Runtime.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\System.Composition.TypedParts.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Auth\MailRegister.cshtml.g.cs
+E:\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Auth\MailOTP.cshtml.g.cs
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\packages\Microsoft.AspNetCore.Razor.Design.2.2.0\tools\rzc.deps.json
+E:\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\packages\Microsoft.AspNetCore.Razor.Design.2.2.0\tools\rzc.runtimeconfig.json
+E:\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\IDM.MvcApplicationPartsAssemblyInfo.cs
+E:\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\IDM.MvcApplicationPartsAssemblyInfo.cache
+E:\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\System\PasswordGenerator.cshtml.g.cs
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\packages\Microsoft.AspNetCore.Razor.Design.2.2.0\tools\rzc.deps.json
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\packages\Microsoft.AspNetCore.Razor.Design.2.2.0\tools\rzc.runtimeconfig.json
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\IDM.exe
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\IDM.deps.json
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\IDM.runtimeconfig.json
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\IDM.runtimeconfig.dev.json
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\IDM.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\IDM.pdb
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Antiforgery.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Authentication.Abstractions.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Authentication.Cookies.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Authentication.Core.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Authentication.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Authentication.OAuth.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Authorization.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Authorization.Policy.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Components.Authorization.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Components.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Components.Forms.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Components.Server.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Components.Web.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Connections.Abstractions.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.CookiePolicy.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Cors.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.DataProtection.Abstractions.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.DataProtection.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.DataProtection.Extensions.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Diagnostics.Abstractions.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Diagnostics.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Diagnostics.HealthChecks.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.HostFiltering.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Hosting.Abstractions.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Hosting.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Html.Abstractions.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Http.Abstractions.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Http.Connections.Common.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Http.Connections.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Http.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Http.Extensions.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Http.Features.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.HttpOverrides.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.HttpsPolicy.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Identity.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Localization.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Localization.Routing.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Metadata.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.Abstractions.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.ApiExplorer.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.Core.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.Cors.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.DataAnnotations.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.Formatters.Json.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.Formatters.Xml.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.Localization.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.Razor.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.RazorPages.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.TagHelpers.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.ViewFeatures.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Razor.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Razor.Runtime.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.ResponseCaching.Abstractions.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.ResponseCaching.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.ResponseCompression.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Rewrite.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Routing.Abstractions.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Routing.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Server.HttpSys.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Server.IIS.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Server.IISIntegration.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Server.Kestrel.Core.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Server.Kestrel.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Session.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.SignalR.Common.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.SignalR.Core.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.SignalR.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.SignalR.Protocols.Json.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.StaticFiles.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.WebSockets.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.WebUtilities.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.CSharp.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.CommandLine.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.EnvironmentVariables.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.Ini.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.Json.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.KeyPerFile.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.UserSecrets.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.Xml.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Diagnostics.HealthChecks.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.FileProviders.Composite.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.FileProviders.Embedded.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.FileProviders.Physical.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Hosting.Abstractions.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Hosting.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Http.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Identity.Core.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Identity.Stores.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Localization.Abstractions.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Localization.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Logging.Configuration.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Logging.Console.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Logging.Debug.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Logging.EventLog.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Logging.EventSource.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Logging.TraceSource.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.ObjectPool.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Options.ConfigurationExtensions.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Options.DataAnnotations.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.WebEncoders.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.JSInterop.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Net.Http.Headers.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.VisualBasic.Core.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.VisualBasic.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Win32.Primitives.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Win32.Registry.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\mscorlib.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\netstandard.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.AppContext.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Buffers.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Collections.Concurrent.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Collections.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Collections.Immutable.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Collections.NonGeneric.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Collections.Specialized.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.ComponentModel.Annotations.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.ComponentModel.DataAnnotations.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.ComponentModel.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.ComponentModel.EventBasedAsync.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.ComponentModel.Primitives.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.ComponentModel.TypeConverter.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Configuration.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Console.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Core.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Data.Common.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Data.DataSetExtensions.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Data.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.Contracts.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.Debug.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.DiagnosticSource.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.EventLog.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.FileVersionInfo.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.Process.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.StackTrace.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.TextWriterTraceListener.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.Tools.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.TraceSource.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.Tracing.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Drawing.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Drawing.Primitives.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Dynamic.Runtime.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Globalization.Calendars.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Globalization.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Globalization.Extensions.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.IO.Compression.Brotli.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.IO.Compression.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.IO.Compression.FileSystem.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.IO.Compression.ZipFile.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.IO.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.IO.FileSystem.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.IO.FileSystem.DriveInfo.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.IO.FileSystem.Primitives.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.IO.FileSystem.Watcher.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.IO.IsolatedStorage.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.IO.MemoryMappedFiles.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.IO.Pipelines.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.IO.Pipes.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.IO.UnmanagedMemoryStream.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Linq.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Linq.Expressions.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Linq.Parallel.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Linq.Queryable.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Memory.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Net.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Net.Http.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Net.HttpListener.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Net.Mail.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Net.NameResolution.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Net.NetworkInformation.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Net.Ping.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Net.Primitives.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Net.Requests.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Net.Security.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Net.ServicePoint.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Net.Sockets.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Net.WebClient.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Net.WebHeaderCollection.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Net.WebProxy.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Net.WebSockets.Client.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Net.WebSockets.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Numerics.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Numerics.Vectors.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.ObjectModel.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Reflection.DispatchProxy.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Reflection.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Reflection.Emit.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Reflection.Emit.ILGeneration.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Reflection.Emit.Lightweight.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Reflection.Extensions.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Reflection.Metadata.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Reflection.Primitives.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Reflection.TypeExtensions.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Resources.Reader.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Resources.ResourceManager.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Resources.Writer.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Runtime.CompilerServices.Unsafe.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Runtime.CompilerServices.VisualC.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Runtime.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Runtime.Extensions.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Runtime.Handles.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Runtime.InteropServices.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Runtime.InteropServices.WindowsRuntime.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Runtime.Intrinsics.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Runtime.Loader.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Runtime.Numerics.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Runtime.Serialization.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Runtime.Serialization.Formatters.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Runtime.Serialization.Json.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Runtime.Serialization.Primitives.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Runtime.Serialization.Xml.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Security.AccessControl.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Security.Claims.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Security.Cryptography.Algorithms.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Security.Cryptography.Cng.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Security.Cryptography.Csp.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Security.Cryptography.Encoding.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Security.Cryptography.Primitives.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Security.Cryptography.X509Certificates.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Security.Cryptography.Xml.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Security.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Security.Permissions.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Security.Principal.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Security.Principal.Windows.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Security.SecureString.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.ServiceModel.Web.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.ServiceProcess.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Text.Encoding.CodePages.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Text.Encoding.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Text.Encoding.Extensions.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Text.Encodings.Web.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Text.RegularExpressions.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Threading.Channels.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Threading.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Threading.Overlapped.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Threading.Tasks.Dataflow.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Threading.Tasks.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Threading.Tasks.Extensions.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Threading.Tasks.Parallel.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Threading.Thread.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Threading.ThreadPool.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Threading.Timer.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Transactions.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Transactions.Local.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.ValueTuple.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Web.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Web.HttpUtility.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Windows.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Windows.Extensions.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Xml.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Xml.Linq.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Xml.ReaderWriter.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Xml.Serialization.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Xml.XDocument.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Xml.XmlDocument.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Xml.XmlSerializer.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Xml.XPath.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\System.Xml.XPath.XDocument.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\refs\WindowsBase.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\IDM.Views.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\IDM.Views.pdb
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\EPPlus.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Razor.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Workspaces.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\dotnet-aspnet-codegenerator-design.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\System.Composition.AttributedModel.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\System.Composition.Convention.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\System.Composition.Hosting.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\System.Composition.Runtime.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\System.Composition.TypedParts.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\System.DirectoryServices.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\System.DirectoryServices.AccountManagement.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\System.DirectoryServices.Protocols.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\System.Text.Json.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\System.Xml.XPath.XmlDocument.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.resources.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.resources.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.resources.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.resources.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.resources.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.resources.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.resources.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.resources.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.resources.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.resources.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.resources.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.DirectoryServices.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.DirectoryServices.AccountManagement.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.DirectoryServices.Protocols.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
+C:\Work\SPU\Source Code\IDM\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Work\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\IDM.csprojAssemblyReference.cache
+C:\Work\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\IDM.AssemblyInfoInputs.cache
+C:\Work\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\IDM.AssemblyInfo.cs
+C:\Work\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\IDM.csproj.CoreCompileInputs.cache
+C:\Work\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\IDM.MvcApplicationPartsAssemblyInfo.cs
+C:\Work\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\IDM.MvcApplicationPartsAssemblyInfo.cache
+C:\Work\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\IDM.RazorAssemblyInfo.cache
+C:\Work\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\IDM.RazorAssemblyInfo.cs
+C:\Work\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\IDM.TagHelpers.input.cache
+C:\Work\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\IDM.TagHelpers.output.cache
+C:\Work\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\IDM.RazorCoreGenerate.cache
+C:\Work\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Account\ChangePassword.cshtml.g.cs
+C:\Work\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Account\ResetPassword.cshtml.g.cs
+C:\Work\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Account\RoleCheck.cshtml.g.cs
+C:\Work\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Account\Search.cshtml.g.cs
+C:\Work\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Auth\ForgotPassword.cshtml.g.cs
+C:\Work\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Auth\ForgotPassword2.cshtml.g.cs
+C:\Work\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Auth\ForgotPasswordOTP.cshtml.g.cs
+C:\Work\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Auth\Login.cshtml.g.cs
+C:\Work\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Auth\MailOTP.cshtml.g.cs
+C:\Work\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Auth\MailRegister.cshtml.g.cs
+C:\Work\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Auth\Register.cshtml.g.cs
+C:\Work\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Auth\RegisterCompleted.cshtml.g.cs
+C:\Work\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Auth\RegisterOTP.cshtml.g.cs
+C:\Work\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Auth\ResetPassword.cshtml.g.cs
+C:\Work\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Auth\ResetPasswordCompleted.cshtml.g.cs
+C:\Work\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Guest\AccountInfo.cshtml.g.cs
+C:\Work\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Guest\ChangePassword.cshtml.g.cs
+C:\Work\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Guest\DeleteAccount.cshtml.g.cs
+C:\Work\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Guest\EnableAccount.cshtml.g.cs
+C:\Work\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Guest\ManageAccount.cshtml.g.cs
+C:\Work\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Guest\ManageAccountImportFile.cshtml.g.cs
+C:\Work\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Guest\ManageAccountWithFile.cshtml.g.cs
+C:\Work\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Guest\PendingAccount.cshtml.g.cs
+C:\Work\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Guest\ResetPassword.cshtml.g.cs
+C:\Work\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+C:\Work\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
+C:\Work\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Profile\Admin.cshtml.g.cs
+C:\Work\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Profile\ChangePassword.cshtml.g.cs
+C:\Work\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Profile\Guest.cshtml.g.cs
+C:\Work\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Profile\MacAddress.cshtml.g.cs
+C:\Work\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Profile\Staff.cshtml.g.cs
+C:\Work\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Profile\Student.cshtml.g.cs
+C:\Work\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Report\History.cshtml.g.cs
+C:\Work\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
+C:\Work\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+C:\Work\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LayoutBox.cshtml.g.cs
+C:\Work\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LayoutLogin.cshtml.g.cs
+C:\Work\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\Work\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\System\Admin.cshtml.g.cs
+C:\Work\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\System\AdminInfo.cshtml.g.cs
+C:\Work\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\System\OU.cshtml.g.cs
+C:\Work\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\System\OUInfo.cshtml.g.cs
+C:\Work\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\System\PasswordGenerator.cshtml.g.cs
+C:\Work\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\System\Role.cshtml.g.cs
+C:\Work\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\System\RoleInfo.cshtml.g.cs
+C:\Work\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\System\Setup.cshtml.g.cs
+C:\Work\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
+C:\Work\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
+C:\Work\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\IDM.RazorTargetAssemblyInfo.cache
+C:\Work\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\IDM.RazorTargetAssemblyInfo.cs
+C:\Work\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\IDM.Views.pdb
+C:\Work\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\IDM.csproj.CopyComplete
+C:\Work\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\staticwebassets\IDM.StaticWebAssets.Manifest.cache
+C:\Work\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\staticwebassets\IDM.StaticWebAssets.xml
+C:\Work\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\IDM.dll
+C:\Work\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\IDM.pdb
+C:\Work\SPU\Source Code\IDM\obj\Debug\netcoreapp3.1\IDM.genruntimeconfig.cache
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\packages\Microsoft.AspNetCore.Razor.Design.2.2.0\tools\rzc.deps.json
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\packages\Microsoft.AspNetCore.Razor.Design.2.2.0\tools\rzc.runtimeconfig.json
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\IDM.exe
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\IDM.deps.json
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\IDM.runtimeconfig.json
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\IDM.runtimeconfig.dev.json
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\IDM.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\IDM.pdb
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Antiforgery.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Authentication.Abstractions.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Authentication.Cookies.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Authentication.Core.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Authentication.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Authentication.OAuth.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Authorization.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Authorization.Policy.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Components.Authorization.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Components.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Components.Forms.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Components.Server.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Components.Web.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Connections.Abstractions.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.CookiePolicy.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Cors.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.DataProtection.Abstractions.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.DataProtection.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.DataProtection.Extensions.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Diagnostics.Abstractions.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Diagnostics.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Diagnostics.HealthChecks.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.HostFiltering.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Hosting.Abstractions.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Hosting.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Html.Abstractions.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Http.Abstractions.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Http.Connections.Common.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Http.Connections.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Http.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Http.Extensions.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Http.Features.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.HttpOverrides.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.HttpsPolicy.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Identity.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Localization.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Localization.Routing.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Metadata.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.Abstractions.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.ApiExplorer.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.Core.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.Cors.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.DataAnnotations.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.Formatters.Json.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.Formatters.Xml.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.Localization.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.Razor.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.RazorPages.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.TagHelpers.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.ViewFeatures.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Razor.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Razor.Runtime.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.ResponseCaching.Abstractions.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.ResponseCaching.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.ResponseCompression.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Rewrite.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Routing.Abstractions.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Routing.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Server.HttpSys.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Server.IIS.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Server.IISIntegration.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Server.Kestrel.Core.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Server.Kestrel.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Session.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.SignalR.Common.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.SignalR.Core.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.SignalR.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.SignalR.Protocols.Json.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.StaticFiles.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.WebSockets.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.WebUtilities.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.CSharp.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.CommandLine.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.EnvironmentVariables.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.Ini.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.Json.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.KeyPerFile.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.UserSecrets.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.Xml.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Diagnostics.HealthChecks.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.FileProviders.Composite.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.FileProviders.Embedded.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.FileProviders.Physical.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Hosting.Abstractions.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Hosting.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Http.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Identity.Core.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Identity.Stores.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Localization.Abstractions.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Localization.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Logging.Configuration.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Logging.Console.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Logging.Debug.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Logging.EventLog.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Logging.EventSource.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Logging.TraceSource.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.ObjectPool.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Options.ConfigurationExtensions.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Options.DataAnnotations.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.WebEncoders.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.JSInterop.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Net.Http.Headers.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.VisualBasic.Core.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.VisualBasic.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Win32.Primitives.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\Microsoft.Win32.Registry.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\mscorlib.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\netstandard.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.AppContext.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Buffers.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Collections.Concurrent.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Collections.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Collections.Immutable.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Collections.NonGeneric.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Collections.Specialized.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.ComponentModel.Annotations.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.ComponentModel.DataAnnotations.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.ComponentModel.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.ComponentModel.EventBasedAsync.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.ComponentModel.Primitives.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.ComponentModel.TypeConverter.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Configuration.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Console.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Core.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Data.Common.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Data.DataSetExtensions.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Data.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.Contracts.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.Debug.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.DiagnosticSource.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.EventLog.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.FileVersionInfo.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.Process.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.StackTrace.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.TextWriterTraceListener.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.Tools.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.TraceSource.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.Tracing.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Drawing.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Drawing.Primitives.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Dynamic.Runtime.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Globalization.Calendars.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Globalization.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Globalization.Extensions.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.IO.Compression.Brotli.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.IO.Compression.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.IO.Compression.FileSystem.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.IO.Compression.ZipFile.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.IO.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.IO.FileSystem.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.IO.FileSystem.DriveInfo.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.IO.FileSystem.Primitives.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.IO.FileSystem.Watcher.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.IO.IsolatedStorage.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.IO.MemoryMappedFiles.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.IO.Pipelines.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.IO.Pipes.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.IO.UnmanagedMemoryStream.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Linq.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Linq.Expressions.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Linq.Parallel.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Linq.Queryable.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Memory.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Net.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Net.Http.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Net.HttpListener.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Net.Mail.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Net.NameResolution.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Net.NetworkInformation.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Net.Ping.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Net.Primitives.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Net.Requests.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Net.Security.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Net.ServicePoint.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Net.Sockets.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Net.WebClient.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Net.WebHeaderCollection.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Net.WebProxy.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Net.WebSockets.Client.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Net.WebSockets.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Numerics.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Numerics.Vectors.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.ObjectModel.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Reflection.DispatchProxy.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Reflection.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Reflection.Emit.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Reflection.Emit.ILGeneration.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Reflection.Emit.Lightweight.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Reflection.Extensions.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Reflection.Metadata.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Reflection.Primitives.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Reflection.TypeExtensions.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Resources.Reader.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Resources.ResourceManager.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Resources.Writer.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Runtime.CompilerServices.Unsafe.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Runtime.CompilerServices.VisualC.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Runtime.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Runtime.Extensions.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Runtime.Handles.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Runtime.InteropServices.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Runtime.InteropServices.WindowsRuntime.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Runtime.Intrinsics.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Runtime.Loader.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Runtime.Numerics.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Runtime.Serialization.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Runtime.Serialization.Formatters.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Runtime.Serialization.Json.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Runtime.Serialization.Primitives.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Runtime.Serialization.Xml.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Security.AccessControl.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Security.Claims.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Security.Cryptography.Algorithms.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Security.Cryptography.Cng.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Security.Cryptography.Csp.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Security.Cryptography.Encoding.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Security.Cryptography.Primitives.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Security.Cryptography.X509Certificates.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Security.Cryptography.Xml.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Security.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Security.Permissions.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Security.Principal.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Security.Principal.Windows.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Security.SecureString.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.ServiceModel.Web.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.ServiceProcess.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Text.Encoding.CodePages.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Text.Encoding.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Text.Encoding.Extensions.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Text.Encodings.Web.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Text.RegularExpressions.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Threading.Channels.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Threading.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Threading.Overlapped.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Threading.Tasks.Dataflow.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Threading.Tasks.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Threading.Tasks.Extensions.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Threading.Tasks.Parallel.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Threading.Thread.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Threading.ThreadPool.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Threading.Timer.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Transactions.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Transactions.Local.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.ValueTuple.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Web.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Web.HttpUtility.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Windows.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Windows.Extensions.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Xml.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Xml.Linq.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Xml.ReaderWriter.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Xml.Serialization.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Xml.XDocument.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Xml.XmlDocument.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Xml.XmlSerializer.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Xml.XPath.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\System.Xml.XPath.XDocument.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\refs\WindowsBase.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\IDM.Views.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\IDM.Views.pdb
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\EPPlus.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Razor.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Workspaces.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\dotnet-aspnet-codegenerator-design.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\System.Composition.AttributedModel.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\System.Composition.Convention.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\System.Composition.Hosting.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\System.Composition.Runtime.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\System.Composition.TypedParts.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\System.DirectoryServices.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\System.DirectoryServices.AccountManagement.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\System.DirectoryServices.Protocols.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\System.Text.Json.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\System.Xml.XPath.XmlDocument.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.resources.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.resources.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.resources.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.resources.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.resources.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.resources.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.resources.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.resources.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.resources.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.resources.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.resources.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.DirectoryServices.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.DirectoryServices.AccountManagement.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.DirectoryServices.Protocols.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
+C:\Work\CU\IDM\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Work\CU\IDM\obj\Debug\netcoreapp3.1\IDM.AssemblyInfoInputs.cache
+C:\Work\CU\IDM\obj\Debug\netcoreapp3.1\IDM.AssemblyInfo.cs
+C:\Work\CU\IDM\obj\Debug\netcoreapp3.1\IDM.RazorAssemblyInfo.cache
+C:\Work\CU\IDM\obj\Debug\netcoreapp3.1\IDM.RazorAssemblyInfo.cs
+C:\Work\CU\IDM\obj\Debug\netcoreapp3.1\IDM.TagHelpers.input.cache
+C:\Work\CU\IDM\obj\Debug\netcoreapp3.1\IDM.TagHelpers.output.cache
+C:\Work\CU\IDM\obj\Debug\netcoreapp3.1\IDM.RazorCoreGenerate.cache
+C:\Work\CU\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Account\ChangePassword.cshtml.g.cs
+C:\Work\CU\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Account\ResetPassword.cshtml.g.cs
+C:\Work\CU\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Account\Search.cshtml.g.cs
+C:\Work\CU\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Auth\Login.cshtml.g.cs
+C:\Work\CU\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Auth\MailOTP.cshtml.g.cs
+C:\Work\CU\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Auth\MailRegister.cshtml.g.cs
+C:\Work\CU\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Profile\ChangePassword.cshtml.g.cs
+C:\Work\CU\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
+C:\Work\CU\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+C:\Work\CU\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LayoutBox.cshtml.g.cs
+C:\Work\CU\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LayoutLogin.cshtml.g.cs
+C:\Work\CU\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\Work\CU\IDM\obj\Debug\netcoreapp3.1\Razor\Views\System\Admin.cshtml.g.cs
+C:\Work\CU\IDM\obj\Debug\netcoreapp3.1\Razor\Views\System\AdminInfo.cshtml.g.cs
+C:\Work\CU\IDM\obj\Debug\netcoreapp3.1\Razor\Views\System\OU.cshtml.g.cs
+C:\Work\CU\IDM\obj\Debug\netcoreapp3.1\Razor\Views\System\OUInfo.cshtml.g.cs
+C:\Work\CU\IDM\obj\Debug\netcoreapp3.1\Razor\Views\System\PasswordGenerator.cshtml.g.cs
+C:\Work\CU\IDM\obj\Debug\netcoreapp3.1\Razor\Views\System\Role.cshtml.g.cs
+C:\Work\CU\IDM\obj\Debug\netcoreapp3.1\Razor\Views\System\RoleInfo.cshtml.g.cs
+C:\Work\CU\IDM\obj\Debug\netcoreapp3.1\Razor\Views\System\Setup.cshtml.g.cs
+C:\Work\CU\IDM\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
+C:\Work\CU\IDM\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
+C:\Work\CU\IDM\obj\Debug\netcoreapp3.1\IDM.RazorTargetAssemblyInfo.cache
+C:\Work\CU\IDM\obj\Debug\netcoreapp3.1\IDM.RazorTargetAssemblyInfo.cs
+C:\Work\CU\IDM\obj\Debug\netcoreapp3.1\IDM.Views.pdb
+C:\Work\CU\IDM\obj\Debug\netcoreapp3.1\IDM.csproj.CopyComplete
+C:\Work\CU\IDM\obj\Debug\netcoreapp3.1\staticwebassets\IDM.StaticWebAssets.Manifest.cache
+C:\Work\CU\IDM\obj\Debug\netcoreapp3.1\staticwebassets\IDM.StaticWebAssets.xml
+C:\Work\CU\IDM\obj\Debug\netcoreapp3.1\IDM.dll
+C:\Work\CU\IDM\obj\Debug\netcoreapp3.1\IDM.pdb
+C:\Work\CU\IDM\obj\Debug\netcoreapp3.1\IDM.genruntimeconfig.cache
+C:\Work\CU\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Account\ApproveChangePassword.cshtml.g.cs
+C:\Work\CU\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Account\CheckAccount.cshtml.g.cs
+C:\Work\CU\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Account\CreateAccount.cshtml.g.cs
+C:\Work\CU\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Account\CreateAccountFromFile.cshtml.g.cs
+C:\Work\CU\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Account\CreateScript.cshtml.g.cs
+C:\Work\CU\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Account\DeleteAccount.cshtml.g.cs
+C:\Work\CU\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Account\DeleteAccountFromFile.cshtml.g.cs
+C:\Work\CU\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Account\EnableAccount.cshtml.g.cs
+C:\Work\CU\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Account\EnableAccountFromFile.cshtml.g.cs
+C:\Work\CU\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Account\InternetAccess.cshtml.g.cs
+C:\Work\CU\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Account\ManageAccount.cshtml.g.cs
+C:\Work\CU\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Account\MoveAccount.cshtml.g.cs
+C:\Work\CU\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Account\OneDayPassword.cshtml.g.cs
+C:\Work\CU\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Account\VPN.cshtml.g.cs
+C:\Work\CU\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Profile\Index.cshtml.g.cs
+C:\Work\CU\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Account\CheckMenuPermission.cshtml.g.cs
+C:\Work\CU\IDM\obj\Debug\netcoreapp3.1\IDM.csprojAssemblyReference.cache
+C:\Work\CU\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Account\AccountInfo.cshtml.g.cs
+C:\Work\CU\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Account\InternetAccessInfo.cshtml.g.cs
+C:\Work\CU\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Report\Log.cshtml.g.cs
+C:\Work\CU\IDM\obj\Debug\netcoreapp3.1\IDM.csproj.CoreCompileInputs.cache
+C:\Work\CU\IDM\obj\Debug\netcoreapp3.1\IDM.MvcApplicationPartsAssemblyInfo.cs
+C:\Work\CU\IDM\obj\Debug\netcoreapp3.1\IDM.MvcApplicationPartsAssemblyInfo.cache
+C:\Work\CU\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Auth\LoginUser.cshtml.g.cs
+C:\Work\CU\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Auth\ActiveUser.cshtml.g.cs
+C:\Work\CU\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Auth\ResetPassword.cshtml.g.cs
+C:\Work\CU\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Auth\ResetPasswordCompleted.cshtml.g.cs
+C:\Work\CU\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Shared\MailRequestApproveResetPassword.cshtml.g.cs
+C:\Work\CU\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Account\MoveAccountInfo.cshtml.g.cs
+C:\Work\CU\IDM\obj\Debug\netcoreapp3.1\Razor\Views\Account\CreateAccountCompleted.cshtml.g.cs

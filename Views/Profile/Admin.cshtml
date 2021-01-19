@@ -1,0 +1,92 @@
+﻿@model IDM.Models.Admin
+@{
+    ViewData["Title"] = "ข้อมูลส่วนตัวผู้ดูแลระบบ";
+}
+
+<div class="container-fluid">
+    <!-- Page-Title -->
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="page-title-box">
+                <div class="float-right">
+                </div>
+                <h4 class="page-title">ข้อมูลส่วนตัวผู้ดูแลระบบ</h4>
+                <p class="text-muted">
+                    Admin Profile
+                </p>
+            </div><!--end page-title-box-->
+        </div><!--end col-->
+    </div>
+    <!-- end page title end breadcrumb -->
+    <!--end row-->
+    <div class="row ">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body mt-3">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label text-right">รหัสผู้ใช้</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" type="text" asp-for="AdminCode" readonly>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label text-right">ชื่อ</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" type="text" asp-for="FirstName" readonly>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label text-right">นามสกุล</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" type="text" asp-for="LastName" readonly>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label text-right">Gmail</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" type="text" asp-for="info" readonly>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label text-right">Office 365</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" type="text" asp-for="spuoffice365" readonly>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label text-right">Email ส่วนตัว</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" type="text" asp-for="spuOtherMails" readonly>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- end card-body -->
+            </div> <!-- end card -->
+        </div> <!-- end col -->
+        <!-- end col -->
+    </div> <!-- end row -->
+
+</div><!-- container -->

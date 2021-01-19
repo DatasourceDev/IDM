@@ -1,0 +1,141 @@
+﻿@model IDM.DTO.SearchDTO
+@using IDM.Extensions;
+@{
+    ViewData["Title"] = "รายงาน";
+
+}
+
+<div class="container-fluid">
+    <!-- Page-Title -->
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="page-title-box">
+                <div class="float-right">
+                </div>
+                <h4 class="page-title">รายงาน</h4>
+                <p class="text-muted">
+                    Report Log
+                </p>
+            </div><!--end page-title-box-->
+        </div><!--end col-->
+    </div>
+    <!-- end page title end breadcrumb -->
+    <!--end row-->
+
+    <form class="form-horizontal form-parsley" asp-action="Log" asp-controller="Report" method="get">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="mt-0 header-title">ค้นหา</h4>
+                        <div class="form-group row">
+                            <div class="col-lg-3">
+                                <label class="col-form-label">คำค้น</label>
+                                <input class="form-control" type="text" placeholder="ผู้แก้ไข รายละเอียด IP Address" asp-for="text_search">
+                            </div>
+                            <div class="col-lg-2">
+                                <label class="col-form-label">วันที่</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control dpicker" asp-for="dfrom">
+                                </div>
+                            </div>
+                            <div class="col-lg-2">
+                                <label class="col-form-label">ถึง</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control dpicker" asp-for="dto">
+                                </div>
+                            </div>
+                            <div class="col-lg-2">
+                                <label class="col-form-label">สถานะ</label>
+                                <select class="form-control" asp-for="logstatus_search">
+                                    <option value="">All</option>
+                                    <option value="@LogStatus.successfully">@LogStatus.successfully.ToString()</option>
+                                    <option value="@LogStatus.failed">@LogStatus.failed.ToString()</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-3">
+                                <label class="col-form-label">action</label>
+                                <select class="form-control" asp-for="log_type_search">
+                                    <option value="">All</option>
+                                    <option value="@LogType.log_login">@(LogType.log_login.ToString())</option>
+                                    <option value="@LogType.log_logout">@(LogType.log_logout.ToString())</option>
+                                    <option value="@LogType.log_create_account">@(LogType.log_create_account.ToString())</option>
+                                    <option value="@LogType.log_create_account_with_file">@(LogType.log_create_account_with_file.ToString())</option>
+                                    <option value="@LogType.log_edit_account">@(LogType.log_edit_account.ToString())</option>
+                                    <option value="@LogType.log_delete_account">@(LogType.log_delete_account.ToString())</option>
+                                    <option value="@LogType.log_delete_account_with_file">@(LogType.log_delete_account_with_file.ToString())</option>
+                                    <option value="@LogType.log_change_password">@(LogType.log_change_password.ToString())</option>
+                                    <option value="@LogType.log_lock_account">@(LogType.log_lock_account.ToString())</option>
+                                    <option value="@LogType.log_unlock_account">@(LogType.log_unlock_account.ToString())</option>
+                                    <option value="@LogType.log_lock_account_with_file">@(LogType.log_lock_account_with_file.ToString())</option>
+                                    <option value="@LogType.log_unlock_account_with_file">@(LogType.log_unlock_account_with_file.ToString())</option>
+                                    <option value="@LogType.log_edit_internetaccess">@(LogType.log_edit_internetaccess.ToString())</option>
+                                    <option value="@LogType.log_approve_reset_password">@(LogType.log_approve_reset_password.ToString())</option>
+                                    <option value="@LogType.log_approved_reset_password">@(LogType.log_approved_reset_password.ToString())</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">                            
+                            <div class="col-lg-1">
+                                <button class="btn btn-primary btn-block" type="submit">ค้นหา</button>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-lg-12">
+                                <div class="table-rep-plugin">
+                                    <div class="table-responsive mb-0" data-pattern="priority-columns">
+                                        <table id="tech-companies-1" class="table table-striped mb-0">
+                                            <thead>
+                                                <tr>
+                                                    <th>ลำดับ</th>
+                                                    <th>วันที่แก้ไข</th>
+                                                    <th>ผู้แก้ไข</th>
+                                                    <th>การกระทำ</th>
+                                                    <th>สถานะ</th>
+                                                    <th>รายละเอียด</th>
+                                                    <th>IP ต้นทาง</th>
+                                                    <th>IP ปลายทาง</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @if (Model.lists != null)
+                                                {
+                                                    var row = 1;
+                                                    @foreach (system_log item in Model.lists)
+                                                    {
+                                                        <tr>
+                                                            <td>@row</td>
+                                                            <td>@item.log_datetime</td>
+                                                            <td>@item.log_username</td>
+                                                            <td>@item.log_type</td>
+                                                            <td>@item.log_status</td>
+                                                            <td>@item.log_description</td>
+                                                            <td>@item.log_ip</td>
+                                                            <td>@item.log_target_ip</td>
+                                                        </tr>
+                                                        row++;
+                                                    }
+                                                }
+                                                @if (Model.lists == null || Model.lists.Count() == 0)
+                                                {
+                                                    <tr>
+                                                        <td colspan="5" class="text-center">ไม่พบข้อมูล</td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div> <!-- end card-body -->
+                </div> <!-- end card -->
+            </div> <!-- end col -->
+            <!-- end col -->
+        </div>
+    </form>
+    <!-- end row -->
+
+</div><!-- container -->

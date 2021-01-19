@@ -1,0 +1,23 @@
+﻿@model IDM.DTO.OTPDTO
+@{
+    ViewData["Title"] = "MailOTP";
+}
+    <div>
+        OTP for register is <span style="font-size:18px"><b>@Model.OTP</b></span>
+        <br/>
+        Ref No. (@Model.RefNo)
+        <table>
+            <tr>
+                <td style="padding-right:15px">
+                    <img src="https://www.cu.ac.th/images/frontend/spu_logo.png" height="30" />
+                </td>
+                <td>
+                    <p>
+                        ศูนย์ ICT จุฬาลงกรณ์มหาวิทยาลัย<br />
+                        email: ictcenter@cu.ac.th<br />
+                    </p>
+                </td>
+            </tr>
+        </table>
+    </div>
+

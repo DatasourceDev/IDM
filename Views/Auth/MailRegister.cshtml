@@ -1,0 +1,30 @@
+﻿@model IDM.Models.Guest
+@using  IDM.Services;
+@using IDM.Extensions;
+@{
+    ViewData["Title"] = "MailRegister";
+}
+<div>
+    <h1>ลงทะเบียน ผู้ใช้ชั่วคราวสำเร็จ</h1>
+    <p>
+        <b>รหัสผู้ใช้ :</b> @Model.User.UserName
+        <br />
+        <b>รหัสผ่าน :</b> @DataEncryptor.Decrypt(Model.User.Password)
+    </p>
+    <p>กรุณารอสักครู่ เพื่อให้ผู้ดูแลระบบอนุมัติการลงทะเบียนของท่าน</p>
+    <table>
+        <tr>
+            <td style="padding-right:15px">
+                <img src="https://www.cu.ac.th/images/frontend/spu_logo.png" height="30" />
+            </td>
+            <td>
+                <p>
+                    ศูนย์ ICT จุฬาลงกรณ์มหาวิทยาลัย<br />
+                    email: ictcenter@cu.ac.th<br />
+                </p>
+            </td>
+        </tr>
+    </table>
+
+</div>
+

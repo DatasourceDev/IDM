@@ -1,0 +1,166 @@
+﻿@model IDM.DTO.SearchDTO
+@using IDM.Identity;
+@using IDM.Extensions
+@{
+    ViewData["Title"] = "แก้ไขข้อมูล VPN";
+
+}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div aria-live="polite" aria-atomic="true" style="position: relative;">
+                <div class="page-title-box">
+                    <div class="float-right" style="width:50%">
+                        @if (ViewBag.ReturnCode != null)
+                        {
+                            @if (ViewBag.ReturnCode == ReturnCode.Success)
+                            {
+                                <div class="alert alert-success  border-0" role="alert">
+                                    <i class="mdi mdi-check-circle-outline font-18 mr-1"></i>
+                                    <strong class="font-18">@ViewBag.Message</strong>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="alert alert-danger border-0" role="alert">
+                                    <i class="mdi mdi-close-circle-outline font-18 mr-1"></i>
+                                    <strong class="font-18">@ViewBag.Message</strong>
+                                </div>
+                            }
+                        }
+                    </div>
+                    <h4 class="page-title">แก้ไขข้อมูล VPN</h4>
+                    <p class="text-muted">
+                        Edit VPN
+                    </p>
+                </div><!--end page-title-box-->
+            </div>
+        </div><!--end col-->
+    </div>
+    <!-- end page title end breadcrumb -->
+    <!--end row-->
+    <form class="form-horizontal form-parsley" asp-action="DeleteAccount" asp-controller="Account">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="mt-0 header-title">ค้นหา</h4>
+                        <div class="form-group row">
+                            <div class="col-lg-9">
+                                <label class="col-form-label">คำค้น</label>
+                                <input class="form-control" type="text" placeholder="รหัสผู้ใช้, ชื่อ, นามสกุล, โทรศัพท์, อีเมล์" asp-for="text_search">
+                            </div>
+                            <div class="col-lg-2">
+                                <label class="col-form-label">ประเภทผู้ใช้</label>
+                                <select class="form-control" asp-for="usertype_search">
+                                    <option value="@IDMUserType.affiliate">@IDMUserType.affiliate.toUserTypeName()</option>
+                                    <option value="@IDMUserType.outsider">@IDMUserType.outsider.toUserTypeName()</option>
+                                    <option value="@IDMUserType.staff">@IDMUserType.staff.toUserTypeName()</option>
+                                    <option value="@IDMUserType.student">@IDMUserType.student.toUserTypeName()</option>
+                                    <option value="@IDMUserType.temporary">@IDMUserType.temporary.toUserTypeName()</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-1">
+                                <label class="col-form-label"><br /></label>
+                                <button class="btn btn-primary btn-block" type="submit">ค้นหา</button>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-lg-12">
+                                <div class="table-rep-plugin">
+                                    <div class="table-responsive mb-0" data-pattern="priority-columns">
+                                        <table id="tech-companies-1" class="table table-striped mb-0">
+                                            <thead>
+                                                <tr>
+                                                    <th width="30px">
+                                                        <div class="custom-control custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" id="chkall" onchange="OnCheckAll()">
+                                                            <label class="custom-control-label" for="chkall"></label>
+                                                        </div>
+                                                    </th>
+                                                    <th>รหัสผู้ใช้</th>
+                                                    <th>ชื่อ</th>
+                                                    <th>นามสกุล</th>
+                                                    <th>Expire Date</th>
+                                                    <th>Email</th>
+                                                    <th>Mobile Phone</th>
+                                                    <th>Jobcode</th>
+                                                    <th>Citizen ID </th>
+                                                    <th>สถานะ</th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @if (Model.lists != null)
+                                                {
+                                                    foreach (AdUser item in Model.lists)
+                                                    {
+                                                        <tr>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox" class="custom-control-input chk" id="chk-@item.sAMAccountName" value="@item.sAMAccountName">
+                                                                    <label class="custom-control-label" for="chk-@item.sAMAccountName"></label>
+                                                                </div>
+                                                            </td>
+                                                            <td>@item.sAMAccountName</td>
+                                                            <td>@item.givenName</td>
+                                                            <td>@item.sn</td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td>
+                                                                @if (NumUtil.ParseInteger(item.userAccountControl) == (int)userAccountControl.Enable | NumUtil.ParseInteger(item.userAccountControl) == (int)userAccountControl.EnablePasswordNotRequired)
+                                                                {
+                                                                    <span class="badge badge-success">Enable</span>
+                                                                }
+                                                                else
+                                                                {
+                                                                    <span class="badge badge-danger">Disable</span>
+                                                                }
+                                                            </td>
+                                                            <td>
+                                                                <a href="#"><i class="far fa-edit font-16"></i></a>
+                                                            </td>
+                                                        </tr>
+                                                    }
+                                                    if (Model.lists.Count() == 0)
+                                                    {
+                                                        <tr>
+                                                            <td colspan="11" class="text-center">ไม่พบข้อมูล</td>
+                                                        </tr>
+                                                    }
+                                                }
+
+                                            </tbody>
+                                            @if (Model.lists != null && Model.lists.Count() > 0)
+                                            {
+                                                <tfoot>
+                                                    <tr>
+                                                        <td colspan="11" class="text-right">
+                                                            <div class="btn-group">
+                                                                @for (var i = 1; i <= Model.pagelen; i++)
+                                                                {
+                                                                    <a href="@Url.Action("DeleteAccount", "Account", new { pageno = i, text_search = Model.text_search})" class="btn btn-outline-secondary @(Model.pageno == i ? "active" : "")">@i</a>
+                                                                }
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tfoot>
+                                            }
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div> <!-- end card-body -->
+                </div> <!-- end card -->
+            </div> <!-- end col -->
+            <!-- end col -->
+        </div>
+    </form>
+</div><!-- container -->

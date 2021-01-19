@@ -1,0 +1,173 @@
+﻿@using IDM.Extensions
+@model IDM.DTO.SearchDTO
+@{
+    ViewData["Title"] = "แก้ไข lock / unlock บัญชีผู้ใช้จากไฟล์";
+
+}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div aria-live="polite" aria-atomic="true" style="position: relative;">
+                <div class="page-title-box">
+                    <div class="float-right" style="width:50%">
+                        @if (ViewBag.ReturnCode != null)
+                        {
+                            @if (ViewBag.ReturnCode == ReturnCode.Success)
+                            {
+                                <div class="alert alert-success  border-0" role="alert">
+                                    <i class="mdi mdi-check-circle-outline font-18 mr-1"></i>
+                                    <strong class="font-18">@ViewBag.Message</strong>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="alert alert-danger border-0" role="alert">
+                                    <i class="mdi mdi-close-circle-outline font-18 mr-1"></i>
+                                    <strong class="font-18">@ViewBag.Message</strong>
+                                </div>
+                            }
+                        }
+                    </div>
+                    <h4 class="page-title">แก้ไข lock / unlock บัญชีผู้ใช้จากไฟล์</h4>
+                    <p class="text-muted">
+                        Edit Lock/Unlock Accounts from File
+                    </p>
+                </div><!--end page-title-box-->
+            </div>
+        </div><!--end col-->
+    </div>
+    <!-- end page title end breadcrumb -->
+    <!--end row-->
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <form class="form-horizontal form-parsley" asp-action="EnableAccountFromFile" asp-controller="Account" enctype="multipart/form-data" method="post">
+                        <div class="form-group row">
+                            <label class="col-lg-2 col-form-label text-right">รูปแบบไฟล์ข้อมูล</label>
+                            <div class="col-lg-3">
+                                <select class="form-control" name="import_option">
+                                    <option value="@ImportLockOption.loginname">Login Name</option>
+                                    <option value="@ImportLockOption.pplid">Citizen ID</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-lg-3">
+                                <input type="file" id="file" name="file" accept="text/plain,.csv,application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" />
+                            </div>
+                            <div class="col-lg-2 text-right">
+                                <button class="btn btn-primary" type="submit">ตรวจสอบไฟล์</button>
+                                @*<a href="@Url.Action("TemplatAccountFile","Guest")" class="btn btn-light" target="_blank">ตัวอย่างไฟล์</a>*@
+                            </div>
+                        </div>
+                    </form>
+                    <hr />
+                    @if (Model.lists.Count() > 0)
+                    {
+                        <div class="form-group row">
+                            <div class="col-lg-12">
+                                <form class="form-horizontal form-parsley" asp-action="EnableAccountFromFile2" asp-controller="Account" method="post">
+                                    <button class="btn btn-primary" type="submit" name="lockstatus" value="@LockStaus.Lock">Lock</button>
+                                    <button class="btn btn-primary" type="submit" name="lockstatus" value="@LockStaus.Unlock">Unlock</button>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-lg-12">
+                                <div class="table-rep-plugin">
+                                    <div class="table-responsive mb-0" data-pattern="priority-columns">
+                                        <table id="tech-companies-1" class="table table-striped mb-0">
+                                            <thead>
+                                                <tr>
+                                                    <th>Citizen ID</th>
+                                                    <th>Login Name</th>
+                                                    <th>First Name</th>
+                                                    <th>Last Name</th>
+                                                    <th>Lock</th>
+                                                    <th>Remark</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach (import item in Model.lists)
+                                                {
+                                                    var basic_givennames = item.basic_givenname.Split("|", StringSplitOptions.RemoveEmptyEntries);
+                                                    var basic_sns = item.basic_sn.Split("|", StringSplitOptions.RemoveEmptyEntries);
+                                                    var cu_pplids = item.cu_pplid.Split("|", StringSplitOptions.RemoveEmptyEntries);
+                                                    var basic_uids = item.basic_uid.Split("|", StringSplitOptions.RemoveEmptyEntries);
+                                                    var LockStauss = item.LockStaus.Split("|", StringSplitOptions.RemoveEmptyEntries);
+
+                                                    var rowcolor = "";
+                                                    if (item.ImportVerify == false)
+                                                    {
+                                                        rowcolor = "text-danger";
+                                                    }
+                                                    <tr class="@rowcolor">
+                                                        <td>
+                                                            @foreach (var cu_pplid in cu_pplids)
+                                                            {
+                                                                @cu_pplid
+                                                                <br />
+                                                            }
+                                                        </td>
+                                                        <td>
+                                                            @foreach (var basic_uid in basic_uids)
+                                                            {
+                                                                @basic_uid
+                                                                <br />
+                                                            }
+                                                        </td>
+                                                        <td>
+                                                            @foreach (var basic_givenname in basic_givennames)
+                                                            {
+                                                                @basic_givenname
+                                                                <br />
+                                                            }
+                                                        </td>
+                                                        <td>
+                                                            @foreach (var basic_sn in basic_sns)
+                                                            {
+                                                                @basic_sn
+                                                                <br />
+                                                            }
+                                                        </td>
+                                                        <td>
+                                                            @foreach (var status in LockStauss)
+                                                            {
+                                                                @if (status == LockStaus.Unlock)
+                                                                {
+                                                                    <span class="badge badge-success">@status</span>
+
+                                                                }
+                                                                else
+                                                                {
+                                                                    <span class="badge badge-danger"> @status</span>
+                                                                }
+                                                                <br />
+                                                            }
+                                                        </td>
+                                                        <td>@item.ImportRemark</td>
+                                                    </tr>
+                                                }
+                                                @if (Model.lists.Count() == 0)
+                                                {
+                                                    <tr>
+                                                        <td colspan="6" class="text-center">ไม่พบข้อมูล</td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                </div> <!-- end card-body -->
+            </div> <!-- end card -->
+        </div> <!-- end col -->
+        <!-- end col -->
+    </div>
+</div><!-- container -->

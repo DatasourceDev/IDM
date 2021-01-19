@@ -1,0 +1,320 @@
+﻿@model IDM.Models.visual_fim_user
+@using IDM.DTO;
+@using IDM.Extensions
+@{
+    ViewData["Title"] = "สร้างบัญชีรายชื่อผู้ใช้";
+
+}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div aria-live="polite" aria-atomic="true" style="position: relative;">
+                <div class="page-title-box">
+                    <div class="float-right" style="width:50%">
+                        @if (ViewBag.ReturnCode != null)
+                        {
+                            @if (ViewBag.ReturnCode == ReturnCode.Success)
+                            {
+                                <div class="alert alert-success  border-0" role="alert">
+                                    <i class="mdi mdi-check-circle-outline font-18 mr-1"></i>
+                                    <strong class="font-18">@ViewBag.Message</strong>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="alert alert-danger border-0" role="alert">
+                                    <i class="mdi mdi-close-circle-outline font-18 mr-1"></i>
+                                    <strong class="font-18">@ViewBag.Message</strong>
+                                </div>
+                            }
+                        }
+                    </div>
+                    <h4 class="page-title">สร้างบัญชีรายชื่อผู้ใช้</h4>
+                    <p class="text-muted">
+                        Create Account
+                    </p>
+                </div><!--end page-title-box-->
+            </div>
+        </div><!--end col-->
+    </div>
+    <!-- end page title end breadcrumb -->
+    <!--end row-->
+    <form class="form-horizontal form-parsley" asp-action="CreateAccount" asp-controller="Account">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body  mt-3">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label text-right">ชื่อ-นามสกุล(อังกฤษ)</label>
+                                    <div class="col-sm-4">
+                                        <input class="form-control" type="text" asp-for="basic_givenname" required>
+                                        @Html.ValidationMessageFor(m => m.basic_givenname)
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <input class="form-control" type="text" asp-for="basic_sn" required>
+                                        @Html.ValidationMessageFor(m => m.basic_sn)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label text-right">ชื่อ-นามสกุล(ไทย)</label>
+                                    <div class="col-sm-4">
+                                        <input class="form-control" type="text" asp-for="cu_thcn" required>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <input class="form-control" type="text" asp-for="cu_thsn" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label text-right">เลขประจำตัวประชาชน</label>
+                                    <div class="col-sm-4">
+                                        <input class="form-control" type="text" asp-for="cu_pplid" maxlength="13" data-parsley-type="number">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label text-right">หมายเลขโทรศัพท์</label>
+                                    <div class="col-sm-4">
+                                        <input class="form-control" type="text" asp-for="basic_telephonenumber" maxlength="10" required data-parsley-type="number">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label text-right">รหัสพนักงาน/รหัสนิสิต</label>
+                                    <div class="col-sm-4 mt-2">
+                                        <input class="form-control" type="text" asp-for="cu_jobcode" maxlength="10">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label text-right">วันหมดอายุ</label>
+                                    <div class="col-sm-2 mt-2">
+                                        <div class="checkbox">
+                                            <input  type="checkbox" asp-for="cu_CUexpire_select"  onchange="CUexpire_Onchange()">
+                                            <label for="cu_CUexpire_select">
+                                                ไม่มีวันหมดอายุ
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2 CUexpire">
+                                        <select class="form-control" asp-for="cu_CUexpire_day">
+                                            @for (var i = 1; i <= 31; i++)
+                                            {
+                                                <option value="@i">@i.ToString("00")</option>
+                                            }
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-2 CUexpire">
+                                        <select class="form-control" asp-for="cu_CUexpire_month">
+                                            @for (var i = 1; i <= 12; i++)
+                                            {
+                                                <option value="@i">@DateUtil.GetShortMonth(i)</option>
+                                            }
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-2 CUexpire">
+                                        <select class="form-control" asp-for="cu_CUexpire_year">
+                                            @for (var i = DateUtil.Now().Year; i <= DateUtil.Now().Year + 5; i++)
+                                            {
+                                                <option value="@i">@i.ToString("0000")</option>
+                                            }
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label text-right">ชื่อหน่วยงาน</label>
+                                    <div class="col-sm-4">
+                                        <select class="form-control" asp-for="system_faculty_id" asp-items="@(ViewBag.ListFaculty)" onchange="FacultyOnchange(this)" relatedto="system_sub_office_id" required>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label text-right">ชื่อหน่วยย่อย</label>
+                                    <div class="col-sm-4">
+                                        <select class="form-control" asp-for="system_sub_office_id">
+                                            <option value=""></option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label text-right">Organizarion Level 1</label>
+                                    <div class="col-sm-4">
+                                        <select class="form-control" asp-for="system_ou_lvl1" onchange="Lvl1Onchange(this)" relatedto="system_ou_lvl2" required>
+                                            @foreach (Organization item in ViewBag.ListOrganization)
+                                            {
+                                                <option value="@item.ou">@item.ouname</option>
+                                            }
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label text-right">Organizarion Level 2</label>
+                                    <div class="col-sm-4">
+                                        <select class="form-control" asp-for="system_ou_lvl2" onchange="Lvl2Onchange(this)" relatedto="system_ou_lvl3">
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label text-right">Organizarion Level 3</label>
+                                    <div class="col-sm-4">
+                                        <select class="form-control" asp-for="system_ou_lvl3">
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label text-right"></label>
+                                    <div class="col-sm-8">
+                                        <button class="btn btn-primary" type="submit">บันทึก</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- end card-body -->
+                </div> <!-- end card -->
+            </div> <!-- end col -->
+            <!-- end col -->
+        </div> <!-- end row -->
+    </form>
+</div><!-- container -->
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            CUexpire_Onchange();
+            if ($('#system_ou_lvl1').val() != null)
+                Lvl1Onchange(document.getElementById("system_ou_lvl1"), '@Model.system_ou_lvl2','@Model.system_ou_lvl3');
+
+            if ($('#system_faculty_id').val() != null)
+                FacultyOnchange(document.getElementById("system_faculty_id"), '@Model.system_sub_office_id');
+        });
+        function FacultyOnchange (obj, sID) {
+         if (obj.attributes.relatedto == null)
+               return;
+            $.ajax({
+                type: 'get',
+                url: '@Url.Action("LoadSubFaculty", "Auth")',
+                contentType: 'application/json; charset=utf-8',
+                data: { fID: obj.value },
+                dataType: 'json',
+                success: function (data) {
+                    var relatedto = obj.attributes.relatedto.value;
+                    var result = '';
+                    for (var i = 0, iL = data.length; i < iL; i++) {
+                        if (sID == data[i].value)
+                            result += '<option selected value="' + data[i].value + '">' + data[i].text + '</option>';
+                        else
+                            result += '<option value="' + data[i].value + '">' + data[i].text + '</option>';
+                    }
+                    $('#' + relatedto).html(result);
+                }
+            });
+        }
+
+        function Lvl1Onchange(obj,  system_ou_lvl2, system_ou_lvl3) {
+            if (obj.attributes.relatedto == null)
+                return;
+            $.ajax({
+                type: 'get',
+                url: '@Url.Action("LoadGetOrganizationLvl2", "Auth")',
+                contentType: 'application/json; charset=utf-8',
+                data: { ou1: obj.value },
+                dataType: 'json',
+                success: function (data) {
+                    var relatedto = obj.attributes.relatedto.value;
+                    var result = '';
+                    for (var i = 0, iL = data.length; i < iL; i++) {
+                        if (system_ou_lvl2 == data[i].ou)
+                            result += '<option selected value="' + data[i].ou + '">' + data[i].ouname + '</option>';
+                        else
+                            result += '<option value="' + data[i].ou + '">' + data[i].ouname + '</option>';
+                    }
+                    $('#' + relatedto).html(result);
+                    Lvl2Onchange(document.getElementById(relatedto), system_ou_lvl3);
+                    
+                }
+            });
+        }
+
+        function Lvl2Onchange(obj, system_ou_lvl3) {
+            if (obj.attributes.relatedto == null)
+                return;
+
+            var ou1 = $('#system_ou_lvl1').val();
+            var ou2 = obj.value;
+            if (ou1 == null || ou1 == "" || ou2 == null || ou2 == ""  ) {
+                $('#' + obj.attributes.relatedto.value).html('');
+                return;
+            }
+            $.ajax({
+                type: 'get',
+                url: '@Url.Action("LoadGetOrganizationLvl3", "Auth")',
+                contentType: 'application/json; charset=utf-8',
+                data: { ou1: ou1, ou2: ou2 },
+                dataType: 'json',
+                success: function (data) {
+                    var relatedto = obj.attributes.relatedto.value;
+                    var result = '';
+                    for (var i = 0, iL = data.length; i < iL; i++) {
+                        if (system_ou_lvl3 == data[i].ou)
+                            result += '<option selected value="' + data[i].ou + '">' + data[i].ouname + '</option>';
+                        else
+                            result += '<option value="' + data[i].ou + '">' + data[i].ouname + '</option>';
+                    }
+                    $('#' + relatedto).html(result);
+                }
+            });
+        }
+
+        function CUexpire_Onchange() {
+            if ($('#cu_CUexpire_select').get(0).checked == true) {
+                $('.CUexpire').hide();
+            }
+            else {
+                $('.CUexpire').show();
+            }
+        }
+    </script>
+}

@@ -1,0 +1,290 @@
+﻿@model IDM.Models.setup
+@{
+    ViewData["Title"] = "กำหนดค่าระบบ";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div aria-live="polite" aria-atomic="true" style="position: relative;">
+                <div class="page-title-box">
+                    <div class="float-right" style="width:50%">
+                        @if (ViewBag.ReturnCode != null)
+                        {
+                            @if (ViewBag.ReturnCode == ReturnCode.Success)
+                            {
+                                <div class="alert alert-success  border-0" role="alert">
+                                    <i class="mdi mdi-check-circle-outline font-18 mr-1"></i>
+                                    <strong class="font-18">@ViewBag.Message</strong>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="alert alert-danger border-0" role="alert">
+                                    <i class="mdi mdi-close-circle-outline font-18 mr-1"></i>
+                                    <strong class="font-18">@ViewBag.Message</strong>
+                                </div>
+                            }
+                        }
+                    </div>
+                    <h4 class="page-title">กำหนดค่าระบบ</h4>
+                    <p class="text-muted">
+                        System Configuration
+                    </p>
+                </div><!--end page-title-box-->
+              
+            </div>
+        </div><!--end col-->
+    </div>
+    <!--end row-->
+    <form class="form-horizontal form-parsley" novalidate role="form" asp-action="Setup" asp-controller="System">
+        @Html.HiddenFor(m => m.ID)
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card" style="display:none">
+                    <div class="card-body mt-3">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group row">
+                                    <div class="col-sm-4"></div>
+                                    <div class="col-sm-8">
+                                        <h4 class="mt-0 header-title">AD</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label text-right">Host</label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control" type="text" asp-for="Host">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label text-right">Port</label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control" type="text" asp-for="Port">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label text-right">Base</label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control" type="text" asp-for="Base">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label text-right">Username</label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control" type="text" asp-for="Username">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label text-right">Password</label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control" type="text" asp-for="Password">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body mt-3">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group row">
+                                    <div class="col-sm-4"></div>
+                                    <div class="col-sm-8">
+                                        <h4 class="mt-0 header-title">SMS</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body mt-3">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group row">
+                                    <div class="col-sm-4"></div>
+                                    <div class="col-sm-8">
+                                        <h4 class="mt-0 header-title">SMTP</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label text-right">SMTP Server</label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control" type="text" asp-for="SMTP_Server">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label text-right">SMTP Port</label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control" type="text" asp-for="SMTP_Port">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label text-right">SMTP From</label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control" type="text" asp-for="SMTP_From">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label text-right">SMTP Username</label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control" type="text" asp-for="SMTP_Username">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label text-right">SMTP Password</label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control" type="text" asp-for="SMTP_Password">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label text-right">SMTP SSL</label>
+                                    <div class="col-sm-8">
+                                        <select class="form-control" asp-for="SMTP_SSL">
+                                            <option value="true">True</option>
+                                            <option value="false">False</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body mt-3">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group row">
+                                    <div class="col-sm-4"></div>
+                                    <div class="col-sm-8">
+                                        <h4 class="mt-0 header-title">Change Password</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label text-right">Approval Workflow</label>
+                                    <div class="col-sm-8  mt-2">
+                                        <div class="checkbox">
+                                            <input type="checkbox" asp-for="change_password_approve_enable">
+                                            <label for="change_password_approve_enable">
+                                                Yes
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label text-right">OTP</label>
+                                    <div class="col-sm-8  mt-2">
+                                        <div class="checkbox">
+                                            <input type="checkbox" asp-for="change_password_otp_enable">
+                                            <label for="change_password_otp_enable">
+                                                Yes
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body mt-3">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group row">
+                                    <div class="col-sm-4"></div>
+                                    <div class="col-sm-8">
+                                        <h4 class="mt-0 header-title">Others</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label text-right">ข้อความหน้าแรก</label>
+                                    <div class="col-sm-10">
+                                        <textarea id="elm1" asp-for="first_page_description"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body mt-3">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label text-right"></label>
+                                    <div class="col-sm-8">
+                                        <button class="btn btn-primary" type="submit">บันทึก</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- end col -->
+            <!-- end col -->
+        </div>
+    </form>
+
+
+    <!-- end row -->
+
+</div><!-- container -->

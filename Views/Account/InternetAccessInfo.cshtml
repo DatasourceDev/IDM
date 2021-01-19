@@ -1,0 +1,87 @@
+﻿@model IDM.Models.visual_fim_user
+@using IDM.Extensions
+@{
+    ViewData["Title"] = "แก้ไข Internet access";
+
+}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div aria-live="polite" aria-atomic="true" style="position: relative;">
+                <div class="page-title-box">
+                    <div class="float-right" style="width:50%">
+                        @if (ViewBag.ReturnCode != null)
+                        {
+                            @if (ViewBag.ReturnCode == ReturnCode.Success)
+                            {
+                                <div class="alert alert-success  border-0" role="alert">
+                                    <i class="mdi mdi-check-circle-outline font-18 mr-1"></i>
+                                    <strong class="font-18">@ViewBag.Message</strong>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="alert alert-danger border-0" role="alert">
+                                    <i class="mdi mdi-close-circle-outline font-18 mr-1"></i>
+                                    <strong class="font-18">@ViewBag.Message</strong>
+                                </div>
+                            }
+                        }
+                    </div>
+                    <h4 class="page-title">แก้ไข Internet access</h4>
+                    <p class="text-muted">
+                        Edit internet access
+                    </p>
+                </div><!--end page-title-box-->                
+            </div>
+        </div><!--end col-->
+    </div>
+    <!-- end page title end breadcrumb -->
+    <!--end row-->
+    <form class="form-horizontal form-parsley" asp-action="InternetAccessInfo" asp-controller="Account">
+        @Html.HiddenFor(m => m.id)
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body  mt-3">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label text-right">Internet access</label>
+                                    <div class="col-sm-4">
+                                        <select class="form-control" asp-for="internetaccess" required>
+                                            <option value="1">1</option>
+                                            <option value="0">0</option>
+                                        </select>
+                                        @Html.ValidationMessageFor(m => m.internetaccess)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label text-right"></label>
+                                    <div class="col-sm-4">
+                                        <button class="btn btn-primary" type="submit">บันทึก</button>
+                                        <a href="@Url.Action("InternetAccess","Account")" class="btn btn-light" type="button">กลับ</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- end card-body -->
+                </div> <!-- end card -->
+            </div> <!-- end col -->
+            <!-- end col -->
+        </div> <!-- end row -->
+    </form>
+</div><!-- container -->
+
+@section scripts{
+    <script>
+     $(document).ready(function () {
+       
+      });
+    
+    </script>
+}

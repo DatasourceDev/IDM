@@ -1,0 +1,141 @@
+﻿@model IDM.DTO.SearchDTO
+@using IDM.Extensions;
+@using IDM.Identity;
+@{
+    ViewData["Title"] = "ค้นหาบัญชีรายชื่อผู้ใช้";
+
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div aria-live="polite" aria-atomic="true" style="position: relative;">
+                <div class="page-title-box">
+                    <div class="float-right" style="width:50%">
+                        @if (ViewBag.ReturnCode != null)
+                        {
+                            @if (ViewBag.ReturnCode == ReturnCode.Success)
+                            {
+                                <div class="alert alert-success  border-0" role="alert">
+                                    <i class="mdi mdi-check-circle-outline font-18 mr-1"></i>
+                                    <strong class="font-18">@ViewBag.Message</strong>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="alert alert-danger border-0" role="alert">
+                                    <i class="mdi mdi-close-circle-outline font-18 mr-1"></i>
+                                    <strong class="font-18">@ViewBag.Message</strong>
+                                </div>
+                            }
+                        }
+                    </div>
+                    <h4 class="page-title">ค้นหาบัญชีรายชื่อผู้ใช้</h4>
+                    <p class="text-muted">
+                        Search Account
+                    </p>
+                </div><!--end page-title-box-->                
+            </div>
+        </div><!--end col-->
+    </div>
+    <form class="form-horizontal form-parsley" asp-action="Search" asp-controller="Account" method="get">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="mt-0 header-title">ค้นหา</h4>
+                        <div class="form-group row">
+                            <div class="col-lg-8">
+                                <label class="col-form-label">คำค้น</label>
+                                <input class="form-control" type="text" placeholder="รหัสผู้ใช้, ชื่อ, นามสกุล, โทรศัพท์, อีเมล์" asp-for="text_search" required>
+                            </div>
+                            <div class="col-lg-2">
+                                <label class="col-form-label">ประเภทผู้ใช้</label>
+                                <select class="form-control" asp-for="usertype_search">
+                                    <option value="@IDMUserType.affiliate">@IDMUserType.affiliate.toUserTypeName()</option>
+                                    <option value="@IDMUserType.outsider">@IDMUserType.outsider.toUserTypeName()</option>
+                                    <option value="@IDMUserType.staff">@IDMUserType.staff.toUserTypeName()</option>
+                                    <option value="@IDMUserType.student">@IDMUserType.student.toUserTypeName()</option>
+                                    <option value="@IDMUserType.temporary">@IDMUserType.temporary.toUserTypeName()</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-1">
+                                <label class="col-form-label"><br /></label>
+                                <button class="btn btn-primary btn-block" type="submit">ค้นหา</button>
+                            </div>
+                        </div>
+                        @if (!string.IsNullOrEmpty(Model.text_search))
+                        {
+                            <div class="form-group row">
+                                <div class="col-lg-12">
+                                    <div class="table-rep-plugin">
+                                        <div class="table-responsive mb-0" data-pattern="priority-columns">
+                                            <table id="tech-companies-1" class="table table-striped mb-0">
+                                                <thead>
+                                                    <tr>
+                                                        <th data-priority="1">รหัสผู้ใช้</th>
+                                                        <th data-priority="2">ชื่อ</th>
+                                                        <th data-priority="3">นามสกุล</th>
+                                                        <th data-priority="4">เบอร์โทรศัพท์</th>
+                                                        <th data-priority="5">อีเมล</th>
+                                                        <th data-priority="6">ประเภทบัญชี</th>
+                                                        <th data-priority="7">สถานะ</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    @foreach (AdUser item in Model.lists)
+                                                    {
+                                                    <tr>
+                                                        <td>@item.sAMAccountName</td>
+                                                        <td>@item.givenName</td>
+                                                        <td>@item.sn</td>
+                                                        <td></td>
+                                                        <td>@item.mail</td>
+                                                        <td>
+                                                            @if (!string.IsNullOrEmpty(item.distinguishedName) && item.distinguishedName.Contains("Staff"))
+                                                            {
+                                                                @("บุคลากร")
+                                                            }
+                                                            else if (!string.IsNullOrEmpty(item.distinguishedName) && item.distinguishedName.Contains("Students"))
+                                                            {
+                                                                @("นักศึกษา")
+                                                            }
+                                                            else
+                                                            {
+                                                                @("Internet")
+                                                            }
+                                                        </td>
+                                                        <td>
+                                                            @if (NumUtil.ParseInteger(item.userAccountControl) == (int)userAccountControl.Enable | NumUtil.ParseInteger(item.userAccountControl) == (int)userAccountControl.EnablePasswordNotRequired)
+                                                            {
+                                                                <span class="badge badge-success">Enable</span>
+                                                            }
+                                                            else
+                                                            {
+                                                                <span class="badge badge-danger">Disable</span>
+                                                            }
+                                                        </td>
+                                                    </tr>
+                                                    }
+                                                    @if (Model.lists.Count() == 0)
+                                                    {
+                                                        <tr>
+                                                            <td colspan="5" class="text-center">ไม่พบข้อมูล</td>
+                                                        </tr>
+                                                    }
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div> <!-- end card-body -->
+                </div> <!-- end card -->
+            </div> <!-- end col -->
+            <!-- end col -->
+        </div>
+    </form>
+    <!-- end row -->
+
+</div><!-- container -->

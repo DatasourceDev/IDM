@@ -1,0 +1,106 @@
+CREATE TABLE [dbo].[table_setup](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[Host] [nvarchar](150) NULL,
+	[Port] [nvarchar](150) NULL,
+	[Base] [nvarchar](150) NULL,
+	[Username] [nvarchar](150) NULL,
+	[Password] [nvarchar](150) NULL,
+	[Create_By] [nvarchar](250) NULL,
+	[Create_On] [datetime2](7) NULL,
+	[Update_By] [nvarchar](250) NULL,
+	[Update_On] [datetime2](7) NULL,
+	[SMTP_From] [nvarchar](150) NULL,
+	[SMTP_Password] [nvarchar](150) NULL,
+	[SMTP_Port] [int] NOT NULL,
+	[SMTP_SSL] [bit] NULL,
+	[SMTP_Server] [nvarchar](150) NULL,
+	[SMTP_Username] [nvarchar](150) NULL,
+	[LDAPBase] [nvarchar](150) NULL,
+	[LDAPHost] [nvarchar](150) NULL,
+	[LDAPPassword] [nvarchar](150) NULL,
+	[LDAPPort] [nvarchar](150) NULL,
+	[LDAPUsername] [nvarchar](150) NULL,
+ CONSTRAINT [PK_table_setup] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+CREATE TABLE [dbo].[table_group_user](
+	[id] [bigint] IDENTITY(1,1) NOT NULL,
+	[group_id] [bigint] NOT NULL,
+	[fim_user_id] [bigint] NOT NULL,
+ CONSTRAINT [PK_table_group_user] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+ALTER TABLE [dbo].[table_group_user]  WITH CHECK ADD  CONSTRAINT [FK_table_group_user_table_group_group_id] FOREIGN KEY([group_id])
+REFERENCES [dbo].[table_group] ([group_id])
+
+ALTER TABLE [dbo].[table_group_user]  WITH CHECK ADD  CONSTRAINT [FK_table_group_user_table_visual_fim_user_id] FOREIGN KEY([fim_user_id])
+REFERENCES [dbo].[table_visual_fim_user] ([id])
+
+
+alter table [table_visual_fim_user]
+add [system_faculty_id] [int] NULL;
+alter table [table_visual_fim_user]
+add [system_sub_office_id] [int] NULL;
+alter table [table_visual_fim_user]
+add [ad_created] [bit] NOT NULL DEFAULT(0);
+alter table [table_visual_fim_user]
+add [ldap_created] [bit] NOT NULL DEFAULT(0);
+alter table [table_visual_fim_user]
+add [system_ou_lvl1] [nvarchar](max) NULL;
+alter table [table_visual_fim_user]
+add [system_ou_lvl2] [nvarchar](max) NULL;
+alter table [table_visual_fim_user]
+add [system_ou_lvl3] [nvarchar](max) NULL;
+alter table [table_visual_fim_user]
+add [system_idm_user_type] [int] NOT NULL DEFAULT(0);
+
+alter table [table_visual_fim_user]
+add [cu_pwdchangeddate] [datetime] NULL;
+
+alter table [table_visual_fim_user]
+add [thaidescription] [nvarchar](max) NULL;
+
+CREATE TABLE [dbo].[table_import](
+	[id] [bigint] IDENTITY(1,1) NOT NULL,
+	[basic_uid] nvarchar(300) NULL,
+	cu_pplid nvarchar(300)  NULL,
+	cu_jobcode nvarchar(300) NULL,
+	basic_sn nvarchar(300) NULL,
+	basic_givenname nvarchar(300) NULL,
+	cu_thcn nvarchar(300) NULL,
+	cu_thsn nvarchar(300) NULL,
+	system_org nvarchar(300) NULL,
+	system_idm_user_types int null,
+	faculty_shot_name nvarchar(300) NULL,
+	import_create_option int null,
+	import_Type int NULL,
+	ImportVerify bit null,
+	ImportRemark varchar(max) NULL,
+	ImportRow int null
+ CONSTRAINT [PK_table_import] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+alter table [table_visual_fim_user]
+add [system_actived] bit NULL default 1;
+
+alter table table_setup
+add change_password_otp_enable bit not NULL default 0;
+alter table table_setup
+add change_password_approve_enable bit not NULL default 0;
+
+alter table table_setup
+add first_page_description nvarchar(max) NULL;
+
+
+
+
+

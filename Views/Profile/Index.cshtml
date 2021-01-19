@@ -1,0 +1,112 @@
+﻿@model IDM.Models.visual_fim_user
+@using IDM.Extensions;
+@{
+    ViewData["Title"] = "ข้อมูลบัญชีรายชื่อผู้ใช้";
+}
+
+<div class="container-fluid">
+    <!-- Page-Title -->
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="page-title-box">
+                <div class="float-right">
+                </div>
+                <h4 class="page-title">ข้อมูลบัญชีรายชื่อผู้ใช้</h4>
+                <p class="text-muted">
+                    Account Profile
+                </p>
+            </div><!--end page-title-box-->
+        </div><!--end col-->
+    </div>
+    <!-- end page title end breadcrumb -->
+    <!--end row-->
+    <div class="row ">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body mt-3">
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label text-right">Login Name</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" type="text" asp-for="basic_uid" readonly>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label text-right">First Name</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" type="text" asp-for="basic_givenname" readonly>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label text-right">Last Name</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" type="text" asp-for="basic_sn" readonly>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label text-right">Email</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" type="text"  asp-for="basic_mail" readonly>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label text-right">Job Code</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" type="text" asp-for="cu_jobcode" readonly>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label text-right">Citizen ID</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" type="text" asp-for="cu_pplid" readonly>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label text-right">Expire Date</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" type="text" asp-for="cu_CUexpire" readonly>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label text-right">Last Password Changed</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" type="text" value="@DateUtil.ToDisplayDateTime(Model.cu_pwdchangeddate)" readonly>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- end card-body -->
+            </div> <!-- end card -->
+        </div> <!-- end col -->
+        <!-- end col -->
+    </div> <!-- end row -->
+</div><!-- container -->

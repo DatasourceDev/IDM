@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - จุฬาลงกรณ์มหาวิทยาลัย</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="~/images/favicon.ico">
+
+    <!-- App css -->
+    <link href="~/metrica/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/metrica/assets/css/jquery-ui.min.css" rel="stylesheet">
+    <link href="~/metrica/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/metrica/assets/css/metisMenu.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/metrica/assets/css/app.css" rel="stylesheet" type="text/css" />
+</head>
+<body class="bg-card">
+    <div class="loading">
+        <div class="loading-spin">
+
+            <div class="spinner-grow text-pink" role="status"></div>
+            <div class="spinner-grow text-pink" role="status"></div>
+            <div class="spinner-grow text-pink" role="status"></div>
+        </div>
+
+    </div>
+    @RenderBody()
+    <!-- End Log In page -->
+    <!-- jQuery  -->
+    <script src="~/metrica/assets/js/jquery.min.js"></script>
+    <script src="~/metrica/assets/js/jquery-ui.min.js"></script>
+    <script src="~/metrica/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="~/metrica/assets/js/metismenu.min.js"></script>
+    <script src="~/metrica/assets/js/waves.js"></script>
+    <script src="~/metrica/assets/js/feather.min.js"></script>
+    <script src="~/metrica/assets/js/jquery.slimscroll.min.js"></script>
+
+    <!-- Parsley js -->
+    <script src="~/metrica/plugins/parsleyjs/parsley.min.js"></script>
+    <script src="~/metrica/assets/pages/jquery.validation.init.js"></script>
+
+    <!-- App js -->
+    <script src="~/metrica/assets/js/jquery.core.js"></script>
+    <script src="~/metrica/assets/js/app.js"></script>
+    @RenderSection("scripts", required: false)
+    <script>
+
+        function displayBusyIndicator() {
+            $('.loading').show();
+        }
+        $(window).on('beforeunload', function () {
+            displayBusyIndicator();
+        });
+        $(document).on('submit', 'form', function () {
+            displayBusyIndicator();
+        });
+        $(document).ajaxStart(function () {
+            displayBusyIndicator();
+        });
+        $(document).ajaxStop(function () {
+            $('.loading').hide();
+        });
+    </script>
+</body>
+</html>

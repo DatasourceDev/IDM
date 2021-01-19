@@ -1,0 +1,280 @@
+﻿@model IDM.Models.Guest
+@using  Microsoft.AspNetCore.Mvc.ModelBinding;
+@{
+    ViewData["Title"] = "ลงทะเบียนผู้ใช้ชั่วคราว";
+    Layout = "_LayoutLogin";
+}
+<div class="container-fluid">
+    <!-- Log In page -->
+    <div class="row vh-100">
+        <div class="col-lg-9 pr-0">
+            <div class="auth-page">
+                <div class="card mb-0 shadow-none h-100">
+                    <div class="card-body">
+                        <div class="mb-5">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <a href="#" class="logo logo-admin">
+                                        <span><img src="~/images/logo.svg" height="30" alt="logo" class="my-3"></span>
+                                    </a>
+                                </div>
+                                <div class="col-sm-6 text-right">
+                                    @*<h5>
+                                        <a href="@Url.Action("Register","Auth", new { lang = LanguageCode.Thai})"><img src="~/metrica/assets/images/flags/thai_flag.jpg" alt="" class="ml-2" height="14" /></a>
+                                        <a href="@Url.Action("Register","Auth", new { lang = LanguageCode.English})"><img src="~/metrica/assets/images/flags/us_flag.jpg" alt="" class="ml-2" height="14" /></a>
+                                        <a href="@Url.Action("Register","Auth", new { lang = LanguageCode.Chinese})"><img src="~/metrica/assets/images/flags/china_flag.jpg" alt="" class="ml-2" height="14" /></a>
+                                    </h5>*@
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="px-3">
+                            <h2 class="font-weight-semibold font-22 mb-2">@LanguageLabel.GetLabel(Model.Languages, "Register") <span class="text-primary">@LanguageLabel.GetLabel(Model.Languages, "Guest")</span></h2>
+                            <form class="form-horizontal auth-form my-4 form-parsley" novalidate role="form" asp-action="Register" asp-controller="Auth">
+                                @Html.HiddenFor(m => m.LanguageCode)
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group row">
+                                            <label class="col-sm-4 col-form-label text-right">@LanguageLabel.GetLabel(Model.Languages, "Username")</label>
+                                            <div class="col-sm-8">
+                                                <input class="form-control" type="text" asp-for="GuestCode" required>
+                                                @Html.ValidationMessageFor(m => m.GuestCode)
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        @*<div class="form-group row">
+                                            <label class="col-sm-4 col-form-label text-right"></label>
+                                            <label class="col-sm-8 col-form-label text-secondary text-left">@LanguageLabel.GetLabel(Model.Languages, "Remark Password")</label>
+                                        </div>*@
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group row">
+                                            <label class="col-sm-4 col-form-label text-right">@LanguageLabel.GetLabel(Model.Languages, "First Name")</label>
+                                            <div class="col-sm-8">
+                                                <input class="form-control" type="text" asp-for="FirstName" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group row">
+                                            <label class="col-sm-4 col-form-label text-right">@LanguageLabel.GetLabel(Model.Languages, "Last Name")</label>
+                                            <div class="col-sm-8">
+                                                <input class="form-control" type="text" asp-for="LastName" required />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group row">
+                                            <label class="col-sm-4 col-form-label text-right">@LanguageLabel.GetLabel(Model.Languages, "Job")</label>
+                                            <div class="col-sm-8">
+                                                <input class="form-control" type="text" asp-for="Job" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group row">
+                                            <label class="col-sm-4 col-form-label text-right">@LanguageLabel.GetLabel(Model.Languages, "Department")</label>
+                                            <div class="col-sm-8">
+                                                <input class="form-control" type="text" asp-for="Department" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                @*<div class="row">
+            <div class="col-lg-6">
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label text-right">เลขประจำตัวประชาชน</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" type="text" asp-for="IDCard" required data-parsley-type="number">
+                    </div>
+                </div>
+            </div>
+        </div>*@
+
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group row">
+                                            <label class="col-sm-4 col-form-label text-right">@LanguageLabel.GetLabel(Model.Languages, "Address")</label>
+                                            <div class="col-sm-8">
+                                                <input class="form-control" type="text" asp-for="Address" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group row">
+                                            <label class="col-sm-4 col-form-label text-right">@LanguageLabel.GetLabel(Model.Languages, "Province")</label>
+                                            <div class="col-sm-8">
+                                                <select class="form-control" asp-for="ProvinceID" asp-items="@(ViewBag.ListProvince)" onchange="ProvinceOnchange(this)" relatedto="AumphurID">
+                                                    <option value=""></option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group row">
+                                            <label class="col-sm-4 col-form-label text-right">@LanguageLabel.GetLabel(Model.Languages, "Aumphur")</label>
+                                            <div class="col-sm-8">
+                                                <select class="form-control" asp-for="AumphurID"  onchange="AumphurOnchange(this)" relatedto="TumbonID">
+                                                    <option value=""></option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group row">
+                                            <label class="col-sm-4 col-form-label text-right">@LanguageLabel.GetLabel(Model.Languages, "Tumbon")</label>
+                                            <div class="col-sm-8">
+                                                <select class="form-control" asp-for="TumbonID"  onchange="TumbonOnchange(this)" relatedto="PostalCode">
+                                                    <option value=""></option>
+                                                </select>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group row">
+                                            <label class="col-sm-4 col-form-label text-right">@LanguageLabel.GetLabel(Model.Languages, "PostalCode")</label>
+                                            <div class="col-sm-8">
+                                                <input class="form-control" type="text" asp-for="PostalCode" required data-parsley-type="number">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group row">
+                                            <label class="col-sm-4 col-form-label text-right">@LanguageLabel.GetLabel(Model.Languages, "Phone")</label>
+                                            <div class="col-sm-8">
+                                                <input class="form-control" type="text" asp-for="Phone" required data-parsley-type="number">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group row">
+                                            <label class="col-sm-4 col-form-label text-right">@LanguageLabel.GetLabel(Model.Languages, "Email")</label>
+                                            <div class="col-sm-8">
+                                                <input class="form-control" type="email" asp-for="Email" required parsley-type="email">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-0 row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group row">
+                                            <label class="col-sm-4 col-form-label text-right"></label>
+                                            <div class="col-sm-8">
+                                                <button class="btn btn-gradient-pink waves-effect waves-light" type="submit">@LanguageLabel.GetLabel(Model.Languages, "Register")</button>
+                                                <a href="@Url.Action("Login","Auth", new { lang = Model.LanguageCode })" class="btn btn-gradient-info waves-effect waves-light" type="button"><i class="fas fa-sign-in-alt ml-1"></i> @LanguageLabel.GetLabel(Model.Languages, "Back")</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--end form-group-->
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 p-0 h-100vh d-flex justify-content-center auth-bg">
+            <div class="accountbg d-flex align-items-center">
+                <div class="account-title text-center text-white">
+                    <img src="~/images/logo.svg" alt="">
+                    <h1 class="text-white">จุฬาลงกรณ์มหาวิทยาลัย</h1>
+                    <h4 class="mt-3 text-white"><span class="text-warning">Chulalongkorn University</span> </h4>
+                    <div class="border w-25 mx-auto border-classic"></div>
+                    <p class="font-12 mt-3">
+                        ศูนย์ ICT จุฬาลงกรณ์มหาวิทยาลัย
+                        <br />
+                        email: ictcenter@cu.ac.th
+                    </p>
+                    <div class="border w-25 mx-auto border-warning"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+@section scripts{
+    <script>
+     $(document).ready(function () {
+          if ($('#ProvinceID').val() != null)
+            ProvinceOnchange(document.getElementById("ProvinceID"), '@Model.AumphurID', '@Model.TumbonID');
+      });
+      function ProvinceOnchange(obj, aID, tID, lang) {
+           if (obj.attributes.relatedto == null)
+               return;
+           $.ajax({
+               type: 'get',
+               url: '@Url.Action("LoadAumphur", "Auth")',
+               contentType: 'application/json; charset=utf-8',
+               data: { pID: obj.value, lang:lang },
+               dataType: 'json',
+               success: function (data) {
+                   var relatedto = obj.attributes.relatedto.value;
+                   var result = '<option value=""></option>';
+                   for (var i = 0, iL = data.length; i < iL; i++) {
+                       if (aID == data[i].value)
+                           result += '<option selected value="' + data[i].value + '">' + data[i].text + '</option>';
+                       else
+                           result += '<option value="' + data[i].value + '">' + data[i].text + '</option>';
+                   }
+                   $('#' + relatedto).html(result);
+                  AumphurOnchange(document.getElementById(relatedto), tID, lang);
+               }
+           });
+       }
+        function AumphurOnchange(obj, tID, lang) {
+            if (obj.attributes.relatedto == null)
+                return;
+            $.ajax({
+                type: 'get',
+                url: '@Url.Action("LoadTumbon", "Auth")',
+                contentType: 'application/json; charset=utf-8',
+                data: { aID: obj.value, lang: lang },
+                dataType: 'json',
+                success: function (data) {
+                    var relatedto = obj.attributes.relatedto.value;
+                    var result = '<option value=""></option>';
+                    for (var i = 0, iL = data.length; i < iL; i++) {
+                        if (tID == data[i].value)
+                            result += '<option selected value="' + data[i].value + '">' + data[i].text + '</option>';
+                        else
+                            result += '<option value="' + data[i].value + '">' + data[i].text + '</option>';
+                    }
+                    $('#' + relatedto).html(result);
+                    TumbonOnchange(document.getElementById(relatedto), lang);
+                }
+            });
+
+        }
+        function TumbonOnchange(obj, lang) {
+               if (obj.value == null || obj.value == '')
+                return;
+            if (obj.attributes.relatedto == null)
+                return;
+            var relatedto = obj.attributes.relatedto.value;
+            $('#' + relatedto).val('');
+            $.ajax({
+                type: 'get',
+                url: '@Url.Action("LoadPostal", "Auth")',
+                contentType: 'application/json; charset=utf-8',
+                data: { tID: obj.value, lang: lang },
+                dataType: 'json',
+                success: function (data) {
+                    $('#' + relatedto).val(data);
+                }
+            });
+
+        }
+    </script>
+}

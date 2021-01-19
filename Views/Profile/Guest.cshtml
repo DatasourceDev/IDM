@@ -1,0 +1,182 @@
+﻿@model IDM.Models.Guest
+@{
+    ViewData["Title"] =LanguageLabel.GetLabel(Model.Languages, "Guest Profile");
+}
+
+<div class="container-fluid">
+    <!-- Page-Title -->
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="page-title-box">
+                <div class="float-right">
+                </div>
+                <h4 class="page-title">@LanguageLabel.GetLabel(Model.Languages, "Guest Profile")</h4>
+                <p class="text-muted">
+                    Guest Profile
+                </p>
+            </div><!--end page-title-box-->
+        </div><!--end col-->
+    </div>
+    <!-- end page title end breadcrumb -->
+    <!--end row-->
+    <div class="row ">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body mt-3">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label text-right">@LanguageLabel.GetLabel(Model.Languages, "Username")</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" type="text" asp-for="GuestCode" readonly>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label text-right">@LanguageLabel.GetLabel(Model.Languages, "First Name")</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" type="text" asp-for="FirstName" readonly>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label text-right">@LanguageLabel.GetLabel(Model.Languages, "Last Name")</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" type="text" asp-for="LastName" readonly>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label text-right">@LanguageLabel.GetLabel(Model.Languages, "Job")</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" type="text" asp-for="Job" readonly>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label text-right">@LanguageLabel.GetLabel(Model.Languages, "Department")</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" type="text" asp-for="Department" readonly>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label text-right">@LanguageLabel.GetLabel(Model.Languages, "Address")</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" type="text" asp-for="Address" readonly>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label text-right">@LanguageLabel.GetLabel(Model.Languages, "Province")</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" type="text" asp-for="Province.ProvinceName" readonly>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label text-right">@LanguageLabel.GetLabel(Model.Languages, "Aumphur")</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" type="text" asp-for="Aumphur.AumphurName" readonly>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label text-right">@LanguageLabel.GetLabel(Model.Languages, "Tumbon")</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" type="text" asp-for="Tumbon.TumbonName" readonly>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label text-right">@LanguageLabel.GetLabel(Model.Languages, "PostalCode")</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" type="text" asp-for="PostalCode" readonly>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label text-right">@LanguageLabel.GetLabel(Model.Languages, "Phone")</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" type="text" asp-for="Phone" readonly>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label text-right">@LanguageLabel.GetLabel(Model.Languages, "Email")</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" type="text" asp-for="Email" readonly>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @if (Model.MacAddressNumShow >= 1)
+                    {
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label text-right">@LanguageLabel.GetLabel(Model.Languages, "Mac Address 1")</label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control" type="text" readonly asp-for="MacAddress1">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    @if (Model.MacAddressNumShow >= 2)
+                    {
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label text-right">@LanguageLabel.GetLabel(Model.Languages, "Mac Address 2")</label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control" type="text" readonly asp-for="MacAddress2">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    @if (Model.MacAddressNumShow >= 3)
+                    {
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label text-right">@LanguageLabel.GetLabel(Model.Languages, "Mac Address 3")</label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control" type="text" readonly asp-for="MacAddress3">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div> <!-- end card-body -->
+            </div> <!-- end card -->
+        </div> <!-- end col -->
+        <!-- end col -->
+    </div> <!-- end row -->
+
+</div><!-- container -->
