@@ -54,7 +54,7 @@ namespace IDM.Controllers
         protected SelectList ListFaculty()
         {
             var list = new List<faculty>();
-            list.AddRange(this._context.table_cu_faculty.OrderBy(o => o.faculty_id));
+            list.AddRange(this._context.table_cu_faculty.OrderBy(o => o.faculty_name));
             return new SelectList(list, "faculty_id", "faculty_name");
         }
         protected SelectList ListSubFaculty(int? fID)
@@ -80,6 +80,16 @@ namespace IDM.Controllers
         public ActionResult LoadSubFaculty(int? fID)
         {
             return Json(ListSubFaculty(fID));
+        }
+
+        [HttpGet]
+        public ActionResult LoadIsExistCitizenID(string pplid)
+        {
+            if (string.IsNullOrEmpty(pplid))
+                return Json(new { result = false });
+            var query = this._context.table_visual_fim_user.Where(c => c.cu_pplid.ToLower() == pplid.ToLower()).FirstOrDefault(); 
+            return Json(new { result  = (query != null) });
+
         }
 
         public bool isExistNameSurNameAndCitizenID(visual_fim_user model)
@@ -161,7 +171,7 @@ namespace IDM.Controllers
         }
         public string sendNotificationEmail(string to, string header, string message)
         {
-            to = "voranun@dthai.co.th";
+            //to = "voranun@dthai.co.th";
             var setup = this._context.table_setup.FirstOrDefault();
             var msg = new System.Text.StringBuilder();
             try
@@ -196,9 +206,17 @@ namespace IDM.Controllers
             return msg.ToString();
         }
 
-        public bool checkrole()
+        //public bool checkrole()
+        //{
+        //    var group = _context.table_group.Where(w => (w.group_name == UserRole.admin | w.group_name == UserRole.helpdesk | w.group_name == UserRole.approve) & w.group_username_list.Contains(this.HttpContext.User.Identity.Name.ToLower())).FirstOrDefault();
+        //    if (group == null)
+        //        return false;
+
+        //    return true;
+        //}
+        public bool checkrole(string[] role)
         {
-            var group = _context.table_group.Where(w => w.group_name == "admin" & w.group_username_list.Contains(this.HttpContext.User.Identity.Name.ToLower())).FirstOrDefault();
+            var group = _context.table_group.Where(w => role.Contains(w.group_name) & w.group_username_list.Contains(this.HttpContext.User.Identity.Name.ToLower())).FirstOrDefault();
             if (group == null)
                 return false;
 
@@ -623,7 +641,8 @@ namespace IDM.Controllers
             else
                 model.basic_mail = genNewEmail(model.basic_givenname, model.basic_sn, model.system_idm_user_type);
             model.basic_mobile = "";
-            model.basic_telephonenumber = model.basic_telephonenumber.Trim();
+            if(!string.IsNullOrEmpty(model.basic_telephonenumber))
+                model.basic_telephonenumber =  model.basic_telephonenumber.Trim();
             model.basic_userPassword = Cryptography.encrypt(password);
             model.basic_userprincipalname = _conf.DefaultValue_userprincipalname.Replace("[uid]", model.basic_uid);
             if (model.cu_CUexpire_select == false & model.cu_CUexpire_day.HasValue & model.cu_CUexpire_month.HasValue & model.cu_CUexpire_year.HasValue)
@@ -641,7 +660,8 @@ namespace IDM.Controllers
                     }
                 }
             }
-            model.cu_jobcode = model.cu_jobcode.Trim();
+            if (!string.IsNullOrEmpty(model.cu_jobcode))
+                model.cu_jobcode = model.cu_jobcode.Trim();
             model.cu_mailacceptinggeneralid = model.basic_mail;
             model.cu_maildrop = _conf.DefaultValue_maildrop.Replace("[uid]", model.basic_uid);
             model.cu_mailhost = _conf.DefaultValue_mailhost;
@@ -693,10 +713,6 @@ namespace IDM.Controllers
             {
                 model.cu_mailhost = "";
                 model.unix_inetCOS = inetCOS[1];
-                //if (string.IsNullOrEmpty(CU.checkAccountInLdapToHtmlTable(name, surname, nameThai, surnameThai, pplid)) == false)
-                //{
-                //    model.cu_CUexpire = ""; 
-                //}
 
             }
             else if (model.system_idm_user_type == IDMUserType.student)
@@ -803,10 +819,68 @@ namespace IDM.Controllers
                 model.unix_gidNumber = "";
 
             context.table_visual_fim_user.Add(model);
+
+            if (model.unix_gidNumber == "302")
+            {
+                var receive = _context.table_receive_student.Where(w => w.login_name.ToLower() == model.basic_uid.ToLower()).FirstOrDefault();
+                if (receive == null)
+                {
+                    receive = new receive_student();
+                    receive.displayname = model.basic_displayname;
+                    receive.login_name = model.basic_uid;
+                    receive.password_initial = model.basic_userPassword;
+                    receive.ticket = Cryptography.encrypt(getNewTicket());
+                    receive.email_address = model.basic_mail;
+                    receive.server_name = _conf.TableReceiveAccount_ServerName;
+                    receive.expire = model.cu_CUexpire;
+                    receive.status_id = model.unix_gidNumber;
+                    receive.org = model.system_org;
+                    receive.create_date = DateUtil.Now();
+                    _context.table_receive_student.Add(receive);
+                }
+            }
+            else if (model.unix_gidNumber == "305")
+            {
+                var receive = _context.table_receive_temp.Where(w => w.login_name.ToLower() == model.basic_uid.ToLower()).FirstOrDefault();
+                if (receive == null)
+                {
+                    receive = new receive_temp();
+                    receive.displayname = model.basic_displayname;
+                    receive.login_name = model.basic_uid;
+                    receive.password_initial = model.basic_userPassword;
+                    receive.ticket = Cryptography.encrypt(getNewTicket());
+                    receive.email_address = model.basic_mail;
+                    receive.server_name = _conf.TableReceiveAccount_ServerName;
+                    receive.expire = model.cu_CUexpire;
+                    receive.status_id = model.unix_gidNumber;
+                    receive.org = model.system_org;
+                    receive.create_date = DateUtil.Now();
+                    _context.table_receive_temp.Add(receive);
+                }
+            }
+            else
+            {
+                var receive = _context.table_receive_staff.Where(w => w.login_name.ToLower() == model.basic_uid.ToLower()).FirstOrDefault();
+                if (receive == null)
+                {
+                    receive = new receive_staff();
+                    receive.displayname = model.basic_displayname;
+                    receive.login_name = model.basic_uid;
+                    receive.password_initial = model.basic_userPassword;
+                    receive.ticket = Cryptography.encrypt(getNewTicket());
+                    receive.email_address = model.basic_mail;
+                    receive.server_name = _conf.TableReceiveAccount_ServerName;
+                    receive.expire = model.cu_CUexpire;
+                    receive.status_id = model.unix_gidNumber;
+                    receive.org = model.system_org;
+                    receive.create_date = DateUtil.Now();
+                    _context.table_receive_staff.Add(receive);
+                }
+            }
             return;
         }
 
-        public void writelog(LogType log_type_id, string log_status, IDMSource source, string uid, string log_description = "", string logonname = "", string log_exception = "")
+        public string writelog(LogType log_type_id, string log_status, IDMSource source, string uid, string log_description = "", string logonname = "", string log_exception = "")
         {
             if (string.IsNullOrEmpty(log_description))
             {
@@ -822,7 +896,7 @@ namespace IDM.Controllers
                     log_description = "ลบบัญชีผู้ใช้";
                 else if (log_type_id == LogType.log_change_password)
                     log_description = "เปลี่ยนรหัสผ่านบัญชีผู้ใช้";
-                else if (log_type_id == LogType.log_approved_reset_password)
+                else if (log_type_id == LogType.log_reset_password)
                     log_description = "เปลี่ยนรหัสผ่านบัญชีผู้ใช้";
                 else if (log_type_id == LogType.log_lock_account)
                     log_description = "ล็อกบัญชีผู้ใช้";
@@ -840,6 +914,8 @@ namespace IDM.Controllers
                     log_description = "ย้ายกลุ่มของบัญชีรายชื่อผู้ใช้";
                 else if (log_type_id == LogType.log_approved_reset_password)
                     log_description = "อนุมัติการขอเปลี่ยนรหัสผ่านบัญชีผู้ใช้";
+                else if (log_type_id == LogType.log_reset_password_api)
+                    log_description = "เปลี่ยนรหัสผ่านบัญชีผู้ใช้จาก API";
 
                 log_description += " " + uid + " บน " + source.ToString();
                 if (log_status == LogStatus.successfully)
@@ -863,7 +939,7 @@ namespace IDM.Controllers
             if (logTableIsExist(tablename) == false)
             {
                 if (logTableCreate(tablename) == false)
-                    return;
+                    return "ไม่สามารถสร้าง log table ได้";
             }
             try
             {
@@ -890,7 +966,8 @@ namespace IDM.Controllers
                 sql.AppendLine(" ,'" + log_description + "'");
                 sql.AppendLine(" ,'" + log_target + "'");
                 sql.AppendLine(" ,'" + getHostIP() + "'");
-                sql.AppendLine(" , getdate() ");
+                sql.AppendLine(" ,'" + DateUtil.ToDisplayDateTime(DateUtil.Now()) + "'");
+
                 sql.AppendLine(" ,'" + log_exception + "'");
                 sql.AppendLine(" )");
                 using (var command = _context.Database.GetDbConnection().CreateCommand())
@@ -905,7 +982,7 @@ namespace IDM.Controllers
             {
 
             }
-
+            return log_description;
         }
 
 
@@ -1000,6 +1077,101 @@ namespace IDM.Controllers
             {
                 return false;
             }
+        }
+
+        public static bool CreateFolder(string filePath)
+        {
+            bool result = true;
+            //filePath = HttpContext.Current.Server.MapPath(filePath);
+            string[] filePathList = filePath.Split('\\');
+
+            string[] pathList = new string[(filePathList.Length - 2)];
+            for (int i = 0; i < filePathList.Length; i++)
+            {
+                if (i > 0)
+                {
+                    filePathList[i] = filePathList[i - 1] + "\\" + filePathList[i];
+                    if (i < (filePathList.Length - 1)) { pathList[(i - 1)] = filePathList[i]; }
+                }
+            }
+
+            foreach (string path in pathList)
+            {
+                System.IO.DirectoryInfo DirInfo = new System.IO.DirectoryInfo(path);
+
+                //*** Create Folder ***// 
+                if (!DirInfo.Exists)
+                {
+                    try
+                    {
+                        DirInfo.Create();
+                        result = true;
+                    }
+                    catch (Exception) { result = false; }
+                }
+                else { result = true; }
+            }
+
+            return result;
+        }
+
+        public static bool writeTextToFile(string filename, string[] text)
+        {
+            bool result = false;
+            //filePath = HttpContext.Current.Server.MapPath(filePath);
+            try
+            {
+                //bool result_CreateFolder = CreateFolder(filePath);
+
+                using (System.IO.StreamWriter StreamWriter1 = new System.IO.StreamWriter(filename, false, System.Text.Encoding.GetEncoding("windows-874")))
+                {
+                    for (int i = 0; i < text.Length; i++)
+                    {
+                        string substring = text[i].Substring(text[i].Length - 4);
+                        string textLine = text[i].Substring(0, text[i].Length - 4) + text[i].Substring(text[i].Length - 4).Replace("\r\n", "").Replace("\n", "").Replace("\r", "");
+                        if (substring == "\r\n\r\n")
+                        {
+                            StreamWriter1.WriteLine(textLine.Trim());
+                            if (i < (text.Length - 1)) { StreamWriter1.WriteLine(""); }
+                        }
+                        else
+                        {
+                            StreamWriter1.WriteLine(textLine.Trim());
+                        }
+                    }
+                    StreamWriter1.Close();
+                    result = true;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                result = false;
+            }
+
+            return result;
+        }
+
+        public static string getNewTicket()
+        {
+            int TicketLength = 8;
+            string NewTicket = getNewTicket(TicketLength);
+            return NewTicket;
+        }
+        public static string getNewTicket(int passwordLength)
+        {
+            string newPassword = "";
+            //int passwordLength = 8;
+            string[] numberSet = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "0" };
+            string[] passwordSet = { "0", "9", "8", "7", "6", "5", "4", "3", "2", "1", };
+            Random random = new Random();
+            while (newPassword.Length < passwordLength)
+            {
+                int randomSet = random.Next(0, 100);
+                if ((randomSet % 2) == 0) { newPassword += numberSet[(random.Next(0, (numberSet.Length - 1)))]; }
+                else if ((randomSet % 2) == 1) { newPassword += passwordSet[(random.Next(0, (passwordSet.Length - 1)))]; }
+            }
+            return newPassword;
         }
     }
 }

@@ -10,6 +10,12 @@ namespace IDM
     {
 
     }
+    public class UserRole
+    {
+        public static string admin = "admin";
+        public static string helpdesk = "HelpDesk";
+        public static string approve = "Approve";
+    }
     public enum IDMSource
     {
         VisualFim,
@@ -164,6 +170,7 @@ namespace IDM
         log_lock_account_with_file,
         log_unlock_account_with_file,
         log_approved_reset_password,
+        log_reset_password_api,
     }
     public static class LogActivity
     {
@@ -181,6 +188,7 @@ namespace IDM
         public static string OTPVerified = "OTP Verified";
         public static string DisableGuest = "Disable Guest";
         public static string EnableGuest = "Enable Guest";
+        public static string ResetPasswordAPI = "Reset Password by API";
     }
     public static class LockStaus
     {
@@ -188,6 +196,35 @@ namespace IDM
         public static string Unlock = "FALSE";
     }
 
+    public enum ScriptFormat
+    {
+        UNIX1,
+        Print,
+        GW1,
+        GW2,
+        pigeon,
+        cano,
+        BB,
+        EDMS,
+        Info,
+        pommo,
+        Other,
+
+    }
+    public static class ScriptFormatParam
+    {
+        public static string UNIX1 = "[basic_uid]:[unix_uidNumber]:[unix_gidNumber]::::[basic_displayname]:[unix_homeDirectory]:[unix_loginShell]:[password_initial]";
+        public static string Print = "[cu_CUexpire]:[cu_thcn]:[cu_thsn]:[system_org]:[basic_uid]:[password_initial]:[basic_mail]";
+        public static string GW1 = "[email_address] ACCEPT";
+        public static string GW2 = "[email_address]:[email_address]";
+        public static string pigeon = "[basic_uid],[basic_givenname],[basic_sn],[unix_homeDirectory],2097152";
+        public static string cano = "[basic_uid]@student.chula.ac.th,[basic_mail]";
+        public static string BB = "[basic_uid]|[basic_uid]|[cu_jobcode]|[basic_givenname]|[basic_sn]|[email_address]|none|Student";
+        public static string EDMS = "[basic_givenname]:[basic_sn]:[unix_homeDirectory]:[basic_uid]:[email_address]:[cu_jobcode]:[cu_pplid]";
+        public static string Info = "[basic_uid]:[password_initial]";
+        public static string pommo = "[basic_mail]::[basic_uid]:[basic_givenname]:[cu_gecos]:STAFF:[basic_sn]::";
+        public static string Other = "[basic_uid]:[unix_uidNumber]:[unix_gidNumber]::::[basic_displayname]:[unix_homeDirectory]:[unix_loginShell]";
+    }
     public static class EnumStatus
     {
         public static IDMUserType ToUserType(this string text)

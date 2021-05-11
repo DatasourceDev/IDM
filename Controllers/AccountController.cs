@@ -18,16 +18,19 @@ using System.IO;
 using OfficeOpenXml;
 using System.Text;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
+using System.Reflection;
 
 namespace IDM.Controllers
 {
     [Authorize]
     public class AccountController : ControllerBase
     {
-
-        public AccountController(SpuContext context, ILogger<AccountController> logger, ILoginServices loginServices, IUserProvider provider, ILDAPUserProvider providerldap, IOptions<SystemConf> conf) : base(context, logger, loginServices, conf, provider, providerldap)
+        public readonly IWebHostEnvironment _env;
+        public AccountController(SpuContext context, ILogger<AccountController> logger, ILoginServices loginServices, IUserProvider provider, ILDAPUserProvider providerldap, IOptions<SystemConf> conf, IWebHostEnvironment env) : base(context, logger, loginServices, conf, provider, providerldap)
         {
 
+            this._env = env;
 
         }
 
@@ -35,7 +38,7 @@ namespace IDM.Controllers
         #region CreateAccount
         public async Task<IActionResult> CreateAccount(ReturnCode code, string msg)
         {
-            if (!checkrole())
+            if (!checkrole(new string[] { UserRole.admin, UserRole.helpdesk }))
                 return RedirectToAction("Logout", "Auth");
 
             var userlogin = this._context.table_visual_fim_user.Where(w => w.basic_uid == this.HttpContext.User.Identity.Name).FirstOrDefault();
@@ -63,7 +66,7 @@ namespace IDM.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateAccount(visual_fim_user model)
         {
-            if (!checkrole())
+            if (!checkrole(new string[] { UserRole.admin, UserRole.helpdesk }))
                 return RedirectToAction("Logout", "Auth");
 
             var userlogin = this._context.table_visual_fim_user.Where(w => w.basic_uid == this.HttpContext.User.Identity.Name).FirstOrDefault();
@@ -71,11 +74,23 @@ namespace IDM.Controllers
                 return RedirectToAction("Logout", "Auth");
 
             /*check name and surname dup*/
-            if (isExistNameSurNameAndCitizenID(model))
+            //if (isExistNameSurNameAndCitizenID(model))
+            //{
+            //    ModelState.AddModelError("basic_givenname", "ชื่อ(อังกฤษ)ซ้ำในระบบ");
+            //    ModelState.AddModelError("basic_sn", "นามสกุล(อังกฤษ)ซ้ำในระบบ"); 
+            //}
+            //if (isExistCitizenID(model.cu_pplid))
+            //{
+            //    ModelState.AddModelError("cu_pplid", "รหัสบัตรประชาชนซ้ำในระบบ");
+            //}
+            var system_ou_lvl1 = AppUtil.getOuName(model.system_ou_lvl1);
+            model.system_idm_user_type = getIdmUserType(system_ou_lvl1);
+            if (model.system_idm_user_type == IDMUserType.student)
             {
-                ModelState.AddModelError("basic_givenname", "ชื่อ(อังกฤษ)ซ้ำในระบบ");
-                ModelState.AddModelError("basic_sn", "นามสกุล(อังกฤษ)ซ้ำในระบบ");
-                ModelState.AddModelError("cu_pplid", "รหัสบัตรประชาชนซ้ำในระบบ");
+                if (string.IsNullOrEmpty(model.cu_jobcode))
+                {
+                    ModelState.AddModelError("cu_jobcode", "กรุณาระบุรหัสนิสิต");
+                }
             }
             if (ModelState.IsValid)
             {
@@ -127,7 +142,7 @@ namespace IDM.Controllers
 
         public IActionResult CreateAccountCompleted(ReturnCode code, string msg, int? id)
         {
-            if (!checkrole())
+            if (!checkrole(new string[] { UserRole.admin, UserRole.helpdesk }))
                 return RedirectToAction("Logout", "Auth");
 
             var model = new visual_fim_user();
@@ -146,10 +161,11 @@ namespace IDM.Controllers
         #region CreateAccountFromFile
         public IActionResult CreateAccountFromFile(SearchDTO model)
         {
-            if (!checkrole())
+            if (!checkrole(new string[] { UserRole.admin, UserRole.helpdesk }))
                 return RedirectToAction("Logout", "Auth");
-
             model.lists = (new List<import>()).AsQueryable();
+            if (model.code == ReturnCode.Success)
+                model.lists = (_context.table_import.Where(w => w.import_Type == ImportType.create)).AsQueryable();
             ViewBag.Message = model.msg;
             ViewBag.ReturnCode = model.code;
             return View(model);
@@ -158,7 +174,7 @@ namespace IDM.Controllers
         [HttpPost]
         public IActionResult CreateAccountFromFile(IFormFile file, ImportCreateOption import_option)
         {
-            if (!checkrole())
+            if (!checkrole(new string[] { UserRole.admin, UserRole.helpdesk }))
                 return RedirectToAction("Logout", "Auth");
 
             var model = new SearchDTO();
@@ -175,6 +191,10 @@ namespace IDM.Controllers
                         if (string.IsNullOrEmpty(input))
                             continue;
                         var columnNameList = input.Split(":");
+                        if (import_option == ImportCreateOption.staff_hr | import_option == ImportCreateOption.staff_other)
+                        {
+                            columnNameList = input.Split("\t");
+                        }
                         var remark = new StringBuilder();
                         var imp = new import();
                         imp.ImportVerify = true;
@@ -198,21 +218,17 @@ namespace IDM.Controllers
                                 }
                                 imp.system_idm_user_types = IDMUserType.student;
                                 imp.cu_jobcode = columnNameList[j]; j++;
-                                /*imp.other_prename = columnNameList[j];*/
-                                j++;
-                                /*imp.prename = columnNameList[j];*/
-                                j++;
+                                /*imp.other_prename = columnNameList[j];*/j++;
+                                /*imp.prename = columnNameList[j];*/j++;
                                 imp.basic_givenname = columnNameList[j]; j++;
                                 imp.basic_sn = columnNameList[j]; j++;
-                                /*imp.other_prenameth =columnNameList[j];*/
-                                j++;
-                                /*imp.prenameth = columnNameList[j];*/
-                                j++;
+                                /*imp.other_prenameth =columnNameList[j];*/j++;
+                                /*imp.prenameth = columnNameList[j];*/j++;
                                 imp.cu_thcn = columnNameList[j]; j++;
                                 imp.cu_thsn = columnNameList[j]; j++;
-                                /*imp.barcode = columnNameList[j];*/
-                                j++;
+                                /*imp.barcode = columnNameList[j];*/j++;
                                 imp.cu_pplid = columnNameList[j]; j++;
+
                                 if (string.IsNullOrEmpty(imp.cu_jobcode))
                                     continue;
 
@@ -286,13 +302,74 @@ namespace IDM.Controllers
                             }
                             else if (import_option == ImportCreateOption.student_other)
                             {
+                                if (columnNameList.Length != 8)
+                                {
+                                    ModelState.AddModelError("format_error", "รูปแบบไฟล์ไม่ถูกต้อง");
+                                    return View(model);
+                                }
+                                imp.system_idm_user_types = IDMUserType.student;
+                                imp.faculty_shot_name = columnNameList[j]; j++;
+                                imp.cu_jobcode = columnNameList[j]; j++;
+                                imp.basic_givenname = columnNameList[j]; j++;
+                                imp.basic_sn = columnNameList[j]; j++;
+                                imp.cu_thcn = columnNameList[j]; j++;
+                                imp.cu_thsn = columnNameList[j]; j++;
+                                imp.cu_pplid = columnNameList[j]; j++;
+                                imp.basic_uid = columnNameList[j]; j++;
+
+                                var fim_user = _context.table_visual_fim_user.Where(w => w.basic_uid.ToLower() == imp.basic_uid.ToLower()).FirstOrDefault();
+                                if (fim_user != null)
+                                {
+                                    imp.ImportVerify = false;
+                                    remark.AppendLine("ผู้ใช้ซ้ำในระบบ");
+                                }
+                            }
+                            else if (import_option == ImportCreateOption.staff_hr)
+                            {
+                                if (columnNameList.Length != 9)
+                                {
+                                    ModelState.AddModelError("format_error", "รูปแบบไฟล์ไม่ถูกต้อง");
+                                    return View(model);
+                                }
+                                imp.system_idm_user_types = IDMUserType.staff;
+                                imp.cu_jobcode = columnNameList[j]; j++;
+                                imp.cu_thcn = columnNameList[j]; j++;
+                                imp.cu_thsn = columnNameList[j]; j++;
+                                imp.basic_givenname = columnNameList[j]; j++;
+                                imp.basic_sn = columnNameList[j]; j++;
+                                imp.structure_1 = columnNameList[j]; j++;
+                                imp.structure_2 = columnNameList[j]; j++;
+                                imp.status = columnNameList[j]; j++;
+                                imp.cu_pplid = columnNameList[j]; j++;
 
                             }
-
-                            if (string.IsNullOrEmpty(imp.cu_jobcode))
+                            else if (import_option == ImportCreateOption.staff_other)
                             {
-                                imp.ImportVerify = false;
-                                remark.AppendLine("jobcode ไม่สามารถเป็นค่าว่าง");
+                                if (columnNameList.Length != 10)
+                                {
+                                    ModelState.AddModelError("format_error", "รูปแบบไฟล์ไม่ถูกต้อง");
+                                    return View(model);
+                                }
+                                imp.system_idm_user_types = IDMUserType.staff;
+                                imp.cu_jobcode = columnNameList[j]; j++;
+                                imp.cu_thcn = columnNameList[j]; j++;
+                                imp.cu_thsn = columnNameList[j]; j++;
+                                imp.basic_givenname = columnNameList[j]; j++;
+                                imp.basic_sn = columnNameList[j]; j++;
+                                imp.structure_1 = columnNameList[j]; j++;
+                                imp.structure_2 = columnNameList[j]; j++;
+                                imp.status = columnNameList[j]; j++;
+                                imp.cu_pplid = columnNameList[j]; j++;
+                                imp.cu_CUexpire = columnNameList[j]; j++;
+                            }
+
+                            if (import_option != ImportCreateOption.staff_hr)
+                            {
+                                if (string.IsNullOrEmpty(imp.cu_jobcode))
+                                {
+                                    imp.ImportVerify = false;
+                                    remark.AppendLine("jobcode ไม่สามารถเป็นค่าว่าง");
+                                }
                             }
                             if (string.IsNullOrEmpty(imp.basic_givenname))
                             {
@@ -304,11 +381,40 @@ namespace IDM.Controllers
                                 imp.ImportVerify = false;
                                 remark.AppendLine("Last Name ไม่สามารถเป็นค่าว่าง");
                             }
+
                             if (string.IsNullOrEmpty(imp.cu_pplid))
                             {
                                 imp.ImportVerify = false;
                                 remark.AppendLine("Citizen ID ไม่สามารถเป็นค่าว่าง");
                             }
+                            else
+                            {
+                                if (import_option == ImportCreateOption.staff_other || import_option == ImportCreateOption.staff_hr)
+                                {
+                                    var fim_user = _context.table_visual_fim_user
+                                        .Where(w => w.cu_pplid.ToLower() == imp.cu_pplid.ToLower() & (w.system_idm_user_type == IDMUserType.staff | w.system_idm_user_type == IDMUserType.affiliate | w.system_idm_user_type == IDMUserType.outsider | w.system_idm_user_type == IDMUserType.temporary))
+                                        .FirstOrDefault();
+                                    if (fim_user != null)
+                                    {
+                                        imp.ImportVerify = false;
+                                        remark.AppendLine("Citizen ID ซ้ำในระบบ");
+                                    }
+                                }
+                                else
+                                {
+                                    var fim_user = _context.table_visual_fim_user
+                                        .Where(w => w.cu_pplid.ToLower() == imp.cu_pplid.ToLower() & w.system_idm_user_type == IDMUserType.student)
+                                        .FirstOrDefault();
+                                    if (fim_user != null)
+                                    {
+                                        imp.ImportVerify = false;
+                                        remark.AppendLine("Citizen ID ซ้ำในระบบ");
+                                    }
+                                }
+                               
+                            }
+
+
                             imp.ImportRemark = remark.ToString();
                         }
                         catch (Exception ex)
@@ -331,7 +437,7 @@ namespace IDM.Controllers
         [HttpPost]
         public IActionResult CreateAccountFromFile2()
         {
-            if (!checkrole())
+            if (!checkrole(new string[] { UserRole.admin, UserRole.helpdesk }))
                 return RedirectToAction("Logout", "Auth");
 
             var userlogin = this._context.table_visual_fim_user.Where(w => w.basic_uid == this.HttpContext.User.Identity.Name).FirstOrDefault();
@@ -347,6 +453,8 @@ namespace IDM.Controllers
                 var fim_user = _context.table_visual_fim_user.Where(w => w.basic_uid.ToLower() == imp.basic_uid.ToLower()).FirstOrDefault();
                 if (fim_user != null)
                 {
+                    imp.ImportVerify = false;
+                    imp.ImportRemark = "ผู้ใช้ซ้ำในระบบ";
                     continue;
                 }
                 var model = new visual_fim_user();
@@ -356,27 +464,64 @@ namespace IDM.Controllers
                 model.cu_thcn = imp.cu_thcn;
                 model.cu_thsn = imp.cu_thsn;
                 model.cu_pplid = imp.cu_pplid;
+                model.cu_CUexpire = imp.cu_CUexpire;
                 model.basic_telephonenumber = "0";
-
+                if (string.IsNullOrEmpty(imp.ImportRemark))
+                    imp.ImportRemark = "";
                 faculty faculty = null;
-                if (imp.import_create_option == ImportCreateOption.student)
-                {
-                    var faculty_id = NumUtil.ParseInteger(imp.cu_jobcode.Substring(imp.cu_jobcode.Length - 2));
-                    faculty = _context.table_cu_faculty.Where(w => w.faculty_id == faculty_id).FirstOrDefault();
-                }
-                else if (imp.import_create_option == ImportCreateOption.student_sasin)
-                {
-                    faculty = _context.table_cu_faculty.Where(w => w.faculty_shot_name.ToLower() == imp.faculty_shot_name.ToLower()).FirstOrDefault();
-                }
-                else if (imp.import_create_option == ImportCreateOption.student_ppc)
-                {
-                    faculty = _context.table_cu_faculty.Where(w => w.faculty_shot_name.ToLower() == imp.faculty_shot_name.ToLower()).FirstOrDefault();
-                }
 
+                if (imp.import_create_option == ImportCreateOption.student | imp.import_create_option == ImportCreateOption.student_sasin | imp.import_create_option == ImportCreateOption.student_ppc | imp.import_create_option == ImportCreateOption.student_other)
+                {
+                    if (imp.import_create_option == ImportCreateOption.student)
+                    {
+                        var faculty_id = NumUtil.ParseInteger(imp.cu_jobcode.Substring(imp.cu_jobcode.Length - 2));
+                        faculty = _context.table_cu_faculty.Where(w => w.faculty_id == faculty_id).FirstOrDefault();
+                    }
+                    else if (imp.import_create_option == ImportCreateOption.student_sasin)
+                    {
+                        faculty = _context.table_cu_faculty.Where(w => w.faculty_shot_name.ToLower() == imp.faculty_shot_name.ToLower()).FirstOrDefault();
+                    }
+                    else if (imp.import_create_option == ImportCreateOption.student_ppc)
+                    {
+                        faculty = _context.table_cu_faculty.Where(w => w.faculty_shot_name.ToLower() == imp.faculty_shot_name.ToLower()).FirstOrDefault();
+                    }
+                    else if (imp.import_create_option == ImportCreateOption.student_other)
+                    {
+                        faculty = _context.table_cu_faculty.Where(w => w.faculty_shot_name.ToLower() == imp.faculty_shot_name.ToLower()).FirstOrDefault();
+                    }
+
+                }
+                else if (imp.import_create_option == ImportCreateOption.staff_hr | imp.import_create_option == ImportCreateOption.staff_other)
+                {
+                    faculty = _context.table_cu_faculty.Where(w => w.faculty_name.ToLower() == imp.structure_1.ToLower() | w.faculty_name.ToLower() == imp.structure_2.ToLower()).FirstOrDefault();
+                    if (faculty == null)
+                    {
+                        var subfaculty = _context.table_cu_faculty_level2.Where(w => w.sub_office_name.ToLower() == imp.structure_1.ToLower() | w.sub_office_name.ToLower() == imp.structure_2.ToLower()).FirstOrDefault();
+                        if (subfaculty != null)
+                        {
+                            faculty = _context.table_cu_faculty.Where(w => w.faculty_id == subfaculty.faculty_id).FirstOrDefault();
+                        }
+                    }
+                }
                 if (faculty != null)
                 {
                     model.system_faculty_id = (int)faculty.faculty_id;
-                    var distinguish_name = faculty.faculty_distinguish_name_student;
+                    var distinguish_name = "";
+                    if (imp.import_create_option == ImportCreateOption.student | imp.import_create_option == ImportCreateOption.student_sasin | imp.import_create_option == ImportCreateOption.student_ppc | imp.import_create_option == ImportCreateOption.student_other)
+                    {
+                        distinguish_name = faculty.faculty_distinguish_name_student;
+                    }
+                    else if (imp.import_create_option == ImportCreateOption.staff_hr | imp.import_create_option == ImportCreateOption.staff_other)
+                    {
+                        if (imp.status.ToLower().Trim() == "student".ToLower())
+                            distinguish_name = faculty.faculty_distinguish_name_student;
+                        else if (imp.status.ToLower().Trim() == "staff".ToLower() || imp.status.ToLower().Trim() == "พนักงานปกติ".ToLower())
+                            distinguish_name = faculty.faculty_distinguish_name_staff;
+                        else if (imp.status.ToLower().Trim() == "outsider".ToLower())
+                            distinguish_name = faculty.faculty_distinguish_name_outsider;
+                        else if (imp.status.ToLower().Trim() == "affiliate".ToLower())
+                            distinguish_name = faculty.faculty_distinguish_name_affiliate;
+                    }
                     if (!string.IsNullOrEmpty(distinguish_name))
                     {
                         var ous = distinguish_name.Split(",");
@@ -414,6 +559,7 @@ namespace IDM.Controllers
                     }
                     try
                     {
+
                         genNewAccount(_context, model);
                         _context.SaveChanges();
 
@@ -422,31 +568,41 @@ namespace IDM.Controllers
                         if (result_ldap.result == true)
                             writelog(LogType.log_create_account_with_file, LogStatus.successfully, IDMSource.LDAP, model.basic_uid);
                         else
-                            writelog(LogType.log_create_account_with_file, LogStatus.failed, IDMSource.LDAP, model.basic_uid, log_exception: result_ldap.Message);
+                        {
+                            imp.ImportVerify = false;
+                            imp.ImportRemark += writelog(LogType.log_create_account_with_file, LogStatus.failed, IDMSource.LDAP, model.basic_uid, log_exception: result_ldap.Message) + Environment.NewLine;
+
+                        }
 
                         var result_ad = _provider.CreateUser(model, _context);
                         model.ad_created = result_ad.result;
                         if (result_ad.result == true)
                             writelog(LogType.log_create_account_with_file, LogStatus.successfully, IDMSource.AD, model.basic_uid);
                         else
-                            writelog(LogType.log_create_account_with_file, LogStatus.failed, IDMSource.AD, model.basic_uid, log_exception: result_ad.Message);
+                        {
+                            imp.ImportVerify = false;
+                            imp.ImportRemark += writelog(LogType.log_create_account_with_file, LogStatus.failed, IDMSource.AD, model.basic_uid, log_exception: result_ad.Message) + Environment.NewLine;
+                        }
 
                         writelog(LogType.log_create_account_with_file, LogStatus.successfully, IDMSource.VisualFim, model.basic_uid);
 
+                        if (result_ldap.result == true && result_ad.result == true)
+                            imp.ImportRemark = "สร้างบัญชีผู้ใช้สำเร็จ";
                         _context.SaveChanges();
                     }
                     catch (Exception ex)
                     {
-                        writelog(LogType.log_create_account_with_file, LogStatus.failed, IDMSource.VisualFim, model.basic_uid, log_exception: ex.Message);
+                        imp.ImportRemark += writelog(LogType.log_create_account_with_file, LogStatus.failed, IDMSource.VisualFim, model.basic_uid, log_exception: ex.Message) + Environment.NewLine;
                     }
                 }
             }
-            _context.table_import.RemoveRange(_context.table_import.Where(w => w.import_Type == ImportType.create));
+            //_context.table_import.RemoveRange(_context.table_import.Where(w => w.import_Type == ImportType.create));
             _context.SaveChanges();
             msg = ReturnMessage.ImportSuccess;
             code = ReturnCode.Success;
             return RedirectToAction("CreateAccountFromFile", new { code = code, msg = msg });
         }
+
 
         #endregion
 
@@ -456,26 +612,34 @@ namespace IDM.Controllers
             ViewBag.Message = model.msg;
             ViewBag.ReturnCode = model.code;
 
-            if (!checkrole())
+            if (!checkrole(new string[] { UserRole.admin, UserRole.helpdesk }))
                 return RedirectToAction("Logout", "Auth");
 
             if (string.IsNullOrEmpty(model.text_search))
                 return View(model);
 
+            model.text_search = model.text_search.Trim();
+            if (model.text_search.Length <= 3)
+            {
+                ModelState.AddModelError("text_search", "คำค้นจะต้องมากกว่า 3 ตัวอักษร");
+                return View(model);
+            }
 
             var lists = this._context.table_visual_fim_user.Where(w => 1 == 1);
 
             if (!string.IsNullOrEmpty(model.text_search))
-                lists = lists.Where(w => w.basic_uid.Contains(model.text_search)
-                | w.basic_givenname.Contains(model.text_search)
-                | w.basic_sn.Contains(model.text_search)
-                | w.cu_thcn.Contains(model.text_search)
-                | w.cu_thsn.Contains(model.text_search)
-                | w.basic_cn.Contains(model.text_search)
-                | w.cu_pplid.Contains(model.text_search)
-                | w.cu_jobcode.Contains(model.text_search)
-                | w.basic_mobile.Contains(model.text_search)
-                | w.basic_mail.Contains(model.text_search));
+            {
+                lists = lists.Where(w => (!string.IsNullOrEmpty(w.basic_uid) && w.basic_uid.ToLower().Contains(model.text_search.ToLower()))
+              | (!string.IsNullOrEmpty(w.basic_givenname) && w.basic_givenname.ToLower().Contains(model.text_search.ToLower()))
+              | (!string.IsNullOrEmpty(w.basic_sn) && w.basic_sn.ToLower().Contains(model.text_search.ToLower()))
+              | (!string.IsNullOrEmpty(w.cu_thcn) && w.cu_thcn.ToLower().Contains(model.text_search.ToLower()))
+              | (!string.IsNullOrEmpty(w.cu_thsn) && w.cu_thsn.ToLower().Contains(model.text_search.ToLower()))
+              | (!string.IsNullOrEmpty(w.basic_cn) && w.basic_cn.ToLower().Contains(model.text_search.ToLower()))
+              | (!string.IsNullOrEmpty(w.cu_pplid) && w.cu_pplid.ToLower().Contains(model.text_search.ToLower()))
+              | (!string.IsNullOrEmpty(w.cu_jobcode) && w.cu_jobcode.ToLower().Contains(model.text_search.ToLower()))
+              | (!string.IsNullOrEmpty(w.basic_mobile) && w.basic_mobile.ToLower().Contains(model.text_search.ToLower()))
+              | (!string.IsNullOrEmpty(w.basic_mail) && w.basic_mail.ToLower().Contains(model.text_search.ToLower())));
+            }
 
             if (model.usertype_search.HasValue)
                 lists = lists.Where(w => w.system_idm_user_type == model.usertype_search);
@@ -496,7 +660,7 @@ namespace IDM.Controllers
         }
         public IActionResult AccountInfo(int? id)
         {
-            if (!checkrole())
+            if (!checkrole(new string[] { UserRole.admin, UserRole.helpdesk }))
                 return RedirectToAction("Logout", "Auth");
 
             var model = new visual_fim_user();
@@ -522,6 +686,15 @@ namespace IDM.Controllers
                         model.cu_CUexpire_month = DateUtil.Now().Month;
                         model.cu_CUexpire_year = DateUtil.Now().Year + 1;
                     }
+
+                    var aduser = _provider.GetAdUser(model.basic_uid, _context);
+                    var ldapuser = _providerldap.GetUser(model.basic_uid, _context);
+
+                    if (aduser != null)
+                        model.ad_created = true;
+
+                    if (ldapuser != null)
+                        model.ldap_created = true;
                 }
             }
             return View(model);
@@ -530,7 +703,7 @@ namespace IDM.Controllers
         [HttpPost]
         public IActionResult AccountInfo(visual_fim_user model)
         {
-            if (!checkrole())
+            if (!checkrole(new string[] { UserRole.admin, UserRole.helpdesk }))
                 return RedirectToAction("Logout", "Auth");
 
             var userlogin = this._context.table_visual_fim_user.Where(w => w.basic_uid == this.HttpContext.User.Identity.Name).FirstOrDefault();
@@ -568,6 +741,8 @@ namespace IDM.Controllers
                             fim_user.unix_inetCOS = model.unix_inetCOS;
                             fim_user.system_modify_by_uid = userlogin.basic_uid;
                             fim_user.system_modify_date = DateUtil.Now();
+                            fim_user.ad_created = model.ad_created;
+                            fim_user.ldap_created = model.ldap_created;
 
                             if (model.cu_CUexpire_select == false & model.cu_CUexpire_day.HasValue & model.cu_CUexpire_month.HasValue & model.cu_CUexpire_year.HasValue)
                                 fim_user.cu_CUexpire = model.cu_CUexpire_day + "-" + DateUtil.GetShortMonth(model.cu_CUexpire_month) + "-" + model.cu_CUexpire_year.ToString().Substring(2);
@@ -611,25 +786,34 @@ namespace IDM.Controllers
             ViewBag.Message = model.msg;
             ViewBag.ReturnCode = model.code;
 
-            if (!checkrole())
+            if (!checkrole(new string[] { UserRole.admin, UserRole.helpdesk }))
                 return RedirectToAction("Logout", "Auth");
 
             if (string.IsNullOrEmpty(model.text_search))
                 return View(model);
 
+            model.text_search = model.text_search.Trim();
+            if (model.text_search.Length <= 3)
+            {
+                ModelState.AddModelError("text_search", "คำค้นจะต้องมากกว่า 3 ตัวอักษร");
+                return View(model);
+            }
+
             var lists = this._context.table_visual_fim_user.Where(w => 1 == 1);
 
             if (!string.IsNullOrEmpty(model.text_search))
-                lists = lists.Where(w => w.basic_uid.Contains(model.text_search)
-                | w.basic_givenname.Contains(model.text_search)
-                | w.basic_sn.Contains(model.text_search)
-                | w.cu_thcn.Contains(model.text_search)
-                | w.cu_thsn.Contains(model.text_search)
-                | w.basic_cn.Contains(model.text_search)
-                | w.cu_pplid.Contains(model.text_search)
-                | w.cu_jobcode.Contains(model.text_search)
-                | w.basic_mobile.Contains(model.text_search)
-                | w.basic_mail.Contains(model.text_search));
+            {
+                lists = lists.Where(w => (!string.IsNullOrEmpty(w.basic_uid) && w.basic_uid.ToLower().Contains(model.text_search.ToLower()))
+              | (!string.IsNullOrEmpty(w.basic_givenname) && w.basic_givenname.ToLower().Contains(model.text_search.ToLower()))
+              | (!string.IsNullOrEmpty(w.basic_sn) && w.basic_sn.ToLower().Contains(model.text_search.ToLower()))
+              | (!string.IsNullOrEmpty(w.cu_thcn) && w.cu_thcn.ToLower().Contains(model.text_search.ToLower()))
+              | (!string.IsNullOrEmpty(w.cu_thsn) && w.cu_thsn.ToLower().Contains(model.text_search.ToLower()))
+              | (!string.IsNullOrEmpty(w.basic_cn) && w.basic_cn.ToLower().Contains(model.text_search.ToLower()))
+              | (!string.IsNullOrEmpty(w.cu_pplid) && w.cu_pplid.ToLower().Contains(model.text_search.ToLower()))
+              | (!string.IsNullOrEmpty(w.cu_jobcode) && w.cu_jobcode.ToLower().Contains(model.text_search.ToLower()))
+              | (!string.IsNullOrEmpty(w.basic_mobile) && w.basic_mobile.ToLower().Contains(model.text_search.ToLower()))
+              | (!string.IsNullOrEmpty(w.basic_mail) && w.basic_mail.ToLower().Contains(model.text_search.ToLower())));
+            }
 
             if (model.usertype_search.HasValue)
                 lists = lists.Where(w => w.system_idm_user_type == model.usertype_search);
@@ -652,7 +836,7 @@ namespace IDM.Controllers
 
         public JsonResult Delete(string choose)
         {
-            if (!checkrole())
+            if (!checkrole(new string[] { UserRole.admin, UserRole.helpdesk }))
                 return Json(new { error = ReturnMessage.Error, result = ReturnCode.Error });
 
             var userlogin = this._context.table_visual_fim_user.Where(w => w.basic_uid == this.HttpContext.User.Identity.Name).FirstOrDefault();
@@ -706,7 +890,7 @@ namespace IDM.Controllers
         #region DeleteAccountFromFile
         public IActionResult DeleteAccountFromFile(SearchDTO model)
         {
-            if (!checkrole())
+            if (!checkrole(new string[] { UserRole.admin, UserRole.helpdesk }))
                 return RedirectToAction("Logout", "Auth");
 
             model.lists = (new List<import>()).AsQueryable();
@@ -718,7 +902,7 @@ namespace IDM.Controllers
         [HttpPost]
         public IActionResult DeleteAccountFromFile(IFormFile file, ImportDeleteOption import_option)
         {
-            if (!checkrole())
+            if (!checkrole(new string[] { UserRole.admin, UserRole.helpdesk }))
                 return RedirectToAction("Logout", "Auth");
 
             var model = new SearchDTO();
@@ -814,7 +998,7 @@ namespace IDM.Controllers
         [HttpPost]
         public IActionResult DeleteAccountFromFile2()
         {
-            if (!checkrole())
+            if (!checkrole(new string[] { UserRole.admin, UserRole.helpdesk }))
                 return RedirectToAction("Logout", "Auth");
 
             var userlogin = this._context.table_visual_fim_user.Where(w => w.basic_uid == this.HttpContext.User.Identity.Name).FirstOrDefault();
@@ -872,26 +1056,34 @@ namespace IDM.Controllers
             ViewBag.Message = model.msg;
             ViewBag.ReturnCode = model.code;
 
-            if (!checkrole())
+            if (!checkrole(new string[] { UserRole.admin, UserRole.helpdesk }))
                 return RedirectToAction("Logout", "Auth");
 
             if (string.IsNullOrEmpty(model.text_search))
                 return View(model);
 
+            model.text_search = model.text_search.Trim();
+            if (model.text_search.Length <= 3)
+            {
+                ModelState.AddModelError("text_search", "คำค้นจะต้องมากกว่า 3 ตัวอักษร");
+                return View(model);
+            }
 
             var lists = this._context.table_visual_fim_user.Where(w => 1 == 1);
 
             if (!string.IsNullOrEmpty(model.text_search))
-                lists = lists.Where(w => w.basic_uid.Contains(model.text_search)
-                | w.basic_givenname.Contains(model.text_search)
-                | w.basic_sn.Contains(model.text_search)
-                | w.cu_thcn.Contains(model.text_search)
-                | w.cu_thsn.Contains(model.text_search)
-                | w.basic_cn.Contains(model.text_search)
-                | w.cu_pplid.Contains(model.text_search)
-                | w.cu_jobcode.Contains(model.text_search)
-                | w.basic_mobile.Contains(model.text_search)
-                | w.basic_mail.Contains(model.text_search));
+            {
+                lists = lists.Where(w => (!string.IsNullOrEmpty(w.basic_uid) && w.basic_uid.ToLower().Contains(model.text_search.ToLower()))
+              | (!string.IsNullOrEmpty(w.basic_givenname) && w.basic_givenname.ToLower().Contains(model.text_search.ToLower()))
+              | (!string.IsNullOrEmpty(w.basic_sn) && w.basic_sn.ToLower().Contains(model.text_search.ToLower()))
+              | (!string.IsNullOrEmpty(w.cu_thcn) && w.cu_thcn.ToLower().Contains(model.text_search.ToLower()))
+              | (!string.IsNullOrEmpty(w.cu_thsn) && w.cu_thsn.ToLower().Contains(model.text_search.ToLower()))
+              | (!string.IsNullOrEmpty(w.basic_cn) && w.basic_cn.ToLower().Contains(model.text_search.ToLower()))
+              | (!string.IsNullOrEmpty(w.cu_pplid) && w.cu_pplid.ToLower().Contains(model.text_search.ToLower()))
+              | (!string.IsNullOrEmpty(w.cu_jobcode) && w.cu_jobcode.ToLower().Contains(model.text_search.ToLower()))
+              | (!string.IsNullOrEmpty(w.basic_mobile) && w.basic_mobile.ToLower().Contains(model.text_search.ToLower()))
+              | (!string.IsNullOrEmpty(w.basic_mail) && w.basic_mail.ToLower().Contains(model.text_search.ToLower())));
+            }
 
             if (model.usertype_search.HasValue)
                 lists = lists.Where(w => w.system_idm_user_type == model.usertype_search);
@@ -913,7 +1105,7 @@ namespace IDM.Controllers
 
         public IActionResult ChangePassword(string id)
         {
-            if (!checkrole())
+            if (!checkrole(new string[] { UserRole.admin, UserRole.helpdesk }))
                 return RedirectToAction("Logout", "Auth");
 
             var model = new ChangePassword3DTO();
@@ -924,7 +1116,7 @@ namespace IDM.Controllers
         [HttpPost]
         public IActionResult ChangePassword(ChangePassword3DTO model)
         {
-            if (!checkrole())
+            if (!checkrole(new string[] { UserRole.admin, UserRole.helpdesk }))
                 return RedirectToAction("Logout", "Auth");
 
             var userlogin = this._context.table_visual_fim_user.Where(w => w.basic_uid == this.HttpContext.User.Identity.Name).FirstOrDefault();
@@ -950,17 +1142,17 @@ namespace IDM.Controllers
                     _context.SaveChanges();
                     var result_ldap = _providerldap.ChangePwd(fim_user, model.Password, _context);
                     if (result_ldap.result == true)
-                        writelog(LogType.log_change_password, LogStatus.successfully, IDMSource.LDAP, model.basic_uid);
+                        writelog(LogType.log_reset_password, LogStatus.successfully, IDMSource.LDAP, model.basic_uid);
                     else
-                        writelog(LogType.log_change_password, LogStatus.failed, IDMSource.LDAP, model.basic_uid, log_exception: result_ldap.Message);
+                        writelog(LogType.log_reset_password, LogStatus.failed, IDMSource.LDAP, model.basic_uid, log_exception: result_ldap.Message);
 
                     var result_ad = _provider.ChangePwd(fim_user, model.Password, _context);
                     if (result_ad.result == true)
-                        writelog(LogType.log_change_password, LogStatus.successfully, IDMSource.AD, model.basic_uid);
+                        writelog(LogType.log_reset_password, LogStatus.successfully, IDMSource.AD, model.basic_uid);
                     else
-                        writelog(LogType.log_change_password, LogStatus.failed, IDMSource.AD, model.basic_uid, log_exception: result_ad.Message);
+                        writelog(LogType.log_reset_password, LogStatus.failed, IDMSource.AD, model.basic_uid, log_exception: result_ad.Message);
 
-                    writelog(LogType.log_change_password, LogStatus.successfully, IDMSource.VisualFim, model.basic_uid);
+                    writelog(LogType.log_reset_password, LogStatus.successfully, IDMSource.VisualFim, model.basic_uid);
 
                     msg = ReturnMessage.ChangePasswordSuccess;
                     code = ReturnCode.Success;
@@ -970,7 +1162,7 @@ namespace IDM.Controllers
                 }
                 catch (Exception ex)
                 {
-                    writelog(LogType.log_change_password, LogStatus.failed, IDMSource.VisualFim, model.basic_uid, log_exception: ex.Message);
+                    writelog(LogType.log_reset_password, LogStatus.failed, IDMSource.VisualFim, model.basic_uid, log_exception: ex.Message);
                 }
             }
             return View(model);
@@ -983,25 +1175,34 @@ namespace IDM.Controllers
             ViewBag.Message = model.msg;
             ViewBag.ReturnCode = model.code;
 
-            if (!checkrole())
+            if (!checkrole(new string[] { UserRole.admin, UserRole.helpdesk }))
                 return RedirectToAction("Logout", "Auth");
 
             if (string.IsNullOrEmpty(model.text_search))
                 return View(model);
 
+            model.text_search = model.text_search.Trim();
+            if (model.text_search.Length <= 3)
+            {
+                ModelState.AddModelError("text_search", "คำค้นจะต้องมากกว่า 3 ตัวอักษร");
+                return View(model);
+            }
+
             var lists = this._context.table_visual_fim_user.Where(w => 1 == 1);
 
             if (!string.IsNullOrEmpty(model.text_search))
-                lists = lists.Where(w => w.basic_uid.Contains(model.text_search)
-                | w.basic_givenname.Contains(model.text_search)
-                | w.basic_sn.Contains(model.text_search)
-                | w.cu_thcn.Contains(model.text_search)
-                | w.cu_thsn.Contains(model.text_search)
-                | w.basic_cn.Contains(model.text_search)
-                | w.cu_pplid.Contains(model.text_search)
-                | w.cu_jobcode.Contains(model.text_search)
-                | w.basic_mobile.Contains(model.text_search)
-                | w.basic_mail.Contains(model.text_search));
+            {
+                lists = lists.Where(w => (!string.IsNullOrEmpty(w.basic_uid) && w.basic_uid.ToLower().Contains(model.text_search.ToLower()))
+              | (!string.IsNullOrEmpty(w.basic_givenname) && w.basic_givenname.ToLower().Contains(model.text_search.ToLower()))
+              | (!string.IsNullOrEmpty(w.basic_sn) && w.basic_sn.ToLower().Contains(model.text_search.ToLower()))
+              | (!string.IsNullOrEmpty(w.cu_thcn) && w.cu_thcn.ToLower().Contains(model.text_search.ToLower()))
+              | (!string.IsNullOrEmpty(w.cu_thsn) && w.cu_thsn.ToLower().Contains(model.text_search.ToLower()))
+              | (!string.IsNullOrEmpty(w.basic_cn) && w.basic_cn.ToLower().Contains(model.text_search.ToLower()))
+              | (!string.IsNullOrEmpty(w.cu_pplid) && w.cu_pplid.ToLower().Contains(model.text_search.ToLower()))
+              | (!string.IsNullOrEmpty(w.cu_jobcode) && w.cu_jobcode.ToLower().Contains(model.text_search.ToLower()))
+              | (!string.IsNullOrEmpty(w.basic_mobile) && w.basic_mobile.ToLower().Contains(model.text_search.ToLower()))
+              | (!string.IsNullOrEmpty(w.basic_mail) && w.basic_mail.ToLower().Contains(model.text_search.ToLower())));
+            }
 
             if (model.usertype_search.HasValue)
                 lists = lists.Where(w => w.system_idm_user_type == model.usertype_search);
@@ -1023,7 +1224,7 @@ namespace IDM.Controllers
         }
         public JsonResult ChangeStatus(string id)
         {
-            if (!checkrole())
+            if (!checkrole(new string[] { UserRole.admin, UserRole.helpdesk }))
                 return Json(new { error = ReturnMessage.Error, result = ReturnCode.Error });
 
             var userlogin = this._context.table_visual_fim_user.Where(w => w.basic_uid == this.HttpContext.User.Identity.Name).FirstOrDefault();
@@ -1106,7 +1307,7 @@ namespace IDM.Controllers
         #region EnableAccountFromFile
         public IActionResult EnableAccountFromFile(SearchDTO model)
         {
-            if (!checkrole())
+            if (!checkrole(new string[] { UserRole.admin, UserRole.helpdesk }))
                 return RedirectToAction("Logout", "Auth");
 
             model.lists = (new List<import>()).AsQueryable();
@@ -1118,7 +1319,7 @@ namespace IDM.Controllers
         [HttpPost]
         public IActionResult EnableAccountFromFile(IFormFile file, ImportLockOption import_option)
         {
-            if (!checkrole())
+            if (!checkrole(new string[] { UserRole.admin, UserRole.helpdesk }))
                 return RedirectToAction("Logout", "Auth");
 
             var model = new SearchDTO();
@@ -1212,7 +1413,7 @@ namespace IDM.Controllers
         [HttpPost]
         public IActionResult EnableAccountFromFile2(string lockstatus)
         {
-            if (!checkrole())
+            if (!checkrole(new string[] { UserRole.admin, UserRole.helpdesk }))
                 return RedirectToAction("Logout", "Auth");
 
             var userlogin = this._context.table_visual_fim_user.Where(w => w.basic_uid == this.HttpContext.User.Identity.Name).FirstOrDefault();
@@ -1297,25 +1498,34 @@ namespace IDM.Controllers
             ViewBag.Message = model.msg;
             ViewBag.ReturnCode = model.code;
 
-            if (!checkrole())
+            if (!checkrole(new string[] { UserRole.admin, UserRole.helpdesk }))
                 return RedirectToAction("Logout", "Auth");
 
             if (string.IsNullOrEmpty(model.text_search))
                 return View(model);
 
+            model.text_search = model.text_search.Trim();
+            if (model.text_search.Length <= 3)
+            {
+                ModelState.AddModelError("text_search", "คำค้นจะต้องมากกว่า 3 ตัวอักษร");
+                return View(model);
+            }
+
             var lists = this._context.table_visual_fim_user.Where(w => 1 == 1);
 
             if (!string.IsNullOrEmpty(model.text_search))
-                lists = lists.Where(w => w.basic_uid.Contains(model.text_search)
-                | w.basic_givenname.Contains(model.text_search)
-                | w.basic_sn.Contains(model.text_search)
-                | w.cu_thcn.Contains(model.text_search)
-                | w.cu_thsn.Contains(model.text_search)
-                | w.basic_cn.Contains(model.text_search)
-                | w.cu_pplid.Contains(model.text_search)
-                | w.cu_jobcode.Contains(model.text_search)
-                | w.basic_mobile.Contains(model.text_search)
-                | w.basic_mail.Contains(model.text_search));
+            {
+                lists = lists.Where(w => (!string.IsNullOrEmpty(w.basic_uid) && w.basic_uid.ToLower().Contains(model.text_search.ToLower()))
+              | (!string.IsNullOrEmpty(w.basic_givenname) && w.basic_givenname.ToLower().Contains(model.text_search.ToLower()))
+              | (!string.IsNullOrEmpty(w.basic_sn) && w.basic_sn.ToLower().Contains(model.text_search.ToLower()))
+              | (!string.IsNullOrEmpty(w.cu_thcn) && w.cu_thcn.ToLower().Contains(model.text_search.ToLower()))
+              | (!string.IsNullOrEmpty(w.cu_thsn) && w.cu_thsn.ToLower().Contains(model.text_search.ToLower()))
+              | (!string.IsNullOrEmpty(w.basic_cn) && w.basic_cn.ToLower().Contains(model.text_search.ToLower()))
+              | (!string.IsNullOrEmpty(w.cu_pplid) && w.cu_pplid.ToLower().Contains(model.text_search.ToLower()))
+              | (!string.IsNullOrEmpty(w.cu_jobcode) && w.cu_jobcode.ToLower().Contains(model.text_search.ToLower()))
+              | (!string.IsNullOrEmpty(w.basic_mobile) && w.basic_mobile.ToLower().Contains(model.text_search.ToLower()))
+              | (!string.IsNullOrEmpty(w.basic_mail) && w.basic_mail.ToLower().Contains(model.text_search.ToLower())));
+            }
 
             if (model.usertype_search.HasValue)
                 lists = lists.Where(w => w.system_idm_user_type == model.usertype_search);
@@ -1337,7 +1547,7 @@ namespace IDM.Controllers
         }
         public IActionResult InternetAccessInfo(int? id)
         {
-            if (!checkrole())
+            if (!checkrole(new string[] { UserRole.admin, UserRole.helpdesk }))
                 return RedirectToAction("Logout", "Auth");
 
             var model = new visual_fim_user();
@@ -1349,7 +1559,7 @@ namespace IDM.Controllers
         [HttpPost]
         public IActionResult InternetAccessInfo(visual_fim_user model)
         {
-            if (!checkrole())
+            if (!checkrole(new string[] { UserRole.admin, UserRole.helpdesk }))
                 return RedirectToAction("Logout", "Auth");
 
             var userlogin = this._context.table_visual_fim_user.Where(w => w.basic_uid == this.HttpContext.User.Identity.Name).FirstOrDefault();
@@ -1406,7 +1616,7 @@ namespace IDM.Controllers
         #region Approve Change Password
         public IActionResult ApproveChangePassword(SearchDTO model)
         {
-            if (!checkrole())
+            if (!checkrole(new string[] { UserRole.admin, UserRole.helpdesk, UserRole.approve }))
                 return RedirectToAction("Logout", "Auth");
 
             var lists = this._context.table_reset_password_temp.Where(w => 1 == 1);
@@ -1445,7 +1655,7 @@ namespace IDM.Controllers
 
         public JsonResult Approve(string choose)
         {
-            if (!checkrole())
+            if (!checkrole(new string[] { UserRole.admin, UserRole.helpdesk, UserRole.approve }))
                 return Json(new { error = ReturnMessage.Error, result = ReturnCode.Error });
 
             var userlogin = this._context.table_visual_fim_user.Where(w => w.basic_uid == this.HttpContext.User.Identity.Name).FirstOrDefault();
@@ -1511,26 +1721,34 @@ namespace IDM.Controllers
             ViewBag.Message = model.msg;
             ViewBag.ReturnCode = model.code;
 
-            if (!checkrole())
+            if (!checkrole(new string[] { UserRole.admin, UserRole.helpdesk }))
                 return RedirectToAction("Logout", "Auth");
 
             if (string.IsNullOrEmpty(model.text_search))
                 return View(model);
 
+            model.text_search = model.text_search.Trim();
+            if (model.text_search.Length <= 3)
+            {
+                ModelState.AddModelError("text_search", "คำค้นจะต้องมากกว่า 3 ตัวอักษร");
+                return View(model);
+            }
 
             var lists = this._context.table_visual_fim_user.Where(w => 1 == 1);
 
             if (!string.IsNullOrEmpty(model.text_search))
-                lists = lists.Where(w => w.basic_uid.Contains(model.text_search)
-                | w.basic_givenname.Contains(model.text_search)
-                | w.basic_sn.Contains(model.text_search)
-                | w.cu_thcn.Contains(model.text_search)
-                | w.cu_thsn.Contains(model.text_search)
-                | w.basic_cn.Contains(model.text_search)
-                | w.cu_pplid.Contains(model.text_search)
-                | w.cu_jobcode.Contains(model.text_search)
-                | w.basic_mobile.Contains(model.text_search)
-                | w.basic_mail.Contains(model.text_search));
+            {
+                lists = lists.Where(w => (!string.IsNullOrEmpty(w.basic_uid) && w.basic_uid.ToLower().Contains(model.text_search.ToLower()))
+              | (!string.IsNullOrEmpty(w.basic_givenname) && w.basic_givenname.ToLower().Contains(model.text_search.ToLower()))
+              | (!string.IsNullOrEmpty(w.basic_sn) && w.basic_sn.ToLower().Contains(model.text_search.ToLower()))
+              | (!string.IsNullOrEmpty(w.cu_thcn) && w.cu_thcn.ToLower().Contains(model.text_search.ToLower()))
+              | (!string.IsNullOrEmpty(w.cu_thsn) && w.cu_thsn.ToLower().Contains(model.text_search.ToLower()))
+              | (!string.IsNullOrEmpty(w.basic_cn) && w.basic_cn.ToLower().Contains(model.text_search.ToLower()))
+              | (!string.IsNullOrEmpty(w.cu_pplid) && w.cu_pplid.ToLower().Contains(model.text_search.ToLower()))
+              | (!string.IsNullOrEmpty(w.cu_jobcode) && w.cu_jobcode.ToLower().Contains(model.text_search.ToLower()))
+              | (!string.IsNullOrEmpty(w.basic_mobile) && w.basic_mobile.ToLower().Contains(model.text_search.ToLower()))
+              | (!string.IsNullOrEmpty(w.basic_mail) && w.basic_mail.ToLower().Contains(model.text_search.ToLower())));
+            }
 
             if (model.usertype_search.HasValue)
                 lists = lists.Where(w => w.system_idm_user_type == model.usertype_search);
@@ -1551,7 +1769,7 @@ namespace IDM.Controllers
         }
         public async Task<IActionResult> MoveAccountInfo(int? id)
         {
-            if (!checkrole())
+            if (!checkrole(new string[] { UserRole.admin, UserRole.helpdesk }))
                 return RedirectToAction("Logout", "Auth");
 
             var model = new visual_fim_user();
@@ -1564,7 +1782,7 @@ namespace IDM.Controllers
         [HttpPost]
         public async Task<IActionResult> MoveAccountInfo(visual_fim_user model)
         {
-            if (!checkrole())
+            if (!checkrole(new string[] { UserRole.admin, UserRole.helpdesk }))
                 return RedirectToAction("Logout", "Auth");
 
             var userlogin = this._context.table_visual_fim_user.Where(w => w.basic_uid == this.HttpContext.User.Identity.Name).FirstOrDefault();
@@ -1665,87 +1883,340 @@ namespace IDM.Controllers
         }
         #endregion
 
-        //public IActionResult CreateScript()
-        //{
-        //    return View();
-        //}
-        //public IActionResult ApproveChangePassword()
-        //{
-        //    return View();
-        //}
-        //public IActionResult CheckAccount()
-        //{
-        //    return View();
-        //}
-        //public IActionResult CheckMenuPermission()
-        //{
-        //    return View();
-        //}
+        #region CheckAccount
+        public IActionResult CheckAccount(SearchDTO model)
+        {
+            ViewBag.Message = model.msg;
+            ViewBag.ReturnCode = model.code;
+
+            if (!checkrole(new string[] { UserRole.admin, UserRole.helpdesk }))
+                return RedirectToAction("Logout", "Auth");
+
+            if (string.IsNullOrEmpty(model.text_search))
+                return View(model);
+
+            model.text_search = model.text_search.Trim();
+            if (model.text_search.Length <= 3)
+            {
+                ModelState.AddModelError("text_search", "คำค้นจะต้องมากกว่า 3 ตัวอักษร");
+                return View(model);
+            }
+
+            var lists = this._context.table_visual_fim_user.Where(w => 1 == 1);
+
+            if (!string.IsNullOrEmpty(model.text_search))
+            {
+                lists = lists.Where(w => (!string.IsNullOrEmpty(w.basic_uid) && w.basic_uid.ToLower().Contains(model.text_search.ToLower()))
+               | (!string.IsNullOrEmpty(w.basic_givenname) && w.basic_givenname.ToLower().Contains(model.text_search.ToLower()))
+               | (!string.IsNullOrEmpty(w.basic_sn) && w.basic_sn.ToLower().Contains(model.text_search.ToLower()))
+               | (!string.IsNullOrEmpty(w.cu_thcn) && w.cu_thcn.ToLower().Contains(model.text_search.ToLower()))
+               | (!string.IsNullOrEmpty(w.cu_thsn) && w.cu_thsn.ToLower().Contains(model.text_search.ToLower()))
+               | (!string.IsNullOrEmpty(w.basic_cn) && w.basic_cn.ToLower().Contains(model.text_search.ToLower()))
+               | (!string.IsNullOrEmpty(w.cu_pplid) && w.cu_pplid.ToLower().Contains(model.text_search.ToLower()))
+               | (!string.IsNullOrEmpty(w.cu_jobcode) && w.cu_jobcode.ToLower().Contains(model.text_search.ToLower()))
+               | (!string.IsNullOrEmpty(w.basic_mobile) && w.basic_mobile.ToLower().Contains(model.text_search.ToLower()))
+               | (!string.IsNullOrEmpty(w.basic_mail) && w.basic_mail.ToLower().Contains(model.text_search.ToLower())));
+            }
 
 
-        //   
-        //    public IActionResult RoleCheck()
-        //    {
-        //        return View();
-        //    }
+            if (model.usertype_search.HasValue)
+                lists = lists.Where(w => w.system_idm_user_type == model.usertype_search);
+
+            lists = lists.OrderByDescending(o => o.system_create_date);
+
+            int skipRows = (model.pageno - 1) * _pagelen;
+            var itemcnt = lists.Count();
+            var pagelen = itemcnt / _pagelen;
+            if (itemcnt % _pagelen > 0)
+                pagelen += 1;
+
+            model.itemcnt = itemcnt;
+            model.pagelen = pagelen;
+            //model.lists = lists.Skip(skipRows).Take(_pagelen).AsQueryable();
+            model.lists = lists.AsQueryable();
+            return View(model);
+        }
+        #endregion
+
+        #region Create Script
+        public IActionResult CreateScript(SearchDTO model)
+        {
+            if (!checkrole(new string[] { UserRole.admin, UserRole.helpdesk }))
+                return RedirectToAction("Logout", "Auth");
+
+            var dfrom = DateUtil.ToDate(model.dfrom);
+            var dto = DateUtil.ToDate(model.dto);
+
+            if (!dfrom.HasValue)
+            {
+                dfrom = DateUtil.Now();
+                model.dfrom = DateUtil.ToDisplayDate(DateUtil.Now());
+            }
+            if (!dto.HasValue)
+            {
+                dto = DateUtil.Now();
+                model.dto = DateUtil.ToDisplayDate(DateUtil.Now());
+            }
+
+            var script_temps = new List<script_temp>();
+
+            var staffs = this._context.table_receive_staff.Where(w => 1 == 1);
+            staffs = staffs.Where(w => w.create_date.Value.Date >= dfrom.Value.Date);
+            staffs = staffs.Where(w => w.create_date.Value.Date <= dto.Value.Date);
+
+            foreach (var item in staffs)
+            {
+                var fim_user = _context.table_visual_fim_user.Where(w => w.basic_uid.ToLower() == item.login_name.ToLower()).FirstOrDefault();
+                if (fim_user != null)
+                {
+                    var script_temp = new script_temp();
+                    script_temp.id = item.id;
+                    script_temp.displayname = item.displayname;
+                    script_temp.login_name = item.login_name;
+                    script_temp.password_initial = item.password_initial;
+                    script_temp.email_address = item.email_address;
+                    script_temp.server_name = item.server_name;
+                    script_temp.expire = item.expire;
+                    script_temp.status_id = item.status_id;
+                    script_temp.org = item.org;
+                    script_temp.create_date = item.create_date;
+                    script_temp.receive_date = item.receive_date;
+                    script_temp.manage_by = item.manage_by;
+                    script_temp.ticket = item.ticket;
+                    script_temp.visual_fim_user = fim_user;
+                    script_temps.Add(script_temp);
+                }
+            }
+
+            var students = this._context.table_receive_student.Where(w => 1 == 1);
+            students = students.Where(w => w.create_date.Value.Date >= dfrom.Value.Date);
+            students = students.Where(w => w.create_date.Value.Date <= dto.Value.Date);
+
+            foreach (var item in students)
+            {
+                var fim_user = _context.table_visual_fim_user.Where(w => w.basic_uid.ToLower() == item.login_name.ToLower()).FirstOrDefault();
+                if (fim_user != null)
+                {
+                    var script_temp = new script_temp();
+                    script_temp.id = item.id;
+                    script_temp.displayname = item.displayname;
+                    script_temp.login_name = item.login_name;
+                    script_temp.password_initial = item.password_initial;
+                    script_temp.email_address = item.email_address;
+                    script_temp.server_name = item.server_name;
+                    script_temp.expire = item.expire;
+                    script_temp.status_id = item.status_id;
+                    script_temp.org = item.org;
+                    script_temp.create_date = item.create_date;
+                    script_temp.receive_date = item.receive_date;
+                    script_temp.manage_by = item.manage_by;
+                    script_temp.ticket = item.ticket;
+                    script_temp.visual_fim_user = fim_user;
+                    script_temps.Add(script_temp);
+                }
+            }
+            var temps = this._context.table_receive_temp.Where(w => 1 == 1);
+            temps = temps.Where(w => w.create_date.Value.Date >= dfrom.Value.Date);
+            temps = temps.Where(w => w.create_date.Value.Date <= dto.Value.Date);
+
+            foreach (var item in temps)
+            {
+                var fim_user = _context.table_visual_fim_user.Where(w => w.basic_uid.ToLower() == item.login_name.ToLower()).FirstOrDefault();
+                if (fim_user != null)
+                {
+                    var script_temp = new script_temp();
+                    script_temp.id = item.id;
+                    script_temp.displayname = item.displayname;
+                    script_temp.login_name = item.login_name;
+                    script_temp.password_initial = item.password_initial;
+                    script_temp.email_address = item.email_address;
+                    script_temp.server_name = item.server_name;
+                    script_temp.expire = item.expire;
+                    script_temp.status_id = item.status_id;
+                    script_temp.org = item.org;
+                    script_temp.create_date = item.create_date;
+                    script_temp.receive_date = item.receive_date;
+                    script_temp.manage_by = item.manage_by;
+                    script_temp.ticket = item.ticket;
+                    script_temp.visual_fim_user = fim_user;
+                    script_temps.Add(script_temp);
+                }
+            }
+
+            script_temps = script_temps.OrderByDescending(o => o.create_date).ToList();
+
+            var Indicator = ":";
+            String[] sparams = null;
+            if (model.script_format == ScriptFormat.UNIX1)
+            {
+                if (string.IsNullOrEmpty(model.script_param))
+                    model.script_param = ScriptFormatParam.UNIX1;
+                sparams = model.script_param.Split(":");
+            }
+            else if (model.script_format == ScriptFormat.Print)
+            {
+                if (string.IsNullOrEmpty(model.script_param))
+                    model.script_param = ScriptFormatParam.Print;
+                sparams = model.script_param.Split(":");
+            }
+            else if (model.script_format == ScriptFormat.GW1)
+            {
+                if (string.IsNullOrEmpty(model.script_param))
+                    model.script_param = ScriptFormatParam.GW1;
+                sparams = model.script_param.Split(":");
+            }
+            else if (model.script_format == ScriptFormat.GW2)
+            {
+                if (string.IsNullOrEmpty(model.script_param))
+                    model.script_param = ScriptFormatParam.GW2;
+                sparams = model.script_param.Split(":");
+            }
+            else if (model.script_format == ScriptFormat.pigeon)
+            {
+                if (string.IsNullOrEmpty(model.script_param))
+                    model.script_param = ScriptFormatParam.pigeon;
+                sparams = model.script_param.Split(",");
+                Indicator = ",";
+            }
+            else if (model.script_format == ScriptFormat.cano)
+            {
+                if (string.IsNullOrEmpty(model.script_param))
+                    model.script_param = ScriptFormatParam.cano;
+                sparams = model.script_param.Split(",");
+                Indicator = ",";
+            }
+            else if (model.script_format == ScriptFormat.BB)
+            {
+                if (string.IsNullOrEmpty(model.script_param))
+                    model.script_param = ScriptFormatParam.BB;
+                sparams = model.script_param.Split("|");
+                Indicator = "|";
+            }
+            else if (model.script_format == ScriptFormat.EDMS)
+            {
+                if (string.IsNullOrEmpty(model.script_param))
+                    model.script_param = ScriptFormatParam.EDMS;
+                sparams = model.script_param.Split(":");
+            }
+            else if (model.script_format == ScriptFormat.Info)
+            {
+                if (string.IsNullOrEmpty(model.script_param))
+                    model.script_param = ScriptFormatParam.Info;
+                sparams = model.script_param.Split(":");
+            }
+            else if (model.script_format == ScriptFormat.pommo)
+            {
+                if (string.IsNullOrEmpty(model.script_param))
+                    model.script_param = ScriptFormatParam.pommo;
+                sparams = model.script_param.Split(":");
+            }
+            else if (model.script_format == ScriptFormat.Other)
+            {
+                if (string.IsNullOrEmpty(model.script_param))
+                    model.script_param = ScriptFormatParam.Other;
+                sparams = model.script_param.Split(":");
+            }
+            var texts = new List<string>();
+            foreach (var script in script_temps)
+            {
+                Type t = script.GetType();
+                Type t2 = script.visual_fim_user.GetType();
+
+                var text = new StringBuilder();
+                foreach (var sparam in sparams)
+                {
+                    var name = sparam;
+                    var name2 = name;
+                    var startindex = name.IndexOf("[");
+                    var endindex = name.IndexOf("]");
+                    if (startindex >= 0 & endindex >= 0)
+                    {
+                        name = name.Substring(startindex, (endindex - startindex) + 1);
+                        name2 = name;
+                        name2 = name2.Replace("[", "");
+                        name2 = name2.Replace("]", "");
+                    }
+                    PropertyInfo pro1 = t.GetProperty(name2);
+                    PropertyInfo pro2 = t2.GetProperty(name2);
+                    if (pro1 != null)
+                    {
+                        var val = pro1.GetValue(script);
+                        if (name2 == "password_initial" | name2 == "ticket")
+                            val = Cryptography.decrypt(val.ToString());
+
+                        if (name != sparam)
+                        {
+                            var newval = sparam.Replace(name, val.ToString());
+                            text.Append(newval);
+                            text.Append(Indicator);
+                        }
+                        else
+                        {
+                            var newval = "";
+                            if (val.GetType().Name == "DateTime")
+                                newval = DateUtil.ToDisplayDate4((DateTime)val);
+                            else
+                            {
+                                if (val != null)
+                                    newval = val.ToString();
+                            }
+                            text.Append(newval);
+                            text.Append(Indicator);
+                        }
 
 
-        //    public async Task<IActionResult> ManageAccount(SearchDTO model)
-        //    {
-        //        var userlogin = this._context.Users.Where(w => w.UserName == this.HttpContext.User.Identity.Name).FirstOrDefault();
-        //        if (userlogin == null)
-        //            return RedirectToAction("Logout", "Auth");
+                    }
+                    else if (pro2 != null)
+                    {
+                        var val = pro2.GetValue(script.visual_fim_user);
+                        if (name2 == "password_initial" | name2 == "ticket")
+                            val = Cryptography.decrypt(val.ToString());
+                        if (name != sparam)
+                        {
+                            var newval = sparam.Replace(name, val.ToString());
+                            text.Append(newval);
+                            text.Append(Indicator);
+                        }
+                        else
+                        {
+                            text.Append(val);
+                            text.Append(Indicator);
+                        }
 
-        //        //if (!string.IsNullOrEmpty(model.text_search))
-        //        {
-        //            model.ou = "Staff";
-        //            var admin = _context.table_visual_fim_user.Where(w => w.UserID == userlogin.ID).FirstOrDefault();
-        //            if (admin != null)
-        //            {
-        //                var roles = _context.AdminRoles.Where(w => w.visual_fim_user_id == admin.id).Select(s => s.Role.OU.OUName).ToArray();
-        //                var users = await provider.FindUser(model, roles, _context);
-        //                model.lists = users.AsQueryable();
-        //            }
-        //        }
-        //        //else
-        //        //model.lists = new List<AdUser>().AsQueryable();
+                    }
+                    else if (string.IsNullOrEmpty(name2))
+                    {
+                        text.Append(Indicator);
+                    }
+                    else
+                    {
+                        text.Append(name2);
+                        text.Append(Indicator);
+                    }
+                }
+                texts.Add(text.ToString().Substring(0, text.ToString().Length - 1));
+            }
+            var lists = texts;
 
-        //        ViewBag.Message = model.msg;
-        //        ViewBag.ReturnCode = model.code;
-        //        return View(model);
-        //    }
-        //   
-        //    public IActionResult MoveAccount()
-        //    {
-        //        return View();
-        //    }
-        //    public IActionResult OneDayPassword()
-        //    {
-        //        return View();
-        //    }
-        //    public async Task<IActionResult> VPN(SearchDTO model)
-        //    {
-        //        var userlogin = this._context.Users.Where(w => w.UserName == this.HttpContext.User.Identity.Name).FirstOrDefault();
-        //        if (userlogin == null)
-        //            return RedirectToAction("Logout", "Auth");
+            int skipRows = (model.pageno - 1) * _pagelen;
+            var itemcnt = lists.Count();
+            var pagelen = itemcnt / _pagelen;
+            if (itemcnt % _pagelen > 0)
+                pagelen += 1;
 
-        //        //if (!string.IsNullOrEmpty(model.text_search))
-        //        {
-        //            model.ou = "Staff";
-        //            var admin = _context.table_visual_fim_user.Where(w => w.UserID == userlogin.ID).FirstOrDefault();
-        //            if (admin != null)
-        //            {
-        //                var roles = _context.AdminRoles.Where(w => w.visual_fim_user_id == admin.id).Select(s => s.Role.OU.OUName).ToArray();
-        //                var users = await provider.FindUser(model, roles, _context);
-        //                model.lists = users.AsQueryable();
-        //            }
-        //        }
-        //        //else
-        //        //model.lists = new List<AdUser>().AsQueryable();
+            model.itemcnt = itemcnt;
+            model.pagelen = pagelen;
+            //model.lists = lists.Skip(skipRows).Take(_pagelen).AsQueryable();
+            model.lists = lists.AsQueryable();
+            ViewBag.Message = model.msg;
+            ViewBag.ReturnCode = model.code;
 
-        //        ViewBag.Message = model.msg;
-        //        ViewBag.ReturnCode = model.code;
-        //        return View(model);
-        //    }
+            string webRootPath = _env.WebRootPath;
+            var filename = webRootPath + "\\createscript.csv";
+            writeTextToFile(filename, texts.ToArray());
+
+            return View(model);
+        }
+        #endregion
     }
 }

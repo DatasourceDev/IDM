@@ -32,14 +32,16 @@
                     <p class="text-muted">
                         Edit User Information
                     </p>
-                </div><!--end page-title-box-->                
+                </div><!--end page-title-box-->
             </div>
         </div><!--end col-->
     </div>
     <!-- end page title end breadcrumb -->
     <!--end row-->
-    <form class="form-horizontal form-parsley" asp-action="AccountInfo" asp-controller="Account" >
+    <form class="form-horizontal form-parsley" asp-action="AccountInfo" asp-controller="Account">
         @Html.HiddenFor(m => m.id)
+        @Html.HiddenFor(m => m.ad_created)
+        @Html.HiddenFor(m => m.ldap_created)
         <div class="row">
             <div class="col-lg-12">
                 <div class="card">
@@ -98,6 +100,17 @@
                                         <input class="form-control" type="text" asp-for="basic_displayname" readonly>
                                         @Html.ValidationMessageFor(m => m.basic_displayname)
                                     </div>
+                                    <label class="col-sm-2 col-form-label text-right">AD</label>
+                                    <div class="col-sm-3 mt-2">
+                                        @if (Model.ad_created)
+                                        {
+                                            <span class="badge badge-success">Account have been created</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge badge-danger">Account has not found </span>
+                                        }
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -108,6 +121,17 @@
                                     <div class="col-sm-3">
                                         <input class="form-control" type="text" asp-for="cu_thcn" required>
                                         @Html.ValidationMessageFor(m => m.cu_thcn)
+                                    </div>
+                                    <label class="col-sm-2 col-form-label text-right">LDAP</label>
+                                    <div class="col-sm-3 mt-2">
+                                        @if (Model.ldap_created)
+                                        {
+                                            <span class="badge badge-success">Account have been created</span>
+                                        }
+                                        else
+                                        {
+                                    <span class="badge badge-danger">Account has not found </span>
+                                        }
                                     </div>
                                 </div>
                             </div>
@@ -120,6 +144,7 @@
                                         <input class="form-control" type="text" asp-for="cu_thsn" required>
                                         @Html.ValidationMessageFor(m => m.cu_thsn)
                                     </div>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -161,7 +186,7 @@
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label text-right">Telephone Number</label>
                                     <div class="col-sm-3">
-                                        <input class="form-control" type="text" asp-for="basic_telephonenumber" maxlength="10" required data-parsley-type="number">
+                                        <input class="form-control" type="text" asp-for="basic_telephonenumber" maxlength="10"  data-parsley-type="number">
                                         @Html.ValidationMessageFor(m => m.basic_telephonenumber)
                                     </div>
                                 </div>
@@ -172,7 +197,7 @@
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label text-right">Jobcode</label>
                                     <div class="col-sm-3">
-                                        <input class="form-control" type="text" asp-for="cu_jobcode" required maxlength="10">
+                                        <input class="form-control" type="text" asp-for="cu_jobcode"  maxlength="10">
                                         @Html.ValidationMessageFor(m => m.cu_jobcode)
                                     </div>
                                 </div>
@@ -183,7 +208,7 @@
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label text-right">Citizen ID</label>
                                     <div class="col-sm-3">
-                                        <input class="form-control" type="text" asp-for="cu_pplid" required maxlength="13" data-parsley-type="number">
+                                        <input class="form-control" type="text" asp-for="cu_pplid" required maxlength="13">
                                         @Html.ValidationMessageFor(m => m.cu_pplid)
                                     </div>
                                 </div>
@@ -274,10 +299,10 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label text-right">mailhost(LDAP)</label>
+                                    <label class="col-sm-3 col-form-label text-right">maildrop(LDAP)</label>
                                     <div class="col-sm-3">
-                                        <input class="form-control" type="text" asp-for="cu_mailhost" readonly>
-                                        @Html.ValidationMessageFor(m => m.cu_mailhost)
+                                        <input class="form-control" type="text" asp-for="cu_maildrop" readonly>
+                                        @Html.ValidationMessageFor(m => m.cu_maildrop)
                                     </div>
                                 </div>
                             </div>
@@ -325,7 +350,7 @@
 
 @section scripts{
     <script>
-     $(document).ready(function () {
+        $(document).ready(function () {
             CUexpire_Onchange();
         });
         function CUexpire_Onchange() {

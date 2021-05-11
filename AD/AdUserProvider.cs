@@ -262,6 +262,32 @@ namespace IDM.Identity
                 {
                     return new Result() { result = false, Message = "Account is duplicated" };
                 }
+                //using (DirectoryEntry de = new DirectoryEntry("LDAP://" + setup.Host + "/" + oufilter + setup.Base, setup.Username, setup.Password, AuthenticationTypes.FastBind))
+                //{
+                //    DirectoryEntry newUser = de.Children.Add("CN=" + model.basic_uid, "user");
+                //    newUser.Properties["samaccountname"].Value = model.basic_uid;
+                //    //d.Properties["userPassword"].Value = Cryptography.decrypt(model.basic_userPassword);
+                //    newUser.Properties["givenName"].Value = model.basic_givenname;
+                //    newUser.Properties["sn"].Value = model.basic_sn;
+                //    newUser.Properties["displayName"].Value = model.basic_displayname;
+                //    newUser.Properties["telephoneNumber"].Value = model.basic_telephonenumber;
+                //    newUser.Properties["mail"].Value = model.basic_mail;
+                //    newUser.Properties["userPrincipalName"].Value = model.basic_userprincipalname;
+                //    newUser.Properties["internetaccess"].Value = model.internetaccess;
+                //    newUser.Properties["netcastaccess"].Value = model.netcastaccess;
+                //    newUser.Properties["pplid"].Value = model.cu_pplid;
+                    
+                //    newUser.Properties["employeeID"].Value = model.cu_jobcode;
+                //    if (model.cu_nsaccountlock == "TRUE")
+                //        newUser.Properties["userAccountControl"].Value = userAccountControl.DisablePasswordNotRequired;
+                //    else
+                //        newUser.Properties["userAccountControl"].Value = userAccountControl.EnablePasswordNotRequired;
+                //    newUser.CommitChanges();
+                //    //newUser.Invoke("SetPassword", Cryptography.decrypt(model.basic_userPassword));
+                //    newUser.CommitChanges();
+                //    de.CommitChanges();
+                //}
+
                 UserPrincipal principal = new UserPrincipal(context, model.basic_uid, Cryptography.decrypt(model.basic_userPassword), true);
                 principal.SamAccountName = model.basic_uid;
                 principal.GivenName = model.basic_givenname;
@@ -270,13 +296,15 @@ namespace IDM.Identity
                 principal.VoiceTelephoneNumber = model.basic_telephonenumber;
                 principal.EmailAddress = model.basic_mail;
                 principal.UserPrincipalName = model.basic_userprincipalname;
+
                 principal.Save();
 
                 DirectoryEntry d = principal.GetUnderlyingObject() as DirectoryEntry;
                 d.Properties["internetaccess"].Value = model.internetaccess;
                 d.Properties["netcastaccess"].Value = model.netcastaccess;
                 d.Properties["pplid"].Value = model.cu_pplid;
-                d.Properties["employeeID"].Value = model.cu_jobcode;
+                if(!string.IsNullOrEmpty(model.cu_jobcode))
+                    d.Properties["employeeID"].Value = model.cu_jobcode;
                 if (model.cu_nsaccountlock == "TRUE")
                     d.Properties["userAccountControl"].Value = userAccountControl.DisablePasswordNotRequired;
                 else

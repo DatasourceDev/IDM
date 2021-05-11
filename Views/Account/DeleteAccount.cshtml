@@ -39,7 +39,7 @@
     </div>
     <!-- end page title end breadcrumb -->
     <!--end row-->
-    <form class="form-horizontal form-parsley" asp-action="DeleteAccount" asp-controller="Account" id="theForm"  method="get">
+    <form class="form-horizontal form-parsley" asp-action="DeleteAccount" asp-controller="Account" id="theForm" method="get">
 
         <div class="row">
             <div class="col-lg-12">
@@ -49,11 +49,15 @@
                         <div class="form-group row">
                             <div class="col-lg-9">
                                 <label class="col-form-label">คำค้น</label>
-                                <input class="form-control" type="text" placeholder="รหัสผู้ใช้, ชื่อ, นามสกุล, โทรศัพท์, อีเมล์" asp-for="text_search" required>
+                                <input class="form-control" type="text" placeholder="รหัสผู้ใช้, ชื่อ, นามสกุล, เลขประจำตัวประชาชน, รหัสพนักงาน, โทรศัพท์, อีเมล์" asp-for="text_search" required>
+                                @Html.ValidationMessageFor(m => m.text_search)
+
                             </div>
                             <div class="col-lg-2">
                                 <label class="col-form-label">ประเภทผู้ใช้</label>
                                 <select class="form-control" asp-for="usertype_search">
+                                    <option value="">All</option>
+
                                     <option value="@IDMUserType.affiliate">@IDMUserType.affiliate.toUserTypeName()</option>
                                     <option value="@IDMUserType.outsider">@IDMUserType.outsider.toUserTypeName()</option>
                                     <option value="@IDMUserType.staff">@IDMUserType.staff.toUserTypeName()</option>
@@ -90,6 +94,7 @@
                                                     <th>Telephone Number</th>
                                                     <th>Jobcode</th>
                                                     <th>Citizen ID</th>
+                                                    <th>Create Date</th>
                                                     <th></th>
                                                 </tr>
                                             </thead>
@@ -111,6 +116,7 @@
                                                             <td>@item.basic_telephonenumber</td>
                                                             <td>@item.cu_jobcode</td>
                                                             <td>@item.cu_pplid</td>
+                                                            <td>@item.system_create_date</td>
                                                             <td>
                                                                 <a href="#" onclick="deleteaccount('@item.basic_uid')"><i class="far fa-trash-alt text-danger font-16"></i></a>
                                                             </td>

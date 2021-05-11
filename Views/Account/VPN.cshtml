@@ -49,11 +49,15 @@
                         <div class="form-group row">
                             <div class="col-lg-9">
                                 <label class="col-form-label">คำค้น</label>
-                                <input class="form-control" type="text" placeholder="รหัสผู้ใช้, ชื่อ, นามสกุล, โทรศัพท์, อีเมล์" asp-for="text_search">
+                                <input class="form-control" type="text" placeholder="รหัสผู้ใช้, ชื่อ, นามสกุล, เลขประจำตัวประชาชน, รหัสพนักงาน, โทรศัพท์, อีเมล์" asp-for="text_search">
+                                @Html.ValidationMessageFor(m => m.text_search)
+
                             </div>
                             <div class="col-lg-2">
                                 <label class="col-form-label">ประเภทผู้ใช้</label>
                                 <select class="form-control" asp-for="usertype_search">
+                                    <option value="">All</option>
+
                                     <option value="@IDMUserType.affiliate">@IDMUserType.affiliate.toUserTypeName()</option>
                                     <option value="@IDMUserType.outsider">@IDMUserType.outsider.toUserTypeName()</option>
                                     <option value="@IDMUserType.staff">@IDMUserType.staff.toUserTypeName()</option>

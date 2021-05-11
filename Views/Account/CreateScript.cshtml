@@ -1,4 +1,7 @@
-﻿@using IDM.Extensions
+﻿@model IDM.DTO.SearchDTO
+@using IDM.Identity;
+@using IDM.Extensions
+@using IDM.DTO
 @{
     ViewData["Title"] = "สร้างสคริปต์";
 
@@ -37,7 +40,327 @@
     </div>
     <!-- end page title end breadcrumb -->
     <!--end row-->
-    <h3 style="color:#f00">
-        ขอข้อมูลเพิ่มเติมเรื่อง format script ที่ยังใช้งานและไม่ได้ใช้แล้ว
-    </h3>
+    <form class="form-horizontal form-parsley" asp-action="CreateScript" asp-controller="Account" method="get">
+     
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="mt-0 header-title">ค้นหา</h4>
+                        <div class="form-group row">
+                            <div class="col-lg-6">
+                                <label class="col-form-label">Format</label>
+                                <select class="form-control" asp-for="script_format" onchange="Format_Onchange()">
+                                    <option value="@ScriptFormat.UNIX1">@ScriptFormat.UNIX1.ToString()</option>
+                                    <option value="@ScriptFormat.Print">@ScriptFormat.Print.ToString()</option>
+                                    <option value="@ScriptFormat.GW1">@ScriptFormat.GW1.ToString()</option>
+                                    <option value="@ScriptFormat.GW2">@ScriptFormat.GW2.ToString()</option>
+                                    <option value="@ScriptFormat.pigeon">@ScriptFormat.pigeon.ToString()</option>
+                                    <option value="@ScriptFormat.cano">@ScriptFormat.cano.ToString()</option>
+                                    <option value="@ScriptFormat.BB">@ScriptFormat.BB.ToString()</option>
+                                    <option value="@ScriptFormat.EDMS">@ScriptFormat.EDMS.ToString()</option>
+                                    <option value="@ScriptFormat.Info">@ScriptFormat.Info.ToString()</option>
+                                    <option value="@ScriptFormat.pommo">@ScriptFormat.pommo.ToString()</option>
+                                    <option value="@ScriptFormat.Other">@ScriptFormat.Other.ToString()</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-lg-4">
+                                <select class="form-control" id="attrname">
+                                    <option selected="selected" value="[displayname]">displayname</option>
+                                    <option value="[login_name]">login_name</option>
+                                    <option value="[password_initial]">password_initial</option>
+                                    <option value="[ticket]">ticket</option>
+                                    <option value="[email_address]">email_address</option>
+                                    <option value="[server_name]">server_name</option>
+                                    <option value="[expire]">expire</option>
+                                    <option value="[status_id]">status_id</option>
+                                    <option value="[org]">org</option>
+                                    <option value="[create_date]">create_date</option>
+                                    <option value="[receive_date]">receive_date</option>
+                                    <option value="[manage_by]">manage_by</option>
+                                    <option value="[id]">id</option>
+                                    <option value="[basic_dn]">basic_dn</option>
+                                    <option value="[basic_cn]">basic_cn</option>
+                                    <option value="[basic_sn]">basic_sn</option>
+                                    <option value="[basic_displayname]">basic_displayname</option>
+                                    <option value="[basic_mail]">basic_mail</option>
+                                    <option value="[basic_mobile]">basic_mobile</option>
+                                    <option value="[basic_uid]">basic_uid</option>
+                                    <option value="[basic_givenname]">basic_givenname</option>
+                                    <option value="[basic_userprincipalname]">basic_userprincipalname</option>
+                                    <option value="[basic_telephonenumber]">basic_telephonenumber</option>
+                                    <option value="[cu_nsaccountlock]">cu_nsaccountlock</option>
+                                    <option value="[cu_mailhost]">cu_mailhost</option>
+                                    <option value="[cu_mailRoutingAddress]">cu_mailRoutingAddress</option>
+                                    <option value="[cu_maildrop]">cu_maildrop</option>
+                                    <option value="[cu_mailacceptinggeneralid]">cu_mailacceptinggeneralid</option>
+                                    <option value="[cu_pwdchangedby]">cu_pwdchangedby</option>
+                                    <option value="[cu_pwdchangedloc]">cu_pwdchangedloc</option>
+                                    <option value="[cu_gecos]">cu_gecos</option>
+                                    <option value="[cu_thcn]">cu_thcn</option>
+                                    <option value="[cu_thsn]">cu_thsn</option>
+                                    <option value="[cu_CUexpire]">cu_CUexpire</option>
+                                    <option value="[cu_jobcode]">cu_jobcode</option>
+                                    <option value="[cu_pplid]">cu_pplid</option>
+                                    <option value="[cu_sce_package]">cu_sce_package</option>
+                                    <option value="[unix_gidNumber]">unix_gidNumber</option>
+                                    <option value="[unix_uidNumber]">unix_uidNumber</option>
+                                    <option value="[unix_homeDirectory]">unix_homeDirectory</option>
+                                    <option value="[unix_loginShell]">unix_loginShell</option>
+                                    <option value="[unix_inetCOS]">unix_inetCOS</option>
+                                    <option value="[mail_miWmprefFullName]">mail_miWmprefFullName</option>
+                                    <option value="[mail_miWmprefEmailAddress]">mail_miWmprefEmailAddress</option>
+                                    <option value="[mail_miWmprefReplyOption]">mail_miWmprefReplyOption</option>
+                                    <option value="[mail_miWmprefTimezone]">mail_miWmprefTimezone</option>
+                                    <option value="[mail_miWmprefCharset]">mail_miWmprefCharset</option>
+                                    <option value="[system_question1]">system_question1</option>
+                                    <option value="[system_answer1]">system_answer1</option>
+                                    <option value="[system_question2]">system_question2</option>
+                                    <option value="[system_answer2]">system_answer2</option>
+                                    <option value="[system_question3]">system_question3</option>
+                                    <option value="[system_answer3]">system_answer3</option>
+                                    <option value="[system_create_by_uid]">system_create_by_uid</option>
+                                    <option value="[system_modify_by_uid]">system_modify_by_uid</option>
+                                    <option value="[system_last_accessed_by_uid]">system_last_accessed_by_uid</option>
+                                    <option value="[system_create_date]">system_create_date</option>
+                                    <option value="[system_modify_date]">system_modify_date</option>
+                                    <option value="[system_last_accessed_date]">system_last_accessed_date</option>
+                                    <option value="[system_waiting_time_for_access]">system_waiting_time_for_access</option>
+                                    <option value="[system_temporary_user_expire_date_counter]">system_temporary_user_expire_date_counter</option>
+                                    <option value="[system_org]">system_org</option>
+                                    <option value="[system_enable_password_forgot]">system_enable_password_forgot</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-2">
+                                <a class="btn btn-success btn-block" onclick="AddAttr_Onclick()">Add Attribute</a>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-lg-12">
+                                @*<textarea class="form-control" asp-for="script_param" rows="3"></textarea>*@
+                                <input class="form-control" asp-for="script_param"/>
+                                <table id="table_parameter" cellpadding="5" cellspacing="5" style="display:none">
+                                    <thead>
+                                        <tr>
+                                            <th>No.</th>
+                                            <th>Colunm Name</th>
+                                            @*<th>Indicator</th>*@
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-lg-2">
+                                <label class="col-form-label">วันที่</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control dpicker" asp-for="dfrom">
+                                </div>
+                            </div>
+                            <div class="col-lg-2">
+                                <label class="col-form-label">ถึง</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control dpicker" asp-for="dto">
+                                </div>
+                            </div>
+                            <div class="col-lg-2">
+                                <label class="col-form-label"><br /></label>
+                                <button class="btn btn-primary btn-block" type="submit">ค้นหา</button>
+                            </div>
+                            <div class="col-lg-2">
+                                <label class="col-form-label"><br /></label>
+                                <button class="btn btn-success btn-block" type="submit" value="csv" name="option">CSV</button>
+                                <a id="btndownload" style="display:none" class="btn btn-success btn-block" target="_blank" href="../createscript.csv" title="save">CSV</a>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-lg-12">
+                                <div class="table-rep-plugin">
+                                    <div class="table-responsive mb-0" data-pattern="priority-columns">
+                                        <table id="table_data" class="table table-striped mb-0">
+                                            <tbody>
+                                                @if (Model.lists != null)
+                                                {
+                                                    foreach (string item in Model.lists)
+                                                    {
+                                                <tr>
+                                                    <td>@item</td>
+                                                </tr>
+                                                    }
+
+                                                }
+                                                @if (Model.lists == null || Model.lists.Count() == 0)
+                                                {
+                                                <tr>
+                                                    <td colspan="7" class="text-center">ไม่พบข้อมูล</td>
+                                                </tr>
+                                                }
+                                            </tbody>
+
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div> <!-- end card-body -->
+                </div> <!-- end card -->
+            </div> <!-- end col -->
+            <!-- end col -->
+        </div>
+    </form>
 </div><!-- container -->
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            InitColumn();
+            if ('@Model.option' == 'csv') {
+                $('#btndownload').get(0).click();
+            }
+        });
+        function clear_data_table() {
+            var table_data = document.getElementById("table_data");
+            $(table_data).find('tbody').find('tr').remove();
+        }
+        function Format_Onchange() {
+            var script_format = $('#script_format').val();
+            if (script_format == '@ScriptFormat.UNIX1') {
+                $('#script_param').val('@ScriptFormatParam.UNIX1');
+            }
+            else if (script_format == '@ScriptFormat.Print') {
+                $('#script_param').val('@ScriptFormatParam.Print');
+            }
+            else if (script_format == '@ScriptFormat.GW1') {
+                $('#script_param').val('@ScriptFormatParam.GW1');
+            }
+            else if (script_format == '@ScriptFormat.GW2') {
+                $('#script_param').val('@ScriptFormatParam.GW2');
+            }
+            else if (script_format == '@ScriptFormat.pigeon') {
+                $('#script_param').val('@ScriptFormatParam.pigeon');
+            }
+            else if (script_format == '@ScriptFormat.cano') {
+                $('#script_param').val('@ScriptFormatParam.cano');
+            }
+            else if (script_format == '@ScriptFormat.BB') {
+                $('#script_param').val('@ScriptFormatParam.BB');
+            }
+            else if (script_format == '@ScriptFormat.EDMS') {
+                $('#script_param').val('@ScriptFormatParam.EDMS');
+            }
+            else if (script_format == '@ScriptFormat.Info') {
+                $('#script_param').val('@ScriptFormatParam.Info');
+            }
+            else if (script_format == '@ScriptFormat.pommo') {
+                $('#script_param').val('@ScriptFormatParam.pommo');
+            }
+            else if (script_format == '@ScriptFormat.Other') {
+                $('#script_param').val('@ScriptFormatParam.Other');
+            }
+
+            InitColumn();
+            clear_data_table();
+        }
+        function InitColumn() {
+            var table_parameter = document.getElementById("table_parameter");
+            $(table_parameter).find('tbody').find('tr').remove();
+            var script_format = $('#script_format').val();
+            var script_param =$('#script_param').val();
+            if (script_param == null || script_param == '')
+                script_param = '@Model.script_param';
+
+            if (script_format == '@ScriptFormat.UNIX1') {
+                var params = script_param.split(':');
+                for (var i = 0; i < params.length; i++) {
+                    $(table_parameter).find('tbody').append('<tr><td>' + (i + 1) + '</td><td>' + params[i] + '</td></tr>');
+                }
+            }
+            else if (script_format == '@ScriptFormat.Print') {
+                var params = script_param.split(':');
+                for (var i = 0; i < params.length; i++) {
+                    $(table_parameter).find('tbody').append('<tr><td>' + (i + 1) + '</td><td>' + params[i] + '</td></tr>');
+                }
+            }
+            else if (script_format == '@ScriptFormat.GW1') {
+                var params = script_param.split(':');
+                for (var i = 0; i < params.length; i++) {
+                    $(table_parameter).find('tbody').append('<tr><td>' + (i + 1) + '</td><td>' + params[i] + '</td></tr>');
+                }
+            }
+            else if (script_format == '@ScriptFormat.GW2') {
+                var params = script_param.split(':');
+                for (var i = 0; i < params.length; i++) {
+                    $(table_parameter).find('tbody').append('<tr><td>' + (i + 1) + '</td><td>' + params[i] + '</td></tr>');
+                }
+            }
+            else if (script_format == '@ScriptFormat.pigeon') {
+                var params = script_param.split(',');
+                for (var i = 0; i < params.length; i++) {
+                    $(table_parameter).find('tbody').append('<tr><td>' + (i + 1) + '</td><td>' + params[i] + '</td></tr>');
+                }
+            }
+            else if (script_format == '@ScriptFormat.cano') {
+                var params = script_param.split(',');
+                for (var i = 0; i < params.length; i++) {
+                    $(table_parameter).find('tbody').append('<tr><td>' + (i + 1) + '</td><td>' + params[i] + '</td></tr>');
+                }
+            }
+            else if (script_format == '@ScriptFormat.BB') {
+                var params = script_param.split('|');
+                for (var i = 0; i < params.length; i++) {
+                    $(table_parameter).find('tbody').append('<tr><td>' + (i + 1) + '</td><td>' + params[i] + '</td></tr>');
+                }
+            }
+            else if (script_format == '@ScriptFormat.EDMS') {
+                var params = script_param.split(':');
+                for (var i = 0; i < params.length; i++) {
+                    $(table_parameter).find('tbody').append('<tr><td>' + (i + 1) + '</td><td>' + params[i] + '</td></tr>');
+                }
+            }
+            else if (script_format == '@ScriptFormat.Info') {
+                var params = script_param.split(':');
+                for (var i = 0; i < params.length; i++) {
+                    $(table_parameter).find('tbody').append('<tr><td>' + (i + 1) + '</td><td>' + params[i] + '</td></tr>');
+                }
+            }
+            else if (script_format == '@ScriptFormat.pommo') {
+                var params = script_param.split(':');
+                for (var i = 0; i < params.length; i++) {
+                    $(table_parameter).find('tbody').append('<tr><td>' + (i + 1) + '</td><td>' + params[i] + '</td></tr>');
+                }
+            }
+            else if (script_format == '@ScriptFormat.Other') {
+                var params = script_param.split(':');
+                for (var i = 0; i < params.length; i++) {
+                    $(table_parameter).find('tbody').append('<tr><td>' + (i + 1) + '</td><td>' + params[i] + '</td></tr>');
+                }
+            }
+            $('#script_param').val(script_param);
+        }
+
+        function AddAttr_Onclick() {
+            var attr = $('#attrname').val();
+            var script_format = $('#script_format').val();
+            var script_param = $('#script_param').val();
+            var table_parameter = document.getElementById("table_parameter");
+            var trcnt = $(table_parameter).find('tbody').find('tr').length;
+            $(table_parameter).find('tbody').append('<tr><td>' + (trcnt + 1) + '</td><td>' + attr + '</td></tr>');
+
+            if (script_format == '@ScriptFormat.BB')
+                script_param += '|';
+            else if (script_format == '@ScriptFormat.pigeon' | script_format == '@ScriptFormat.cano')
+                script_param += ',';
+            else
+                script_param += ':';
+            script_param += attr;
+
+            $('#script_param').val(script_param);
+        }
+    </script>
+}

@@ -151,6 +151,9 @@ namespace IDM.Controllers
        
         public IActionResult Setup()
         {
+            if (!checkrole(new string[] { UserRole.admin }))
+                return RedirectToAction("Logout", "Auth");
+
             var model = _context.table_setup.FirstOrDefault();
             if (model == null)
                 model = new setup();
@@ -159,7 +162,7 @@ namespace IDM.Controllers
         [HttpPost]
         public IActionResult Setup(setup model)
         {
-            if (!checkrole())
+            if (!checkrole(new string[] { UserRole.admin}))
                 return RedirectToAction("Logout", "Auth");
 
             var userlogin = this._context.table_visual_fim_user.Where(w => w.basic_uid == this.HttpContext.User.Identity.Name).FirstOrDefault();

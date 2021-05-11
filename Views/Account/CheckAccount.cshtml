@@ -1,28 +1,160 @@
-﻿@{
+﻿@model IDM.DTO.SearchDTO
+@using IDM.Identity;
+@using IDM.Extensions
+@{
     ViewData["Title"] = "ตรวจสอบสถานะแอคเคาท์";
 
 }
-
 <div class="container-fluid">
-    <!-- Page-Title -->
     <div class="row">
         <div class="col-sm-12">
-            <div class="page-title-box">
-                <div class="float-right">
-                </div>
-                <h4 class="page-title">ตรวจสอบสิทธิ์บัญชีรายชื่อผู้ใช้</h4>
-                <p class="text-muted">
-                    Check Account Status
-                </p>
-            </div><!--end page-title-box-->
+            <div aria-live="polite" aria-atomic="true" style="position: relative;">
+                <div class="page-title-box">
+                    <div class="float-right" style="width:50%">
+                        @if (ViewBag.ReturnCode != null)
+                        {
+                            @if (ViewBag.ReturnCode == ReturnCode.Success)
+                            {
+                                <div class="alert alert-success  border-0" role="alert">
+                                    <i class="mdi mdi-check-circle-outline font-18 mr-1"></i>
+                                    <strong class="font-18">@ViewBag.Message</strong>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="alert alert-danger border-0" role="alert">
+                                    <i class="mdi mdi-close-circle-outline font-18 mr-1"></i>
+                                    <strong class="font-18">@ViewBag.Message</strong>
+                                </div>
+                            }
+                        }
+                    </div>
+                    <h4 class="page-title">ตรวจสอบสถานะแอคเคาท์</h4>
+                    <p class="text-muted">
+                        Check Account
+                    </p>
+                </div><!--end page-title-box-->
+            </div>
         </div><!--end col-->
     </div>
     <!-- end page title end breadcrumb -->
     <!--end row-->
+    <form class="form-horizontal form-parsley" asp-action="CheckAccount" asp-controller="Account" method="get">
+        <!-- end row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="mt-0 header-title">ค้นหา</h4>
+                        <div class="form-group row">
+                            <div class="col-lg-9">
+                                <label class="col-form-label">คำค้น</label>
+                                <input class="form-control" type="text" placeholder="รหัสผู้ใช้, ชื่อ, นามสกุล, เลขประจำตัวประชาชน, รหัสพนักงาน, โทรศัพท์, อีเมล์" asp-for="text_search" required>
+                                @Html.ValidationMessageFor(m => m.text_search)
 
-    
-    <!-- end row -->
+                            </div>
+                            <div class="col-lg-2">
+                                <label class="col-form-label">ประเภทผู้ใช้</label>
+                                <select class="form-control" asp-for="usertype_search">
+                                    <option value="">All</option>
+
+                                    <option value="@IDMUserType.affiliate">@IDMUserType.affiliate.toUserTypeName()</option>
+                                    <option value="@IDMUserType.outsider">@IDMUserType.outsider.toUserTypeName()</option>
+                                    <option value="@IDMUserType.staff">@IDMUserType.staff.toUserTypeName()</option>
+                                    <option value="@IDMUserType.student">@IDMUserType.student.toUserTypeName()</option>
+                                    <option value="@IDMUserType.temporary">@IDMUserType.temporary.toUserTypeName()</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-1">
+                                <label class="col-form-label"><br /></label>
+                                <button class="btn btn-primary btn-block" type="submit">ค้นหา</button>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-lg-12">
+                                <div class="table-rep-plugin">
+                                    <div class="table-responsive mb-0" data-pattern="priority-columns">
+                                        <table class="table table-striped mb-0 font-12">
+                                            <thead>
+                                                <tr>
+                                                    <th>Login Name</th>
+                                                    <th>First Name</th>
+                                                    <th>Last Name</th>
+                                                    <th>First Name (Th)</th>
+                                                    <th>Last Name (Th)</th>
+                                                    <th>Mail</th>
+                                                    <th>Telephone Number</th>
+                                                    <th>Jobcode</th>
+                                                    <th>Citizen ID</th>
+                                                    <th>User Type</th>
+                                                    <th>Locked</th>
+                                                    <th>Internet Access</th>
+                                                    <th>Netcast Access</th>
+                                                    <th>Changed By</th>
+                                                    <th>Changed From</th>
+                                                    <th>Last Password Change</th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @if (Model.lists != null)
+                                                {
+                                                    foreach (visual_fim_user item in Model.lists)
+                                                    {
+                                                        <tr>
+                                                            <td>@item.basic_uid</td>
+                                                            <td>@item.basic_givenname</td>
+                                                            <td>@item.basic_sn</td>
+                                                            <td>@item.cu_thcn</td>
+                                                            <td>@item.cu_thsn</td>
+                                                            <td>@item.basic_mail</td>
+                                                            <td>@item.basic_telephonenumber</td>
+                                                            <td>@item.cu_jobcode</td>
+                                                            <td>@item.cu_pplid</td>
+                                                            <td>@item.system_idm_user_type.toUserTypeName()</td>
+                                                            <td>
+                                                                @if (item.cu_nsaccountlock == LockStaus.Unlock)
+                                                                {
+                                                                    <span id="stutus-@item.basic_uid" class="badge badge-success">@item.cu_nsaccountlock</span>
+
+                                                                }
+                                                                else
+                                                                {
+                                                                    <span id="stutus-@item.basic_uid" class="badge badge-danger">@item.cu_nsaccountlock</span>
+                                                                }
+                                                            </td>
+                                                            <td>@item.internetaccess</td>
+                                                            <td>@item.netcastaccess</td>
+                                                            <td>@DateUtil.ToDisplayDateTime(item.system_modify_date)</td>
+                                                            <td>@item.system_modify_by_uid</td>
+                                                            <td>@DateUtil.ToDisplayDateTime(item.cu_pwdchangeddate)</td>
+                                                            <td>
+                                                                <a href="@Url.Action("AccountInfo","Account", new{id=item.id })" target="_blank"><i class="far fa-edit font-16"></i></a>
+                                                            </td>
+                                                        </tr>
+                                                    }
+
+                                                }
+                                                @if (Model.lists == null || Model.lists.Count() == 0)
+                                                {
+                                                    <tr>
+                                                        <td colspan="14" class="text-center">ไม่พบข้อมูล</td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div> <!-- end card-body -->
+                </div> <!-- end card -->
+            </div> <!-- end col -->
+            <!-- end col -->
+        </div>
+    </form>
 
 </div><!-- container -->
-
-

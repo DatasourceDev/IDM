@@ -32,6 +32,9 @@ namespace IDM.Controllers
         }
         public IActionResult Log(SearchDTO model)
         {
+            if (!checkrole(new string[] { UserRole.admin, UserRole.helpdesk, UserRole.approve }))
+                return RedirectToAction("Logout", "Auth");
+
             var lists = new List<system_log>();
 
             if (string.IsNullOrEmpty(model.dfrom))
@@ -140,7 +143,8 @@ namespace IDM.Controllers
             //model.itemcnt = itemcnt;
             //model.pagelen = pagelen;
             ////model.lists = lists.Skip(skipRows).Take(_pagelen).AsQueryable();
-            model.lists = lists.AsQueryable();
+            
+            model.lists = lists.OrderByDescending(o=>  o.log_datetime).AsQueryable();
 
             return View(model);
         }

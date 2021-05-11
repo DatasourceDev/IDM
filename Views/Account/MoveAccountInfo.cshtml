@@ -177,7 +177,7 @@
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label text-right">Telephone Number</label>
                                     <div class="col-sm-3">
-                                        <input class="form-control" type="text" asp-for="basic_telephonenumber" maxlength="10" readonly data-parsley-type="number">
+                                        <input class="form-control" type="text" asp-for="basic_telephonenumber" maxlength="10" readonly >
                                         @Html.ValidationMessageFor(m => m.basic_telephonenumber)
                                     </div>
                                 </div>
@@ -199,7 +199,7 @@
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label text-right">Citizen ID</label>
                                     <div class="col-sm-3">
-                                        <input class="form-control" type="text" asp-for="cu_pplid" readonly maxlength="13" data-parsley-type="number">
+                                        <input class="form-control" type="text" asp-for="cu_pplid" readonly maxlength="13" >
                                         @Html.ValidationMessageFor(m => m.cu_pplid)
                                     </div>
                                 </div>

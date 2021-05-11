@@ -20,6 +20,9 @@ namespace IDM
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
+                    webBuilder.ConfigureKestrel(options => {
+                        options.Limits.KeepAliveTimeout = TimeSpan.FromDays(1);
+                    });
                     webBuilder.UseStartup<Startup>();
                 });
     }

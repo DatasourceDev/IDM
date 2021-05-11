@@ -34,6 +34,11 @@ namespace IDM.DTO
         public string dto { get; set; }
         public string import_option { get; set; }
 
+        public string option { get; set; }
+        public ScriptFormat script_format { get; set; }
+        public string script_param { get; set; }
+
+
         private int _pageno; // field
         public int pageno {
             get
@@ -225,5 +230,24 @@ namespace IDM.DTO
         public bool Upper { get; set; }
 
         public List<string> Passwords { get; set; }
+    }
+
+    public class script_temp
+    {
+        public Int64 id { get; set; }
+        public string displayname { get; set; }
+
+        public string login_name { get; set; }
+        public string password_initial { get; set; }
+        public string email_address { get; set; }
+        public string server_name { get; set; }
+        public string expire { get; set; }
+        public string status_id { get; set; }
+        public string org { get; set; }
+        public DateTime? create_date { get; set; }
+        public DateTime? receive_date { get; set; }
+        public string manage_by { get; set; }
+        public string ticket { get; set; }
+        public visual_fim_user visual_fim_user { get; set; }
     }
 }

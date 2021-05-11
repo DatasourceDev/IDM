@@ -37,7 +37,10 @@ namespace IDM
             services.AddRazorPages().AddRazorRuntimeCompilation();
 
             services.AddMvc().AddSessionStateTempDataProvider();
-            services.AddSession();
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromDays(1);
+            });
 
 
             var connectionString = Configuration.GetConnectionString("DefaultConnection");
@@ -65,12 +68,14 @@ namespace IDM
                 {
                     options.LoginPath = "/Auth/Login";
                     options.LogoutPath = "/Auth/Logout";
+                    options.ExpireTimeSpan = TimeSpan.FromDays(1);
                 });
 
 
                 services.ConfigureApplicationCookie(options =>
                 {
                     options.AccessDeniedPath = "/Auth/Login";
+                    options.ExpireTimeSpan = TimeSpan.FromDays(1);
                 });
             }
             else
@@ -186,6 +191,8 @@ namespace IDM
         public string DefaultValue_inetCOSForTemporaryAccount { get; set; }
         public string DefaultValue_SCE_Package { get; set; }
         public string DefaultValue_OU_Filter { get; set; }
+
+        public string TableReceiveAccount_ServerName { get; set; }
 
     }
 }

@@ -26,6 +26,10 @@ namespace IDM.Models
         public string cu_pplid { get; set; }
         public string system_org { get; set; }
         public string faculty_shot_name { get; set; }
+        public string structure_1 { get; set; }
+        public string structure_2 { get; set; }
+        public string status { get; set; }
+        public string cu_CUexpire { get; set; }
 
         public ImportType import_Type { get; set; }
         public IDMUserType system_idm_user_types { get; set; }

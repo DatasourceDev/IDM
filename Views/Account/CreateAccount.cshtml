@@ -65,9 +65,13 @@
                                     <label class="col-sm-3 col-form-label text-right">ชื่อ-นามสกุล(ไทย)</label>
                                     <div class="col-sm-4">
                                         <input class="form-control" type="text" asp-for="cu_thcn" required>
+                                        @Html.ValidationMessageFor(m => m.cu_thcn)
+
                                     </div>
                                     <div class="col-sm-4">
                                         <input class="form-control" type="text" asp-for="cu_thsn" required>
+                                        @Html.ValidationMessageFor(m => m.cu_thsn)
+
                                     </div>
                                 </div>
                             </div>
@@ -77,7 +81,9 @@
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label text-right">เลขประจำตัวประชาชน</label>
                                     <div class="col-sm-4">
-                                        <input class="form-control" type="text" asp-for="cu_pplid" maxlength="13" data-parsley-type="number">
+                                        <input class="form-control" type="text" asp-for="cu_pplid" maxlength="13" required onchange="cu_pplid_Onchange()">
+                                        @Html.ValidationMessageFor(m => m.cu_pplid)
+                                        <h5 id="cu_pplid_info" class="text-blue" style="display:none">เลขประจำตัวประชาชนซ้ำในระบบ</h5>
                                     </div>
                                 </div>
                             </div>
@@ -87,7 +93,8 @@
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label text-right">หมายเลขโทรศัพท์</label>
                                     <div class="col-sm-4">
-                                        <input class="form-control" type="text" asp-for="basic_telephonenumber" maxlength="10" required data-parsley-type="number">
+                                        <input class="form-control" type="text" asp-for="basic_telephonenumber">
+                                        @Html.ValidationMessageFor(m => m.basic_telephonenumber)
                                     </div>
                                 </div>
                             </div>
@@ -98,6 +105,7 @@
                                     <label class="col-sm-3 col-form-label text-right">รหัสพนักงาน/รหัสนิสิต</label>
                                     <div class="col-sm-4 mt-2">
                                         <input class="form-control" type="text" asp-for="cu_jobcode" maxlength="10">
+                                        @Html.ValidationMessageFor(m => m.cu_jobcode)
                                     </div>
                                 </div>
                             </div>
@@ -108,7 +116,7 @@
                                     <label class="col-sm-3 col-form-label text-right">วันหมดอายุ</label>
                                     <div class="col-sm-2 mt-2">
                                         <div class="checkbox">
-                                            <input  type="checkbox" asp-for="cu_CUexpire_select"  onchange="CUexpire_Onchange()">
+                                            <input type="checkbox" asp-for="cu_CUexpire_select" onchange="CUexpire_Onchange()">
                                             <label for="cu_CUexpire_select">
                                                 ไม่มีวันหมดอายุ
                                             </label>
@@ -202,7 +210,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="form-group row">
@@ -230,6 +238,25 @@
             if ($('#system_faculty_id').val() != null)
                 FacultyOnchange(document.getElementById("system_faculty_id"), '@Model.system_sub_office_id');
         });
+        function cu_pplid_Onchange() {
+            var pplid = $('#cu_pplid').val();
+             $.ajax({
+                type: 'get',
+                url: '@Url.Action("LoadIsExistCitizenID", "Account")',
+                contentType: 'application/json; charset=utf-8',
+                data: { pplid: pplid },
+                dataType: 'json',
+                 success: function (data) {
+                     $('#cu_pplid_info').hide();
+                    if (data != null) {
+                        if (data.result == true) {
+                            $('#cu_pplid_info').show();
+                        }
+                    }
+                }
+            });
+        }
+
         function FacultyOnchange (obj, sID) {
          if (obj.attributes.relatedto == null)
                return;
@@ -273,7 +300,7 @@
                     }
                     $('#' + relatedto).html(result);
                     Lvl2Onchange(document.getElementById(relatedto), system_ou_lvl3);
-                    
+
                 }
             });
         }

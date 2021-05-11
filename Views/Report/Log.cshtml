@@ -65,6 +65,7 @@
                                     <option value="@LogType.log_delete_account">@(LogType.log_delete_account.ToString())</option>
                                     <option value="@LogType.log_delete_account_with_file">@(LogType.log_delete_account_with_file.ToString())</option>
                                     <option value="@LogType.log_change_password">@(LogType.log_change_password.ToString())</option>
+                                    <option value="@LogType.log_reset_password">@(LogType.log_reset_password.ToString())</option>
                                     <option value="@LogType.log_lock_account">@(LogType.log_lock_account.ToString())</option>
                                     <option value="@LogType.log_unlock_account">@(LogType.log_unlock_account.ToString())</option>
                                     <option value="@LogType.log_lock_account_with_file">@(LogType.log_lock_account_with_file.ToString())</option>
@@ -72,10 +73,11 @@
                                     <option value="@LogType.log_edit_internetaccess">@(LogType.log_edit_internetaccess.ToString())</option>
                                     <option value="@LogType.log_approve_reset_password">@(LogType.log_approve_reset_password.ToString())</option>
                                     <option value="@LogType.log_approved_reset_password">@(LogType.log_approved_reset_password.ToString())</option>
+                                    <option value="@LogType.log_reset_password_api">@(LogType.log_reset_password_api.ToString())</option>
                                 </select>
                             </div>
                         </div>
-                        <div class="form-group row">                            
+                        <div class="form-group row">
                             <div class="col-lg-1">
                                 <button class="btn btn-primary btn-block" type="submit">ค้นหา</button>
                             </div>
@@ -95,6 +97,7 @@
                                                     <th>รายละเอียด</th>
                                                     <th>IP ต้นทาง</th>
                                                     <th>IP ปลายทาง</th>
+                                                    @*<th>Url</th>*@
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -112,6 +115,7 @@
                                                             <td>@item.log_description</td>
                                                             <td>@item.log_ip</td>
                                                             <td>@item.log_target_ip</td>
+                                                            @*<td>@item.log_target</td>*@
                                                         </tr>
                                                         row++;
                                                     }

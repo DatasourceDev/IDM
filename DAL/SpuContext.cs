@@ -27,7 +27,11 @@ namespace IDM.DAL
         public DbSet<cu_email_student> table_cu_email_student { get; set; }
         public DbSet<import> table_import { get; set; }
         public DbSet<reset_password_temp> table_reset_password_temp { get; set; }
-        
+
+        public DbSet<receive_staff> table_receive_staff { get; set; }
+        public DbSet<receive_student> table_receive_student { get; set; }
+        public DbSet<receive_temp> table_receive_temp { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             foreach (var relationship in modelBuilder.Model.GetEntityTypes().SelectMany(e => e.GetForeignKeys()))

@@ -180,6 +180,7 @@ namespace IDM.Extensions
          }
       }
 
+
       public static string ToDisplayDate3(Nullable<DateTime> d)
       {
          try
@@ -199,7 +200,20 @@ namespace IDM.Extensions
             return "";
          }
       }
-      public static string ToDisplayFullDayOfweek(Nullable<DateTime> d)
+
+        public static string ToDisplayDate4(DateTime d)
+        {
+            try
+            {
+                CultureInfo UsaCulture = new CultureInfo("en-US");
+                return d.ToString("M/d/yyyy", UsaCulture);
+            }
+            catch
+            {
+                return "";
+            }
+        }
+        public static string ToDisplayFullDayOfweek(Nullable<DateTime> d)
       {
          try
          {

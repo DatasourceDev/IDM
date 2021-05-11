@@ -6894,7 +6894,7 @@ code[class*="language-"], pre[class*="language-"] {
 .badge {
     -webkit-box-shadow: none;
     box-shadow: none;
-    font-size: 11px !important;
+    font-size: 13px !important;
 }
 
     .badge.badge-soft-primary {
