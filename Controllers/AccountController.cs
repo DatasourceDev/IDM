@@ -1222,7 +1222,7 @@ namespace IDM.Controllers
 
             return View(model);
         }
-        public JsonResult ChangeStatus(string id)
+        public JsonResult ChangeStatus(string id, string remark)
         {
             if (!checkrole(new string[] { UserRole.admin, UserRole.helpdesk }))
                 return Json(new { error = ReturnMessage.Error, result = ReturnCode.Error });
@@ -1237,7 +1237,10 @@ namespace IDM.Controllers
                     {
                         model.system_modify_date = DateUtil.Now();
                         model.system_modify_by_uid = userlogin.basic_uid;
-
+                        if (!string.IsNullOrEmpty(model.lock_remark) & !string.IsNullOrEmpty(remark))
+                            model.lock_remark += Environment.NewLine + remark;
+                        else
+                            model.lock_remark = remark;
                         if (model.cu_nsaccountlock == LockStaus.Lock)
                         {
                             try

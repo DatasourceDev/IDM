@@ -40,7 +40,55 @@
     <!-- end page title end breadcrumb -->
     <!--end row-->
     <form class="form-horizontal form-parsley" asp-action="EnableAccount" asp-controller="Account" method="get">
+        <input type="hidden" id="select_id" />
+        <button id="btnremarksubmit" type="button" class="btn btn-info waves-effect waves-light" style="display:none;" data-toggle="modal" data-animation="bounce" data-target=".remark-submit">Center modal</button>
+        <div id="remark-submit-modal" class="modal fade bs-example-modal-center remark-submit" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title mt-0" id="exampleModalLabel">หมายเหตุ</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group row">
+                            <div class="col-lg-12">
+                                <textarea id="txtRemark" class="form-control"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-lg-12 text-right">
+                                <button type="button" class="btn btn-primary" onclick="change_status()">ตกลง</button>
+                                @*<button type="button" class="btn btn-default"  data-dismiss="modal" aria-label="Close">ปิด</button>*@
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div>
 
+        <button id="btnremark" type="button" class="btn btn-info waves-effect waves-light" style="display:none;" data-toggle="modal" data-animation="bounce" data-target=".remark">Center modal</button>
+        <div id="remark-modal" class="modal fade bs-example-modal-center remark" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel2" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title mt-0" id="mySmallModalLabel2">หมายเหตุ</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group row">
+                            <div class="col-lg-12">
+                               <span id="lblRemark"></span>
+                            </div>
+                        </div>
+                      
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div>
         <div class="row">
             <div class="col-lg-12">
                 <div class="card">
@@ -80,6 +128,7 @@
                                                     <th>Login Name</th>
                                                     <th>Display Name</th>
                                                     <th>nsaccountlock</th>
+                                                    <th>Remark</th>
                                                     <th width="200px"></th>
                                                 </tr>
                                             </thead>
@@ -94,12 +143,23 @@
                                                             <td>
                                                                 @if (item.cu_nsaccountlock == LockStaus.Unlock)
                                                                 {
-                                                                    <span id="stutus-@item.basic_uid" class="badge badge-success">@item.cu_nsaccountlock</span>
+                                                                    <span id="status-@item.basic_uid" class="badge badge-success">@item.cu_nsaccountlock</span>
 
                                                                 }
                                                                 else
                                                                 {
-                                                                    <span id="stutus-@item.basic_uid" class="badge badge-danger">@item.cu_nsaccountlock</span>
+                                                                    <span id="status-@item.basic_uid" class="badge badge-danger">@item.cu_nsaccountlock</span>
+                                                                }
+                                                            </td>
+                                                            <td>
+                                                                <span style="display:none;" id="remark-@item.basic_uid">@item.lock_remark</span>
+                                                                @if (!string.IsNullOrEmpty(item.lock_remark))
+                                                                {
+                                                                    <a href="#" id="btnremark-@item.basic_uid" onclick="showremark('@item.basic_uid'); return false;"><span style="text-decoration:underline">หมายเหตุ</span></a>
+                                                                }
+                                                                else
+                                                                {
+                                                                    <a href="#" id="btnremark-@item.basic_uid" onclick="showremark('@item.basic_uid'); return false;" style="display:none;"><span style="text-decoration:underline">หมายเหตุ</span></a>
                                                                 }
                                                             </td>
                                                             <td>
@@ -118,7 +178,7 @@
                                                 @if (Model.lists == null || Model.lists.Count() == 0)
                                                 {
                                                     <tr>
-                                                        <td colspan="4" class="text-center">ไม่พบข้อมูล</td>
+                                                        <td colspan="5" class="text-center">ไม่พบข้อมูล</td>
                                                     </tr>
                                                 }
                                             </tbody>
@@ -134,40 +194,59 @@
             </div> <!-- end col -->
             <!-- end col -->
         </div>
+
     </form>
 </div><!-- container -->
 @section scripts{
     <script>
         function lockaccont(id) {
-            if (confirm('ต้องการทำรายการนี้?')) {
-                $.ajax({
-                    type: 'Get',
-                    url: '@Url.Action("ChangeStatus", "Account")?id=' + id,
-                    success: function (data) {
-                        if (data.result == 1) {
-                            if (data.status == '@(LockStaus.Unlock)') {
-                                $('#stutus-' + id).removeClass();
-                                $('#stutus-' + id).addClass('badge badge-success');
-                                $('#stutus-' + id).text(data.status);
+            $('#btnremarksubmit').click();
+            $('#select_id').val(id);
+        }
+        function showremark(id) {
+            $('#btnremark').click();
+            var remark = $('#remark-' + id).text();
+            remark = remark.replace('\r\n', '<br/>');
+            remark = remark.replace('\n', '<br/>');
+            $('#lblRemark').html(remark);
+        }
+        function change_status() {
+            $("#remark-submit-modal").modal('hide');
+            var id = $('#select_id').val();
+            var remark = $('#txtRemark').val();
+            $.ajax({
+                type: 'Get',
+                url: '@Url.Action("ChangeStatus", "Account")?id=' + id + '&remark=' + remark,
+                success: function (data) {
+                    if (data.result == 1) {
+                        if (data.status == '@(LockStaus.Unlock)') {
+                            $('#status-' + id).removeClass();
+                            $('#status-' + id).addClass('badge badge-success');
+                            $('#status-' + id).text(data.status);
 
-                                $('#icon-' + id).removeClass();
-                                $('#icon-' + id).addClass('fas fa-lock text-primary font-16');
-                            }
-                            else {
-                                 $('#stutus-' + id).removeClass();
-                                $('#stutus-' + id).addClass('badge badge-danger');
-                                $('#stutus-' + id).text(data.status);
-
-                                 $('#icon-' + id).removeClass();
-                                $('#icon-' + id).addClass('fas fa-unlock text-primary font-16');
-                            }
-
+                            $('#icon-' + id).removeClass();
+                            $('#icon-' + id).addClass('fas fa-lock text-primary font-16');
                         }
-                    },
-                    error: function (XMLHttpRequest, errorThrown) {
+                        else {
+                            $('#status-' + id).removeClass();
+                            $('#status-' + id).addClass('badge badge-danger');
+                            $('#status-' + id).text(data.status);
+
+                            $('#icon-' + id).removeClass();
+                            $('#icon-' + id).addClass('fas fa-unlock text-primary font-16');
+                        }
+                        remark = $('#remark-' + id).text() + '<br/>' + remark;
+                        remark = remark.replace('\r\n', '<br/>');
+                        $('#remark-' + id).text(remark);
+                        if (remark != null && remark != '')
+                            $('#btnremark-' + id).show();
                     }
-                });
-            }
+                    $('#txtRemark').val('');
+                },
+                error: function (XMLHttpRequest, errorThrown) {
+                    $('#txtRemark').val('');
+                }
+            });
         }
     </script>
 }

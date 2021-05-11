@@ -276,6 +276,7 @@ namespace IDM.Models
         public bool ad_created { get; set; }
         public bool ldap_created { get; set; }
         public string thaidescription { get; set; }
+        public string lock_remark { get; set; }
 
     }
 
