@@ -3,7 +3,7 @@
 @{
     ViewData["Title"] = "สร้างบัญชีรายชื่อผู้ใช้จากไฟล์";
     var rowcnt = 0;
-    if(Model.lists != null && Model.lists.Count() > 0)
+    if (Model.lists != null && Model.lists.Count() > 0)
     {
         rowcnt = Model.lists.Count();
     }
@@ -16,19 +16,19 @@
                     <div class="float-right" style="width:50%">
                         @if (ViewBag.ReturnCode != null)
                         {
-                            @if (ViewBag.ReturnCode == ReturnCode.Success)
+                        @if (ViewBag.ReturnCode == ReturnCode.Success)
                             {
-                                <div class="alert alert-success  border-0" role="alert">
-                                    <i class="mdi mdi-check-circle-outline font-18 mr-1"></i>
-                                    <strong class="font-18">@ViewBag.Message</strong>
-                                </div>
+                        <div class="alert alert-success  border-0" role="alert">
+                            <i class="mdi mdi-check-circle-outline font-18 mr-1"></i>
+                            <strong class="font-18">@ViewBag.Message</strong>
+                        </div>
                             }
                             else
                             {
-                                <div class="alert alert-danger border-0" role="alert">
-                                    <i class="mdi mdi-close-circle-outline font-18 mr-1"></i>
-                                    <strong class="font-18">@ViewBag.Message</strong>
-                                </div>
+                        <div class="alert alert-danger border-0" role="alert">
+                            <i class="mdi mdi-close-circle-outline font-18 mr-1"></i>
+                            <strong class="font-18">@ViewBag.Message</strong>
+                        </div>
                             }
                         }
                     </div>
@@ -57,7 +57,7 @@
                                     <option value="@ImportCreateOption.student_other">นิสิต:อื่นๆ</option>
                                     <option value="@ImportCreateOption.staff_hr">บุคลากร:สำนักบริหารทรัพยากรมนุษย์</option>
                                     <option value="@ImportCreateOption.staff_other">บุคลากร:อื่นๆ</option>
-                                    @*<option value="@ImportCreateOption.temp">ผู้ใช้แบบชั่วคราว</option>*@
+                                    <option value="@ImportCreateOption.fixlogin">Fix login</option>
                                 </select>
                             </div>
                             <div class="col-lg-3">
@@ -151,6 +151,8 @@
                                         <th>structure_2</th>
                                         <th>status</th>
                                         <th>cu_pplid</th>
+                                        <th>basic_mobile</th>
+                                        <th>basic_telephonenumber</th>
                                     </tr>
                                 </thead>
                             </table>
@@ -169,6 +171,19 @@
                                         <th>status</th>
                                         <th>cu_pplid</th>
                                         <th>cu_CUexpire</th>
+                                        <th>basic_mobile</th>
+                                        <th>basic_telephonenumber</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                        <div id="div@(ImportCreateOption.fixlogin)">
+                            <table class="table table-striped table-bordered mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>org</th>
+                                        <th>basic_givenname</th>
+                                        <th>basic_sn</th>
                                     </tr>
                                 </thead>
                             </table>
@@ -177,34 +192,37 @@
 
                     @if (Model.lists != null && Model.lists.Count() > 0)
                     {
-                        @if (Model.code != ReturnCode.Success)
+                    @if (Model.code != ReturnCode.Success)
                         {
-                            <div class="form-group row">
-                                <div class="col-lg-12">
-                                    <form class="form-horizontal form-parsley" asp-action="CreateAccountFromFile2" asp-controller="Account" method="post">
-                                        <button class="btn btn-primary" type="submit">บันทึก</button>
-                                    </form>
-                                </div>
-                            </div>
+                    <div class="form-group row">
+                        <div class="col-lg-12">
+                            <form class="form-horizontal form-parsley" asp-action="CreateAccountFromFile2" asp-controller="Account" method="post">
+                                <button class="btn btn-primary" type="submit">บันทึก</button>
+                            </form>
+                        </div>
+                    </div>
                         }
-                        <div class="form-group row">
-                            <div class="col-lg-12">
-                                <div class="table-rep-plugin">
-                                    <div class="table-responsive mb-0" data-pattern="priority-columns">
-                                        <table id="tech-companies-1" class="table table-striped mb-0">
-                                            <thead>
-                                                <tr>
-                                                    <th>Job Code</th>
-                                                    <th>First Name</th>
-                                                    <th>Last Name</th>
-                                                    <th>First Name (Th)</th>
-                                                    <th>Last Name (Th)</th>
-                                                    <th>Citizen ID</th>
-                                                    <th>Remark</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                @if (Model.lists != null)
+                    <div class="form-group row">
+                        <div class="col-lg-12">
+                            <div class="table-rep-plugin">
+                                <div class="table-responsive mb-0" data-pattern="priority-columns">
+                                    <table id="tech-companies-1" class="table table-striped mb-0">
+                                        <thead>
+                                            <tr>
+                                                <th>ORG</th>
+                                                <th>Job Code</th>
+                                                <th>First Name</th>
+                                                <th>Last Name</th>
+                                                <th>First Name (Th)</th>
+                                                <th>Last Name (Th)</th>
+                                                <th>Citizen ID</th>
+                                                <th>Mobile</th>
+                                                <th>Telephonenumber</th>
+                                                <th>Remark</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @if (Model.lists != null)
                                                 {
                                                     foreach (import item in Model.lists)
                                                     {
@@ -213,47 +231,56 @@
                                                         {
                                                             rowcolor = "text-danger";
                                                         }
-                                                        <tr class="@rowcolor">
-                                                            <td>
-                                                                @item.cu_jobcode
-                                                            </td>
-                                                            <td>
-                                                                @item.basic_givenname
-                                                            </td>
-                                                            <td>
-                                                                @item.basic_sn
-                                                            </td>
-                                                            <td>
-                                                                @item.cu_thcn
-                                                            </td>
-                                                            <td>
-                                                                @item.cu_thsn
-                                                            </td>
-                                                            <td>
-                                                                @item.cu_pplid
-                                                            </td>
-                                                            <td>
-                                                                @if (!string.IsNullOrEmpty(item.ImportRemark))
+                                            <tr class="@rowcolor">
+                                                <td>
+                                                    @item.system_org
+                                                </td>
+                                                <td>
+                                                    @item.cu_jobcode
+                                                </td>
+                                                <td>
+                                                    @item.basic_givenname
+                                                </td>
+                                                <td>
+                                                    @item.basic_sn
+                                                </td>
+                                                <td>
+                                                    @item.cu_thcn
+                                                </td>
+                                                <td>
+                                                    @item.cu_thsn
+                                                </td>
+                                                <td>
+                                                    @item.cu_pplid
+                                                </td>
+                                                <td>
+                                                    @item.basic_mobile
+                                                </td>
+                                                <td>
+                                                    @item.basic_telephonenumber
+                                                </td>
+                                                <td>
+                                                    @if (!string.IsNullOrEmpty(item.ImportRemark))
                                                                 {
-                                                                    @Html.Raw(item.ImportRemark.Replace("\r\n", "<br/>"))
+                                                    @Html.Raw(item.ImportRemark.Replace("\r\n", "<br/>"))
                                                                 }
-                                                            </td>
-                                                        </tr>
+                                                </td>
+                                            </tr>
                                                     }
                                                 }
-                                                @if (Model.lists == null || Model.lists.Count() == 0)
+                                            @if (Model.lists == null || Model.lists.Count() == 0)
                                                 {
-                                                    <tr>
-                                                        <td colspan="7" class="text-center">ไม่พบข้อมูล</td>
-                                                    </tr>
+                                            <tr>
+                                                <td colspan="7" class="text-center">ไม่พบข้อมูล</td>
+                                            </tr>
                                                 }
-                                            </tbody>
+                                        </tbody>
 
-                                        </table>
-                                    </div>
+                                    </table>
                                 </div>
                             </div>
                         </div>
+                    </div>
                     }
 
                 </div> <!-- end card-body -->
@@ -275,6 +302,7 @@
             $('#div' + '@ImportCreateOption.student_other').hide();
             $('#div' + '@ImportCreateOption.staff_hr').hide();
             $('#div' + '@ImportCreateOption.staff_other').hide();
+            $('#div' + '@ImportCreateOption.fixlogin').hide();
             if (@rowcnt == 0) {
                 $('#div' + option).show();
             }

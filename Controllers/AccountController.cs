@@ -218,15 +218,20 @@ namespace IDM.Controllers
                                 }
                                 imp.system_idm_user_types = IDMUserType.student;
                                 imp.cu_jobcode = columnNameList[j]; j++;
-                                /*imp.other_prename = columnNameList[j];*/j++;
-                                /*imp.prename = columnNameList[j];*/j++;
+                                /*imp.other_prename = columnNameList[j];*/
+                                j++;
+                                /*imp.prename = columnNameList[j];*/
+                                j++;
                                 imp.basic_givenname = columnNameList[j]; j++;
                                 imp.basic_sn = columnNameList[j]; j++;
-                                /*imp.other_prenameth =columnNameList[j];*/j++;
-                                /*imp.prenameth = columnNameList[j];*/j++;
+                                /*imp.other_prenameth =columnNameList[j];*/
+                                j++;
+                                /*imp.prenameth = columnNameList[j];*/
+                                j++;
                                 imp.cu_thcn = columnNameList[j]; j++;
                                 imp.cu_thsn = columnNameList[j]; j++;
-                                /*imp.barcode = columnNameList[j];*/j++;
+                                /*imp.barcode = columnNameList[j];*/
+                                j++;
                                 imp.cu_pplid = columnNameList[j]; j++;
 
                                 if (string.IsNullOrEmpty(imp.cu_jobcode))
@@ -326,7 +331,7 @@ namespace IDM.Controllers
                             }
                             else if (import_option == ImportCreateOption.staff_hr)
                             {
-                                if (columnNameList.Length != 9)
+                                if (columnNameList.Length != 11)
                                 {
                                     ModelState.AddModelError("format_error", "รูปแบบไฟล์ไม่ถูกต้อง");
                                     return View(model);
@@ -341,11 +346,13 @@ namespace IDM.Controllers
                                 imp.structure_2 = columnNameList[j]; j++;
                                 imp.status = columnNameList[j]; j++;
                                 imp.cu_pplid = columnNameList[j]; j++;
+                                imp.basic_mobile = columnNameList[j]; j++;
+                                imp.basic_telephonenumber = columnNameList[j]; j++;
 
                             }
                             else if (import_option == ImportCreateOption.staff_other)
                             {
-                                if (columnNameList.Length != 10)
+                                if (columnNameList.Length != 12)
                                 {
                                     ModelState.AddModelError("format_error", "รูปแบบไฟล์ไม่ถูกต้อง");
                                     return View(model);
@@ -361,16 +368,27 @@ namespace IDM.Controllers
                                 imp.status = columnNameList[j]; j++;
                                 imp.cu_pplid = columnNameList[j]; j++;
                                 imp.cu_CUexpire = columnNameList[j]; j++;
+                                imp.basic_mobile = columnNameList[j]; j++;
+                                imp.basic_telephonenumber = columnNameList[j]; j++;
+                            }
+                            else if (import_option == ImportCreateOption.fixlogin)
+                            {
+                                if (columnNameList.Length != 3)
+                                {
+                                    ModelState.AddModelError("format_error", "รูปแบบไฟล์ไม่ถูกต้อง");
+                                    return View(model);
+                                }
+                                imp.system_idm_user_types = IDMUserType.outsider;
+                                imp.system_org = columnNameList[j]; j++;
+                                imp.basic_givenname = columnNameList[j]; j++;
+                                imp.basic_sn = columnNameList[j]; j++;
+
+                                imp.cu_thcn = imp.basic_givenname;
+                                imp.cu_thsn = imp.basic_sn;
+                                imp.basic_uid = imp.basic_givenname;
                             }
 
-                            if (import_option != ImportCreateOption.staff_hr)
-                            {
-                                if (string.IsNullOrEmpty(imp.cu_jobcode))
-                                {
-                                    imp.ImportVerify = false;
-                                    remark.AppendLine("jobcode ไม่สามารถเป็นค่าว่าง");
-                                }
-                            }
+                           
                             if (string.IsNullOrEmpty(imp.basic_givenname))
                             {
                                 imp.ImportVerify = false;
@@ -382,36 +400,52 @@ namespace IDM.Controllers
                                 remark.AppendLine("Last Name ไม่สามารถเป็นค่าว่าง");
                             }
 
-                            if (string.IsNullOrEmpty(imp.cu_pplid))
+                            if (import_option == ImportCreateOption.student 
+                                || import_option == ImportCreateOption.student_sasin 
+                                || import_option == ImportCreateOption.student_ppc 
+                                || import_option == ImportCreateOption.student_other 
+                                || import_option == ImportCreateOption.staff_hr
+                                || import_option == ImportCreateOption.staff_other)
                             {
-                                imp.ImportVerify = false;
-                                remark.AppendLine("Citizen ID ไม่สามารถเป็นค่าว่าง");
-                            }
-                            else
-                            {
+                                if (import_option != ImportCreateOption.staff_hr)
+                                {
+                                    if (string.IsNullOrEmpty(imp.cu_jobcode))
+                                    {
+                                        imp.ImportVerify = false;
+                                        remark.AppendLine("jobcode ไม่สามารถเป็นค่าว่าง");
+                                    }
+                                }
                                 if (import_option == ImportCreateOption.staff_other || import_option == ImportCreateOption.staff_hr)
                                 {
-                                    var fim_user = _context.table_visual_fim_user
-                                        .Where(w => w.cu_pplid.ToLower() == imp.cu_pplid.ToLower() & (w.system_idm_user_type == IDMUserType.staff | w.system_idm_user_type == IDMUserType.affiliate | w.system_idm_user_type == IDMUserType.outsider | w.system_idm_user_type == IDMUserType.temporary))
-                                        .FirstOrDefault();
-                                    if (fim_user != null)
+                                    if (string.IsNullOrEmpty(imp.cu_pplid))
                                     {
                                         imp.ImportVerify = false;
-                                        remark.AppendLine("Citizen ID ซ้ำในระบบ");
+                                        remark.AppendLine("Citizen ID ไม่สามารถเป็นค่าว่าง");
+                                    }
+                                    else
+                                    {
+
+                                        var fim_user = _context.table_visual_fim_user
+                                            .Where(w => w.cu_pplid.ToLower() == imp.cu_pplid.ToLower() & (w.system_idm_user_type == IDMUserType.staff | w.system_idm_user_type == IDMUserType.affiliate | w.system_idm_user_type == IDMUserType.outsider | w.system_idm_user_type == IDMUserType.temporary))
+                                            .FirstOrDefault();
+                                        if (fim_user != null)
+                                        {
+                                            imp.ImportVerify = false;
+                                            remark.AppendLine("Citizen ID ซ้ำในระบบ");
+                                        }
                                     }
                                 }
-                                else
+                            }
+                            else if(import_option == ImportCreateOption.fixlogin)
+                            {
+                                var fim_user = _context.table_visual_fim_user
+                                            .Where(w => w.basic_uid.ToLower() == imp.basic_uid.ToLower())
+                                            .FirstOrDefault();
+                                if (fim_user != null)
                                 {
-                                    var fim_user = _context.table_visual_fim_user
-                                        .Where(w => w.cu_pplid.ToLower() == imp.cu_pplid.ToLower() & w.system_idm_user_type == IDMUserType.student)
-                                        .FirstOrDefault();
-                                    if (fim_user != null)
-                                    {
-                                        imp.ImportVerify = false;
-                                        remark.AppendLine("Citizen ID ซ้ำในระบบ");
-                                    }
+                                    imp.ImportVerify = false;
+                                    remark.AppendLine("basic_uid ซ้ำในระบบ");
                                 }
-                               
                             }
 
 
@@ -465,7 +499,8 @@ namespace IDM.Controllers
                 model.cu_thsn = imp.cu_thsn;
                 model.cu_pplid = imp.cu_pplid;
                 model.cu_CUexpire = imp.cu_CUexpire;
-                model.basic_telephonenumber = "0";
+                model.basic_telephonenumber = imp.basic_telephonenumber;
+                model.basic_mobile = imp.basic_mobile;
                 if (string.IsNullOrEmpty(imp.ImportRemark))
                     imp.ImportRemark = "";
                 faculty faculty = null;
@@ -493,16 +528,29 @@ namespace IDM.Controllers
                 }
                 else if (imp.import_create_option == ImportCreateOption.staff_hr | imp.import_create_option == ImportCreateOption.staff_other)
                 {
-                    faculty = _context.table_cu_faculty.Where(w => w.faculty_name.ToLower() == imp.structure_1.ToLower() | w.faculty_name.ToLower() == imp.structure_2.ToLower()).FirstOrDefault();
+                    faculty = _context.table_cu_faculty.Where(w => w.faculty_name.ToLower() == imp.structure_1.ToLower() | w.faculty_name.ToLower() == imp.structure_2.ToLower() | w.faculty_shot_name.ToLower() == imp.structure_1.ToLower() | w.faculty_shot_name.ToLower() == imp.structure_2.ToLower()).FirstOrDefault();
                     if (faculty == null)
                     {
-                        var subfaculty = _context.table_cu_faculty_level2.Where(w => w.sub_office_name.ToLower() == imp.structure_1.ToLower() | w.sub_office_name.ToLower() == imp.structure_2.ToLower()).FirstOrDefault();
+                        var subfaculty = _context.table_cu_faculty_level2.Where(w => w.sub_office_name.ToLower() == imp.structure_1.ToLower() | w.sub_office_name.ToLower() == imp.structure_2.ToLower() | w.sub_office_shot_name.ToLower() == imp.structure_1.ToLower() | w.sub_office_shot_name.ToLower() == imp.structure_2.ToLower()).FirstOrDefault();
                         if (subfaculty != null)
                         {
                             faculty = _context.table_cu_faculty.Where(w => w.faculty_id == subfaculty.faculty_id).FirstOrDefault();
                         }
                     }
                 }
+                else if (imp.import_create_option == ImportCreateOption.fixlogin)
+                {
+                    faculty = _context.table_cu_faculty.Where(w => w.faculty_name.ToLower() == imp.system_org.ToLower()  | w.faculty_shot_name.ToLower() == imp.system_org.ToLower() ).FirstOrDefault();
+                    if (faculty == null)
+                    {
+                        var subfaculty = _context.table_cu_faculty_level2.Where(w => w.sub_office_name.ToLower() == imp.system_org.ToLower() | w.sub_office_shot_name.ToLower() == imp.system_org.ToLower() ).FirstOrDefault();
+                        if (subfaculty != null)
+                        {
+                            faculty = _context.table_cu_faculty.Where(w => w.faculty_id == subfaculty.faculty_id).FirstOrDefault();
+                        }
+                    }
+                }
+
                 if (faculty != null)
                 {
                     model.system_faculty_id = (int)faculty.faculty_id;
@@ -522,6 +570,12 @@ namespace IDM.Controllers
                         else if (imp.status.ToLower().Trim() == "affiliate".ToLower())
                             distinguish_name = faculty.faculty_distinguish_name_affiliate;
                     }
+                    if (imp.import_create_option == ImportCreateOption.fixlogin)
+                    {
+                        distinguish_name = faculty.faculty_distinguish_name_outsider;
+                        model.basic_uid = imp.basic_uid;
+                    }
+
                     if (!string.IsNullOrEmpty(distinguish_name))
                     {
                         var ous = distinguish_name.Split(",");
@@ -559,7 +613,7 @@ namespace IDM.Controllers
                     }
                     try
                     {
-
+                        
                         genNewAccount(_context, model);
                         _context.SaveChanges();
 
@@ -751,17 +805,44 @@ namespace IDM.Controllers
 
                             _context.SaveChanges();
 
-                            var result_ldap = _providerldap.UpdateUser(fim_user, _context);
-                            if (result_ldap.result == true)
-                                writelog(LogType.log_edit_account, LogStatus.successfully, IDMSource.LDAP, model.basic_uid);
+                            if (!model.ldap_created)
+                            {
+                                fim_user.system_create_by_uid = userlogin.basic_uid;
+                                fim_user.system_create_date = DateUtil.Now();
+                                _context.SaveChanges();
+                                var result_ldap = _providerldap.CreateUser(fim_user, _context);
+                                model.ldap_created = result_ldap.result;
+                                if (result_ldap.result == true)
+                                    writelog(LogType.log_edit_account, LogStatus.successfully, IDMSource.LDAP, model.basic_uid);
+                            }
                             else
-                                writelog(LogType.log_edit_account, LogStatus.failed, IDMSource.LDAP, model.basic_uid, log_exception: result_ldap.Message);
+                            {
+                                var result_ldap = _providerldap.UpdateUser(fim_user, _context);
+                                if (result_ldap.result == true)
+                                    writelog(LogType.log_edit_account, LogStatus.successfully, IDMSource.LDAP, model.basic_uid);
+                                else
+                                    writelog(LogType.log_edit_account, LogStatus.failed, IDMSource.LDAP, model.basic_uid, log_exception: result_ldap.Message);
+                            }
+                            if (!model.ad_created)
+                            {
+                                fim_user.system_create_by_uid = userlogin.basic_uid;
+                                fim_user.system_create_date = DateUtil.Now();
+                                _context.SaveChanges();
+                                var result_ad = _provider.CreateUser(fim_user, _context);
+                                model.ad_created = result_ad.result;
+                                if (result_ad.result == true)
+                                    writelog(LogType.log_edit_account, LogStatus.successfully, IDMSource.AD, model.basic_uid);
+                            }
+                            else
+                            {
+                                var result_ad = _provider.UpdateUser(fim_user, _context);
+                                if (result_ad.result == true)
+                                    writelog(LogType.log_edit_account, LogStatus.successfully, IDMSource.AD, model.basic_uid);
+                                else
+                                    writelog(LogType.log_edit_account, LogStatus.failed, IDMSource.AD, model.basic_uid, log_exception: result_ad.Message);
+                            }
 
-                            var result_ad = _provider.UpdateUser(fim_user, _context);
-                            if (result_ad.result == true)
-                                writelog(LogType.log_edit_account, LogStatus.successfully, IDMSource.AD, model.basic_uid);
-                            else
-                                writelog(LogType.log_edit_account, LogStatus.failed, IDMSource.AD, model.basic_uid, log_exception: result_ad.Message);
+                            
 
                             writelog(LogType.log_edit_account, LogStatus.successfully, IDMSource.VisualFim, model.basic_uid);
 

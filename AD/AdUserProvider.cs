@@ -293,7 +293,8 @@ namespace IDM.Identity
                 principal.GivenName = model.basic_givenname;
                 principal.Surname = model.basic_sn;
                 principal.DisplayName = model.basic_displayname;
-                principal.VoiceTelephoneNumber = model.basic_telephonenumber;
+                if (!string.IsNullOrEmpty(model.basic_telephonenumber))
+                    principal.VoiceTelephoneNumber = model.basic_telephonenumber;
                 principal.EmailAddress = model.basic_mail;
                 principal.UserPrincipalName = model.basic_userprincipalname;
 
@@ -339,8 +340,11 @@ namespace IDM.Identity
                 principal.GivenName = model.basic_givenname;
                 principal.Surname = model.basic_sn;
                 principal.DisplayName = model.basic_displayname;
-                principal.VoiceTelephoneNumber = model.basic_telephonenumber;
+                if (!string.IsNullOrEmpty(model.basic_telephonenumber))
+                    principal.VoiceTelephoneNumber = model.basic_telephonenumber;
                 principal.EmailAddress = model.basic_mail;
+                principal.UserPrincipalName = model.basic_userprincipalname;
+
                 principal.Save();
 
                 DirectoryEntry d = principal.GetUnderlyingObject() as DirectoryEntry;

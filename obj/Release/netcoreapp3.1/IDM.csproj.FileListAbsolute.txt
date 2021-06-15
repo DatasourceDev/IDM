@@ -1330,7 +1330,6 @@ C:\Work\CU\CUIDM\bin\Release\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System
 C:\Work\CU\CUIDM\bin\Release\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Work\CU\CUIDM\bin\Release\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Work\CU\CUIDM\bin\Release\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Work\CU\CUIDM\obj\Release\netcoreapp3.1\IDM.csprojAssemblyReference.cache
 C:\Work\CU\CUIDM\obj\Release\netcoreapp3.1\IDM.AssemblyInfoInputs.cache
 C:\Work\CU\CUIDM\obj\Release\netcoreapp3.1\IDM.AssemblyInfo.cs
 C:\Work\CU\CUIDM\obj\Release\netcoreapp3.1\IDM.csproj.CoreCompileInputs.cache
@@ -1398,3 +1397,4 @@ C:\Work\CU\CUIDM\obj\Release\netcoreapp3.1\staticwebassets\IDM.StaticWebAssets.x
 C:\Work\CU\CUIDM\obj\Release\netcoreapp3.1\IDM.dll
 C:\Work\CU\CUIDM\obj\Release\netcoreapp3.1\IDM.pdb
 C:\Work\CU\CUIDM\obj\Release\netcoreapp3.1\IDM.genruntimeconfig.cache
+C:\Work\CU\CUIDM\obj\Release\netcoreapp3.1\IDM.csprojAssemblyReference.cache

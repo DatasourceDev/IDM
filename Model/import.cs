@@ -30,7 +30,8 @@ namespace IDM.Models
         public string structure_2 { get; set; }
         public string status { get; set; }
         public string cu_CUexpire { get; set; }
-
+        public string basic_telephonenumber { get; set; }
+        public string basic_mobile { get; set; }
         public ImportType import_Type { get; set; }
         public IDMUserType system_idm_user_types { get; set; }
         public ImportCreateOption import_create_option { get; set; }

@@ -83,7 +83,7 @@
                                                     <th>First Name (Th)</th>
                                                     <th>Last Name (Th)</th>
                                                     <th>Mail</th>
-                                                    <th>Telephone Number</th>
+                                                    <th>Mobile</th>
                                                     <th>Jobcode</th>
                                                     <th>Citizen ID</th>
                                                     <th>User Type</th>
@@ -93,6 +93,7 @@
                                                     <th>Changed By</th>
                                                     <th>Changed From</th>
                                                     <th>Last Password Change</th>
+                                                    <th>Changed From</th>
                                                     <th></th>
                                                 </tr>
                                             </thead>
@@ -102,13 +103,15 @@
                                                     foreach (visual_fim_user item in Model.lists)
                                                     {
                                                         <tr>
-                                                            <td>@item.basic_uid</td>
+                                                            <td>
+                                                                <a href="@Url.Action("AccountInfo", "Account", new { id = item.id })" target="_blank"><u>@item.basic_uid</u></a>
+                                                            </td>
                                                             <td>@item.basic_givenname</td>
                                                             <td>@item.basic_sn</td>
                                                             <td>@item.cu_thcn</td>
                                                             <td>@item.cu_thsn</td>
                                                             <td>@item.basic_mail</td>
-                                                            <td>@item.basic_telephonenumber</td>
+                                                            <td>@item.basic_mobile</td>
                                                             <td>@item.cu_jobcode</td>
                                                             <td>@item.cu_pplid</td>
                                                             <td>@item.system_idm_user_type.toUserTypeName()</td>
@@ -128,6 +131,7 @@
                                                             <td>@DateUtil.ToDisplayDateTime(item.system_modify_date)</td>
                                                             <td>@item.system_modify_by_uid</td>
                                                             <td>@DateUtil.ToDisplayDateTime(item.cu_pwdchangeddate)</td>
+                                                            <td>@item.cu_pwdchangedby</td>
                                                             <td>
                                                                 <a href="@Url.Action("AccountInfo","Account", new{id=item.id })" target="_blank"><i class="far fa-edit font-16"></i></a>
                                                             </td>

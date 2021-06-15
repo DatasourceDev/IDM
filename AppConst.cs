@@ -73,7 +73,7 @@ namespace IDM
         student_other,
         staff_hr,
         staff_other,
-        temp
+        fixlogin
     }
     public enum ImportLockOption
     {
@@ -423,9 +423,9 @@ namespace IDM
             {
                 return ImportCreateOption.staff_other;
             }
-            else if (text == ((int)ImportCreateOption.temp).ToString())
+            else if (text == ((int)ImportCreateOption.fixlogin).ToString())
             {
-                return ImportCreateOption.temp;
+                return ImportCreateOption.fixlogin;
             }
             return ImportCreateOption.student;
         }

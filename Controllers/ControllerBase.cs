@@ -634,17 +634,23 @@ namespace IDM.Controllers
             model.basic_dn += ",dc=chula,dc=ac,dc=th";
             model.basic_givenname = model.basic_givenname;
             model.basic_sn = model.basic_sn;
-            model.basic_uid = genUid(model.basic_givenname, model.basic_sn, model.system_idm_user_type, model.basic_dn, model.cu_jobcode);
+            if(string.IsNullOrEmpty(model.basic_uid))
+                model.basic_uid = genUid(model.basic_givenname, model.basic_sn, model.system_idm_user_type, model.basic_dn, model.cu_jobcode);
             model.basic_dn = model.basic_dn.Replace("[uid]", model.basic_uid);
             if (model.system_idm_user_type == IDMUserType.student)
                 model.basic_mail = genNewEmailForStudent(model.cu_jobcode);
             else
                 model.basic_mail = genNewEmail(model.basic_givenname, model.basic_sn, model.system_idm_user_type);
-            model.basic_mobile = "";
-            if(!string.IsNullOrEmpty(model.basic_telephonenumber))
+            if (!string.IsNullOrEmpty(model.basic_mobile))
+                model.basic_mobile = model.basic_mobile.Trim();
+            if (!string.IsNullOrEmpty(model.basic_telephonenumber))
                 model.basic_telephonenumber =  model.basic_telephonenumber.Trim();
             model.basic_userPassword = Cryptography.encrypt(password);
-            model.basic_userprincipalname = _conf.DefaultValue_userprincipalname.Replace("[uid]", model.basic_uid);
+
+            if (model.system_idm_user_type == IDMUserType.student)
+                model.basic_userprincipalname = _conf.DefaultValue_userprincipalname.Replace("[uid]", model.basic_uid);
+            else
+                model.basic_userprincipalname = model.basic_mail;
             if (model.cu_CUexpire_select == false & model.cu_CUexpire_day.HasValue & model.cu_CUexpire_month.HasValue & model.cu_CUexpire_year.HasValue)
                 model.cu_CUexpire = model.cu_CUexpire_day + "-" + DateUtil.GetShortMonth(model.cu_CUexpire_month) + "-" + model.cu_CUexpire_year.ToString().Substring(2);
             model.cu_gecos = "";

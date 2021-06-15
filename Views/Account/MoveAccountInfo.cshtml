@@ -177,7 +177,7 @@
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label text-right">Telephone Number</label>
                                     <div class="col-sm-3">
-                                        <input class="form-control" type="text" asp-for="basic_telephonenumber" maxlength="10" readonly >
+                                        <input class="form-control" type="text" asp-for="basic_telephonenumber"  readonly >
                                         @Html.ValidationMessageFor(m => m.basic_telephonenumber)
                                     </div>
                                 </div>
@@ -188,7 +188,7 @@
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label text-right">Jobcode</label>
                                     <div class="col-sm-3">
-                                        <input class="form-control" type="text" asp-for="cu_jobcode" readonly maxlength="10">
+                                        <input class="form-control" type="text" asp-for="cu_jobcode" readonly >
                                         @Html.ValidationMessageFor(m => m.cu_jobcode)
                                     </div>
                                 </div>
