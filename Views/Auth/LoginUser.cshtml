@@ -44,37 +44,44 @@
                                     <span class="text-eng ">Please login to System.</span>
                                     <form class="form-horizontal auth-form my-4 form-parsley" novalidate role="form" asp-action="LoginUser" asp-controller="Auth">
                                         <div class="form-group">
-                                            <label for="username">Username</label>
-                                            <input type="text" class="form-control" asp-for="UserName" required>
+                                            <label for="username">บัญชีผู้ใช้</label>
+                                            <input type="text" class="form-control" asp-for="UserName" required placeholder="Username">
                                             @Html.ValidationMessageFor(m => m.UserName)
 
                                         </div><!--end form-group-->
 
                                         <div class="form-group">
-                                            <label for="userpassword">Password</label>
-                                            <input type="password" class="form-control" asp-for="Password" required>
+                                            <label for="userpassword">รหัสผ่าน</label>
+                                            <input type="password" class="form-control" asp-for="Password" required placeholder="Password">
                                             @Html.ValidationMessageFor(m => m.Password)
                                         </div>
-                                        <div class="form-group mb-0 row">
+                                        <!--<div class="form-group mb-0 row">
                                             <div class="col-12 mt-2">
-                                                <button class="btn btn-primary btn-block waves-effect waves-light" type="submit"><i class="fas fa-sign-in-alt ml-1"></i> Login</button>
-                                            </div><!--end col-->
-                                        </div> <!--end form-group-->
+                                                <button class="btn btn-primary btn-block waves-effect waves-light" type="submit"><i class="fas fa-sign-in-alt ml-1"></i> เข้าสู่ระบบ</button>
+                                            </div>-->
+                                        <!--end col-->
+                                        <!--</div>--> <!--end form-group-->
                                         @*<div class="form-group row mt-4">
                                                 <div class="col-sm-12 ">
-                                                    <a href="@Url.Action("ActiveUser","Auth")" class="font-13"><i class="dripicons-lock"></i> เข้าสู่ระบบครั้งแรก</a>
+                                                    <a href="@Url.Action("ActiveUser","Auth")" class="font-13"><i class="dripicons-lock"></i> รับรหัสผ่าน</a>
                                                 </div>
                                             </div>*@
-                                        @*<div class="form-group mb-0 row">
-                                            <div class="col-12 mt-2">
-                                                <a class="btn btn-success btn-block waves-effect waves-light" href="@Url.Action("ActiveUser","Auth")">
-                                                    <i class="fas fa-user-plus ml-1"></i> เปิดใช้งานบัญชีผู้ใช้ครั้งแรก
+                                        <div class="form-group mb-0 row">
+                                            <div class="col-6 mt-2">
+                                                <button class="btn btn-primary btn-block waves-effect waves-light" type="submit">
+                                                    <i class="fas fa-sign-in-alt ml-1"></i> เข้าสู่ระบบ
                                                     <span><br /></span>
-                                                    <span class="text-eng mt-1">Activate account (First time Login)</span>
+                                                    <span class="text-eng mt-1">Login</span>
+                                                </button>
+                                            </div>
+                                            <div class="col-6 mt-2">
+                                                <a class="btn btn-success btn-block waves-effect waves-light" href="@Url.Action("GetPassword","Auth")">
+                                                    <i class="fas fa-user-plus ml-1"></i> รับรหัสผ่าน
+                                                    <span><br /></span>
+                                                    <span class="text-eng mt-1">Get Password for new User</span>
                                                 </a>
                                             </div>
-
-                                        </div>*@
+                                        </div>
                                     </form><!--end form-->
                                 </div>
                             </div>

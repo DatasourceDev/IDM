@@ -303,8 +303,9 @@ namespace IDM.Identity
                 DirectoryEntry d = principal.GetUnderlyingObject() as DirectoryEntry;
                 d.Properties["internetaccess"].Value = model.internetaccess;
                 d.Properties["netcastaccess"].Value = model.netcastaccess;
-                d.Properties["pplid"].Value = model.cu_pplid;
-                if(!string.IsNullOrEmpty(model.cu_jobcode))
+                if (!string.IsNullOrEmpty(model.cu_pplid))
+                    d.Properties["pplid"].Value = model.cu_pplid;
+                if (!string.IsNullOrEmpty(model.cu_jobcode))
                     d.Properties["employeeID"].Value = model.cu_jobcode;
                 if (model.cu_nsaccountlock == "TRUE")
                     d.Properties["userAccountControl"].Value = userAccountControl.DisablePasswordNotRequired;

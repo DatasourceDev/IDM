@@ -1362,7 +1362,6 @@ C:\Work\CU\CUIDM\obj\Release\netcoreapp3.1\Razor\Views\Account\OneDayPassword.cs
 C:\Work\CU\CUIDM\obj\Release\netcoreapp3.1\Razor\Views\Account\ResetPassword.cshtml.g.cs
 C:\Work\CU\CUIDM\obj\Release\netcoreapp3.1\Razor\Views\Account\Search.cshtml.g.cs
 C:\Work\CU\CUIDM\obj\Release\netcoreapp3.1\Razor\Views\Account\VPN.cshtml.g.cs
-C:\Work\CU\CUIDM\obj\Release\netcoreapp3.1\Razor\Views\Auth\ActiveUser.cshtml.g.cs
 C:\Work\CU\CUIDM\obj\Release\netcoreapp3.1\Razor\Views\Auth\Login.cshtml.g.cs
 C:\Work\CU\CUIDM\obj\Release\netcoreapp3.1\Razor\Views\Auth\LoginUser.cshtml.g.cs
 C:\Work\CU\CUIDM\obj\Release\netcoreapp3.1\Razor\Views\Auth\MailOTP.cshtml.g.cs
@@ -1398,3 +1397,5 @@ C:\Work\CU\CUIDM\obj\Release\netcoreapp3.1\IDM.dll
 C:\Work\CU\CUIDM\obj\Release\netcoreapp3.1\IDM.pdb
 C:\Work\CU\CUIDM\obj\Release\netcoreapp3.1\IDM.genruntimeconfig.cache
 C:\Work\CU\CUIDM\obj\Release\netcoreapp3.1\IDM.csprojAssemblyReference.cache
+C:\Work\CU\CUIDM\obj\Release\netcoreapp3.1\Razor\Views\Auth\GetPassword.cshtml.g.cs
+C:\Work\CU\CUIDM\obj\Release\netcoreapp3.1\Razor\Views\Auth\ShowPassword.cshtml.g.cs

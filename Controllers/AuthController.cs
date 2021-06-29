@@ -175,34 +175,118 @@ namespace IDM.Controllers
             }
             return View(model);
         }
-
-        public IActionResult ActiveUser()
+        [HttpGet]
+        public IActionResult GetPassword()
         {
-            var model = new ActivateDTO();
+            var model = new GetPasswordDTO();
             return View(model);
         }
+       
         [HttpPost]
-        public IActionResult ActiveUser(ActivateDTO model)
+        public IActionResult GetPassword(GetPasswordDTO model)
         {
+        
+            if (!string.IsNullOrEmpty(model.cu_jobcode) && !string.IsNullOrEmpty(model.cu_pplid))
+            {
+                
+            }
+            else if (!string.IsNullOrEmpty(model.cu_jobcode) && !string.IsNullOrEmpty(model.basic_givenname) && !string.IsNullOrEmpty(model.basic_sn))
+            {
+
+            }
+            else
+            {
+                ViewBag.ReturnCode = ReturnCode.Error;
+                ViewBag.Message += "กรุณาระบุรหัสนิสิตและรหัสบัตรประชาชน<br/>หรือ กรุณาระบุรหัสนิสิต ชื่อและนามสกุล<hr/>The Student ID and Citizen ID field is required or The Student ID, First Name and Last Name field is required.";
+            }
+
             if (ModelState.IsValid)
             {
-                var fim_user = this._context.table_visual_fim_user.Where(w => w.cu_pplid == model.cu_pplid).FirstOrDefault();
-                if (fim_user == null)
+                if (!string.IsNullOrEmpty(model.cu_jobcode))
                 {
-                    ModelState.AddModelError("cu_pplid", "ไม่พบข้อมูลรหัสบัตรประชาชนที่ระบุ");
-                    return View(model);
+                    var fim_user = this._context.table_visual_fim_user.Where(w => w.system_actived == false & w.basic_uid == model.cu_jobcode & w.system_idm_user_type == IDMUserType.student).FirstOrDefault();
+                    if (fim_user == null)
+                    {
+                        ModelState.AddModelError("cu_jobcode", "ไม่พบข้อมูลรหัสนักศึกษาในระบบ");
+                        return View(model);
+                    }
+                    else
+                    {
+                        if (string.IsNullOrEmpty(fim_user.cu_pplid) || fim_user.cu_pplid == "0")
+                        { 
+                            if (!string.IsNullOrEmpty(model.basic_givenname) && !string.IsNullOrEmpty(model.basic_sn))
+                            {
+                                fim_user = this._context.table_visual_fim_user.Where(w => w.system_actived == false & w.basic_givenname == model.basic_givenname & w.basic_sn == model.basic_sn & w.basic_uid == model.cu_jobcode & w.system_idm_user_type == IDMUserType.student).FirstOrDefault();
+                                if (fim_user == null)
+                                {
+                                    ModelState.AddModelError("basic_givenname", "ไม่พบข้อมูลในระบบหรือระบุข้อมูลไม่ถูกต้อง");
+                                    ModelState.AddModelError("basic_sn", "ไม่พบข้อมูลในระบบหรือระบุข้อมูลไม่ถูกต้อง");
+                                    ModelState.AddModelError("cu_jobcode", "ไม่พบข้อมูลในระบบหรือระบุข้อมูลไม่ถูกต้อง");
+                                    return View(model);
+                                }
+                                return RedirectToAction("ShowPassword", new { u = DataEncryptor.Encrypt(fim_user.basic_uid + "|" + DateUtil.ToDisplayDate(DateUtil.Now())) });
+                            }
+                        }
+                    }
                 }
-                fim_user = this._context.table_visual_fim_user.Where(w => w.cu_jobcode == model.cu_jobcode & w.cu_pplid == model.cu_pplid).FirstOrDefault();
-                if (fim_user == null)
+
+                if (!string.IsNullOrEmpty(model.cu_jobcode) && !string.IsNullOrEmpty(model.cu_pplid))
                 {
-                    ModelState.AddModelError("cu_jobcode", "รหัสนักศึกษาไม่ถูกต้อง");
-                    return View(model);
+                    var fim_user = this._context.table_visual_fim_user.Where(w => w.system_actived == false & w.cu_pplid == model.cu_pplid & w.basic_uid == model.cu_jobcode & w.system_idm_user_type == IDMUserType.student).FirstOrDefault();
+                    if (fim_user == null)
+                    {
+                        ModelState.AddModelError("cu_pplid", "ไม่พบข้อมูลในระบบหรือระบุข้อมูลไม่ถูกต้อง");
+                        ModelState.AddModelError("cu_jobcode", "ไม่พบข้อมูลในระบบหรือระบุข้อมูลไม่ถูกต้อง");
+                        return View(model);
+                    }
+
+                    return RedirectToAction("ShowPassword", new { u = DataEncryptor.Encrypt(fim_user.basic_uid + "|" + DateUtil.ToDisplayDate(DateUtil.Now())) });
                 }
-                return RedirectToAction("ResetPassword", new { u = DataEncryptor.Encrypt(fim_user.basic_uid) });
+                else if (!string.IsNullOrEmpty(model.cu_jobcode) && !string.IsNullOrEmpty(model.basic_givenname) && !string.IsNullOrEmpty(model.basic_sn))
+                {
+                    var fim_user = this._context.table_visual_fim_user.Where(w => w.system_actived == false & w.basic_givenname == model.basic_givenname & w.basic_sn == model.basic_sn & w.basic_uid == model.cu_jobcode & w.system_idm_user_type == IDMUserType.student).FirstOrDefault();
+                    if (fim_user == null)
+                    {
+                        ModelState.AddModelError("basic_givenname", "ไม่พบข้อมูลในระบบหรือระบุข้อมูลไม่ถูกต้อง");
+                        ModelState.AddModelError("basic_sn", "ไม่พบข้อมูลในระบบหรือระบุข้อมูลไม่ถูกต้อง");
+                        ModelState.AddModelError("cu_jobcode", "ไม่พบข้อมูลในระบบหรือระบุข้อมูลไม่ถูกต้อง");
+                        return View(model);
+                    }
+                    return RedirectToAction("ShowPassword", new { u = DataEncryptor.Encrypt(fim_user.basic_uid + "|" + DateUtil.ToDisplayDate(DateUtil.Now())) });
+                }
+
             }
             return View(model);
         }
-
+        public IActionResult ShowPassword(string u)
+        {
+            var model = new ShowPasswordDTO();
+            var code = DataEncryptor.Decrypt(u);
+            var codes = code.Split("|", StringSplitOptions.RemoveEmptyEntries);
+            if (codes.Length != 2)
+            {
+                ViewBag.ReturnCode = ReturnCode.Error;
+                ViewBag.Message = "เกิดข้อผิดพลาดในระบบ";
+                return View(model);
+            }
+            else
+            {
+                var basic_uid = codes[0];
+                var date = DateUtil.ToDate(codes[1]);
+                if (date == null || date < DateUtil.Now().Date)
+                {
+                    ViewBag.ReturnCode = ReturnCode.Error;
+                    ViewBag.Message = "รหัสการขอการรับรหัสผ่านหมดอายุ";
+                    return View(model);
+                }
+                var fim_user = this._context.table_visual_fim_user.Where(w => w.basic_uid == basic_uid).FirstOrDefault();
+                if(fim_user != null)
+                {
+                    model.Password = Cryptography.decrypt(fim_user.basic_userPassword);
+                }
+            }
+            return View(model);
+        }
         public IActionResult ResetPassword(string u)
         {
             var model = new ChangePassword2DTO();
@@ -215,14 +299,34 @@ namespace IDM.Controllers
             visual_fim_user fim_user = null;
             try
             {
-                fim_user = this._context.table_visual_fim_user.Where(w => w.basic_uid == DataEncryptor.Decrypt(model.Code)).FirstOrDefault();
-                if (fim_user == null)
-                    return RedirectToAction("Logout", "Auth");
+                var code = DataEncryptor.Decrypt(model.Code);
+                var codes = code.Split("|", StringSplitOptions.RemoveEmptyEntries);
+                if(codes.Length != 2)
+                {
+                    ModelState.AddModelError("Password", "เกิดข้อผิดพลาดในระบบ");
+                    ModelState.AddModelError("ConfirmPassword", "เกิดข้อผิดพลาดในระบบ");
+                    return View(model);
+                }
+                else
+                {
+                    var basic_uid = codes[0];
+                    var date = DateUtil.ToDate( codes[1]);
+                    if(date == null  || date < DateUtil.Now().Date)
+                    {
+                        ModelState.AddModelError("Password", "รหัสการขอการรับรหัสผ่านหมดอายุ");
+                        ModelState.AddModelError("ConfirmPassword", "รหัสการขอการรับรหัสผ่านหมดอายุ");
+                        return View(model);
+                    }
+                    fim_user = this._context.table_visual_fim_user.Where(w => w.basic_uid == basic_uid).FirstOrDefault();                    
+                }
             }
             catch (Exception ex)
             {
                 return RedirectToAction("Logout", "Auth");
             }
+
+            if (fim_user == null)
+                return RedirectToAction("Logout", "Auth");
 
             if (ModelState.IsValid)
             {

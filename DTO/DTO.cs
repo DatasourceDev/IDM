@@ -86,16 +86,22 @@ namespace IDM.DTO
         public string basic_uid { get; set; }
 
     }
-    public class ActivateDTO : BaseDTO
+    public class GetPasswordDTO : BaseDTO
     {
-        [Required]
         [MaxLength(10)]
+        [Required]
         public string cu_jobcode { get; set; }
 
 
-        [Required]
         [MaxLength(13)]
         public string cu_pplid { get; set; }
+
+        [MaxLength(500)]
+        public string basic_sn { get; set; }
+
+        [MaxLength(500)]
+        public string basic_givenname { get; set; }
+        
     }
     public class LoginDTO : BaseDTO
     {
@@ -187,6 +193,7 @@ namespace IDM.DTO
     {
 
     }
+
     public class OTPDTO : BaseDTO
     {
         [Required]
@@ -232,6 +239,10 @@ namespace IDM.DTO
         public List<string> Passwords { get; set; }
     }
 
+    public class ShowPasswordDTO
+    {
+        public string Password { get; set; }
+    }
     public class script_temp
     {
         public Int64 id { get; set; }

@@ -11379,5 +11379,5 @@ a.link {
     font-size: 0.7rem;
     font-style: italic;
     display: block;
-    margin-top: -10px;
+    margin-top: -5px !important;
 }

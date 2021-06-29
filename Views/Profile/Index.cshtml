@@ -27,7 +27,10 @@
                     <div class="row">
                         <div class="col-lg-7">
                             <div class="form-group row">
-                                <label class="col-sm-4 col-form-label text-right">Login Name</label>
+                                <div class="col-sm-4 text-right">
+                                    <label class="col-form-label-eng">รหัสผุ้ใช้</label>
+                                    <span class="text-eng">Login Name</span>
+                                </div>
                                 <div class="col-sm-8">
                                     <input class="form-control" type="text" asp-for="basic_uid" readonly>
                                 </div>
@@ -37,7 +40,10 @@
                     <div class="row">
                         <div class="col-lg-7">
                             <div class="form-group row">
-                                <label class="col-sm-4 col-form-label text-right">First Name</label>
+                                <div class="col-sm-4 text-right">
+                                    <label class="col-form-label-eng">ชื่อ</label>
+                                    <span class="text-eng">First Name</span>
+                                </div>
                                 <div class="col-sm-8">
                                     <input class="form-control" type="text" asp-for="basic_givenname" readonly>
                                 </div>
@@ -47,7 +53,10 @@
                     <div class="row">
                         <div class="col-lg-7">
                             <div class="form-group row">
-                                <label class="col-sm-4 col-form-label text-right">Last Name</label>
+                                <div class="col-sm-4 text-right">
+                                    <label class="col-form-label-eng">นามสกุล</label>
+                                    <span class="text-eng">Last Name</span>
+                                </div>
                                 <div class="col-sm-8">
                                     <input class="form-control" type="text" asp-for="basic_sn" readonly>
                                 </div>
@@ -57,9 +66,12 @@
                     <div class="row">
                         <div class="col-lg-7">
                             <div class="form-group row">
-                                <label class="col-sm-4 col-form-label text-right">Email</label>
+                                <div class="col-sm-4 text-right">
+                                    <label class="col-form-label-eng">อีเมล</label>
+                                    <span class="text-eng">Email</span>
+                                </div>
                                 <div class="col-sm-8">
-                                    <input class="form-control" type="text"  asp-for="basic_mail" readonly>
+                                    <input class="form-control" type="text" asp-for="basic_mail" readonly>
                                 </div>
                             </div>
                         </div>
@@ -67,7 +79,17 @@
                     <div class="row">
                         <div class="col-lg-7">
                             <div class="form-group row">
-                                <label class="col-sm-4 col-form-label text-right">Job Code</label>
+                                <div class="col-sm-4 text-right">
+                                    @if (Model.system_idm_user_type == IDMUserType.student)
+                                    {
+                                        <label class="col-form-label-eng">รหัสนักศึกษา</label>
+                                    }
+                                    else
+                                    {
+                                        <label class="col-form-label-eng">รหัสพนักงาน</label>
+                                    }
+                                    <span class="text-eng">Job Code</span>
+                                </div>
                                 <div class="col-sm-8">
                                     <input class="form-control" type="text" asp-for="cu_jobcode" readonly>
                                 </div>
@@ -77,7 +99,10 @@
                     <div class="row">
                         <div class="col-lg-7">
                             <div class="form-group row">
-                                <label class="col-sm-4 col-form-label text-right">Citizen ID</label>
+                                <div class="col-sm-4 text-right">
+                                    <label class="col-form-label-eng">รหัสบัตรประชาชน หรือ Passport No.</label>
+                                    <span class="text-eng">Citizen ID</span>
+                                </div>
                                 <div class="col-sm-8">
                                     <input class="form-control" type="text" asp-for="cu_pplid" readonly>
                                 </div>
@@ -87,7 +112,10 @@
                     <div class="row">
                         <div class="col-lg-7">
                             <div class="form-group row">
-                                <label class="col-sm-4 col-form-label text-right">Expire Date</label>
+                                <div class="col-sm-4 text-right">
+                                    <label class="col-form-label-eng">วันหมดอายุ</label>
+                                    <span class="text-eng">Expire Date</span>
+                                </div>
                                 <div class="col-sm-8">
                                     <input class="form-control" type="text" asp-for="cu_CUexpire" readonly>
                                 </div>
@@ -97,7 +125,10 @@
                     <div class="row">
                         <div class="col-lg-7">
                             <div class="form-group row">
-                                <label class="col-sm-4 col-form-label text-right">Last Password Changed</label>
+                                <div class="col-sm-4 text-right">
+                                    <label class="col-form-label-eng">เปลี่ยนรหัสผ่านล่าสุด</label>
+                                    <span class="text-eng">Last Password Changed</span>
+                                </div>
                                 <div class="col-sm-8">
                                     <input class="form-control" type="text" value="@DateUtil.ToDisplayDateTime(Model.cu_pwdchangeddate)" readonly>
                                 </div>

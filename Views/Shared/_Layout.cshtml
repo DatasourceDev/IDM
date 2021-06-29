@@ -91,7 +91,7 @@
             </div>
         </div>
         <ul class="metismenu left-sidenav-menu slimscroll">
-            @if (groupname == UserRole.admin | groupname == UserRole.helpdesk | groupname == UserRole.approve)
+            @if (portal == Portal.admin && (groupname == UserRole.admin | groupname == UserRole.helpdesk | groupname == UserRole.approve))
             {
                 if (groupname == UserRole.admin | groupname == UserRole.helpdesk)
                 {

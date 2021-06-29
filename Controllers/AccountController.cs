@@ -807,13 +807,16 @@ namespace IDM.Controllers
 
                             if (!model.ldap_created)
                             {
-                                fim_user.system_create_by_uid = userlogin.basic_uid;
-                                fim_user.system_create_date = DateUtil.Now();
-                                _context.SaveChanges();
                                 var result_ldap = _providerldap.CreateUser(fim_user, _context);
                                 model.ldap_created = result_ldap.result;
                                 if (result_ldap.result == true)
+                                {
                                     writelog(LogType.log_edit_account, LogStatus.successfully, IDMSource.LDAP, model.basic_uid);
+                                    fim_user.system_create_by_uid = userlogin.basic_uid;
+                                    fim_user.system_create_date = DateUtil.Now();
+                                    fim_user.ldap_created = true;
+                                    _context.SaveChanges();
+                                }
                             }
                             else
                             {
@@ -825,13 +828,17 @@ namespace IDM.Controllers
                             }
                             if (!model.ad_created)
                             {
-                                fim_user.system_create_by_uid = userlogin.basic_uid;
-                                fim_user.system_create_date = DateUtil.Now();
-                                _context.SaveChanges();
+                              
                                 var result_ad = _provider.CreateUser(fim_user, _context);
                                 model.ad_created = result_ad.result;
                                 if (result_ad.result == true)
+                                {
                                     writelog(LogType.log_edit_account, LogStatus.successfully, IDMSource.AD, model.basic_uid);
+                                    fim_user.system_create_by_uid = userlogin.basic_uid;
+                                    fim_user.system_create_date = DateUtil.Now();
+                                    fim_user.ad_created = true;
+                                    _context.SaveChanges();
+                                }
                             }
                             else
                             {
