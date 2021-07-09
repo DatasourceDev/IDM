@@ -15,6 +15,22 @@ namespace IDM.Extensions
             }
             return 0;
         }
+        public static Int64 ParseInt64(object s, decimal def = 0)
+        {
+            Int64 d = 0;
+            if (s != null)
+            {
+                try
+                {
+                    return Convert.ToInt64(s.ToString().Trim().Replace(",", ""));
+                }
+                catch
+                {
+                    return d;
+                }
+            }
+            return d;
+        }
 
         public static decimal ParseDecimal(object s, decimal def = 0)
         {

@@ -30,6 +30,7 @@ namespace IDM.DTO
         public string log_type_search { get; set; }
 
         public Status? status_search { get; set; }
+        public string id { get; set; }
         public string dfrom { get; set; }
         public string dto { get; set; }
         public string import_option { get; set; }

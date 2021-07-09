@@ -295,6 +295,8 @@ namespace IDM.Identity
                 principal.DisplayName = model.basic_displayname;
                 if (!string.IsNullOrEmpty(model.basic_telephonenumber))
                     principal.VoiceTelephoneNumber = model.basic_telephonenumber;
+                else
+                    principal.VoiceTelephoneNumber = null;
                 principal.EmailAddress = model.basic_mail;
                 principal.UserPrincipalName = model.basic_userprincipalname;
 
@@ -303,10 +305,17 @@ namespace IDM.Identity
                 DirectoryEntry d = principal.GetUnderlyingObject() as DirectoryEntry;
                 d.Properties["internetaccess"].Value = model.internetaccess;
                 d.Properties["netcastaccess"].Value = model.netcastaccess;
+
                 if (!string.IsNullOrEmpty(model.cu_pplid))
                     d.Properties["pplid"].Value = model.cu_pplid;
+                else
+                    d.Properties["pplid"].Value = null;
+
                 if (!string.IsNullOrEmpty(model.cu_jobcode))
                     d.Properties["employeeID"].Value = model.cu_jobcode;
+                else
+                    d.Properties["employeeID"].Value = null;
+
                 if (model.cu_nsaccountlock == "TRUE")
                     d.Properties["userAccountControl"].Value = userAccountControl.DisablePasswordNotRequired;
                 else
@@ -343,13 +352,24 @@ namespace IDM.Identity
                 principal.DisplayName = model.basic_displayname;
                 if (!string.IsNullOrEmpty(model.basic_telephonenumber))
                     principal.VoiceTelephoneNumber = model.basic_telephonenumber;
+                else
+                    principal.VoiceTelephoneNumber = null;
                 principal.EmailAddress = model.basic_mail;
                 principal.UserPrincipalName = model.basic_userprincipalname;
 
                 principal.Save();
 
                 DirectoryEntry d = principal.GetUnderlyingObject() as DirectoryEntry;
-                d.Properties["pplid"].Value = model.cu_pplid;
+                if (!string.IsNullOrEmpty(model.cu_pplid))
+                    d.Properties["pplid"].Value = model.cu_pplid;
+                else
+                    d.Properties["pplid"].Value = null;
+
+                if (!string.IsNullOrEmpty(model.cu_jobcode))
+                    d.Properties["employeeID"].Value = model.cu_jobcode;
+                else
+                    d.Properties["employeeID"].Value = null;
+
                 d.Properties["employeeID"].Value = model.cu_jobcode;
                 principal.Save();
 

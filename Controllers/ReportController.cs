@@ -44,7 +44,16 @@ namespace IDM.Controllers
 
             var dfrom = DateUtil.ToDate(model.dfrom);
             var dto = DateUtil.ToDate(model.dto);
-
+            if (!string.IsNullOrEmpty(model.id))
+            {
+                var fim_user = _context.table_visual_fim_user.Where(w => w.basic_uid == model.id).FirstOrDefault();
+                if(fim_user != null && fim_user.system_create_date.HasValue)
+                {
+                    dfrom = fim_user.system_create_date;
+                    model.dfrom = DateUtil.ToDisplayDate(fim_user.system_create_date);
+                }
+            }
+               
             while (dfrom <= dto)
             {
                 var datetime = dfrom.Value;
@@ -59,11 +68,15 @@ namespace IDM.Controllers
                     sql.AppendLine(" where 1=1");
                     if (!string.IsNullOrEmpty(model.logstatus_search))
                     {
-                        sql.AppendLine(" and log_status = '" + model.logstatus_search + "'" );
+                        sql.AppendLine(" and log_status = '" + model.logstatus_search + "'");
                     }
                     if (!string.IsNullOrEmpty(model.log_type_search))
                     {
                         sql.AppendLine(" and log_type = '" + model.log_type_search + "'");
+                    }
+                    if (!string.IsNullOrEmpty(model.id))
+                    {
+                        sql.AppendLine(" and LOWER(log_username) = '" + model.id + "'");
                     }
                     if (!string.IsNullOrEmpty(model.text_search))
                     {
@@ -89,10 +102,10 @@ namespace IDM.Controllers
                             {
                                 var j = 0;
                                 var log = new system_log();
-                                log.log_id = (long)AppUtil.ManageNull(result.GetValue(j)); j++;
+                                log.log_id = NumUtil.ParseInt64(AppUtil.ManageNull(result.GetValue(j))); j++;
                                 log.log_username = AppUtil.ManageNull(result.GetValue(j)).ToString(); j++;
                                 log.log_ip = AppUtil.ManageNull(result.GetValue(j)).ToString(); j++;
-                                log.log_type_id = (long)AppUtil.ManageNull(result.GetValue(j)); j++;
+                                log.log_type_id = NumUtil.ParseInt64( AppUtil.ManageNull(result.GetValue(j))); j++;
                                 log.log_type = AppUtil.ManageNull(result.GetValue(j)).ToString(); j++;
                                 log.log_action = AppUtil.ManageNull(result.GetValue(j)).ToString(); j++;
                                 log.log_status = AppUtil.ManageNull(result.GetValue(j)).ToString(); j++;
@@ -143,8 +156,8 @@ namespace IDM.Controllers
             //model.itemcnt = itemcnt;
             //model.pagelen = pagelen;
             ////model.lists = lists.Skip(skipRows).Take(_pagelen).AsQueryable();
-            
-            model.lists = lists.OrderByDescending(o=>  o.log_datetime).AsQueryable();
+
+            model.lists = lists.OrderByDescending(o => o.log_datetime).AsQueryable();
 
             return View(model);
         }

@@ -81,7 +81,7 @@
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label text-right">เลขประจำตัวประชาชน</label>
                                     <div class="col-sm-4">
-                                        <input class="form-control" type="text" asp-for="cu_pplid" maxlength="13" required onchange="cu_pplid_Onchange()">
+                                        <input class="form-control" type="text" asp-for="cu_pplid" maxlength="13" onchange="cu_pplid_Onchange()">
                                         @Html.ValidationMessageFor(m => m.cu_pplid)
                                         <h5 id="cu_pplid_info" class="text-blue" style="display:none">เลขประจำตัวประชาชนซ้ำในระบบ</h5>
                                     </div>

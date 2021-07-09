@@ -673,7 +673,8 @@ namespace IDM.Controllers
             model.cu_mailhost = _conf.DefaultValue_mailhost;
             model.cu_mailRoutingAddress = _conf.DefaultValue_mailRoutingAddress.Replace("[uid]", model.basic_uid);
             model.cu_nsaccountlock = _conf.DefaultValue_nsaccountlock;
-            model.cu_pplid = model.cu_pplid.Trim();
+            if(!string.IsNullOrEmpty(model.cu_pplid))
+                model.cu_pplid = model.cu_pplid.Trim();
             model.cu_pwdchangedby = userlogin.basic_uid;
             model.cu_pwdchangeddate = DateUtil.Now();
             model.cu_pwdchangedloc = this.getClientIP();

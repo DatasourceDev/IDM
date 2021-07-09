@@ -90,11 +90,14 @@
                                                     <th>Locked</th>
                                                     <th>Internet Access</th>
                                                     <th>Netcast Access</th>
+                                                    <th>Created By</th>
+                                                    <th>Created From</th>
                                                     <th>Changed By</th>
                                                     <th>Changed From</th>
-                                                    <th>Last Password Change</th>
-                                                    <th>Changed From</th>
-                                                    <th></th>
+                                                    <th>Password Changed</th>
+                                                    <th>Password Changed From</th>
+                                                    <th>Edit</th>
+                                                    <th>Log</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -128,12 +131,17 @@
                                                             </td>
                                                             <td>@item.internetaccess</td>
                                                             <td>@item.netcastaccess</td>
+                                                            <td>@DateUtil.ToDisplayDateTime(item.system_create_date)</td>
+                                                            <td>@item.system_create_by_uid</td>
                                                             <td>@DateUtil.ToDisplayDateTime(item.system_modify_date)</td>
                                                             <td>@item.system_modify_by_uid</td>
                                                             <td>@DateUtil.ToDisplayDateTime(item.cu_pwdchangeddate)</td>
                                                             <td>@item.cu_pwdchangedby</td>
                                                             <td>
                                                                 <a href="@Url.Action("AccountInfo","Account", new{id=item.id })" target="_blank"><i class="far fa-edit font-16"></i></a>
+                                                            </td>
+                                                            <td>
+                                                                <a href="@Url.Action("Log","Report", new{id=item.basic_uid })" target="_blank"><i class="fas fa-list font-16"></i></a>
                                                             </td>
                                                         </tr>
                                                     }
@@ -142,7 +150,7 @@
                                                 @if (Model.lists == null || Model.lists.Count() == 0)
                                                 {
                                                     <tr>
-                                                        <td colspan="14" class="text-center">ไม่พบข้อมูล</td>
+                                                        <td colspan="17" class="text-center">ไม่พบข้อมูล</td>
                                                     </tr>
                                                 }
                                             </tbody>
